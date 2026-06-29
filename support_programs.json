@@ -1,0 +1,205 @@
+{
+  "timestamp": "2026-06-29 13:06",
+  "overall": "🔴 위험",
+  "risk_types": [
+    "DE 정치리스크",
+    "MX 정치리스크",
+    "BR 정치리스크",
+    "US 정치리스크",
+    "ID 정치리스크",
+    "AU 정치리스크",
+    "CN 정치리스크"
+  ],
+  "industries": [
+    "철강",
+    "배터리",
+    "반도체",
+    "자동차"
+  ],
+  "matched": [
+    {
+      "id": "SP001",
+      "name": "수출바우처 사업",
+      "agency": "산업통상자원부·KOTRA",
+      "risk_types": [
+        "관세리스크",
+        "수출규제리스크"
+      ],
+      "industries": [
+        "반도체",
+        "자동차",
+        "배터리",
+        "철강"
+      ],
+      "description": "수출 기업 맞춤형 해외마케팅 지원 (시장조사·전시회·수출컨설팅)",
+      "url": "https://www.exportvoucher.com",
+      "urgency": "단기"
+    },
+    {
+      "id": "SP002",
+      "name": "무역보험 (단기수출보험)",
+      "agency": "한국무역보험공사",
+      "risk_types": [
+        "관세리스크",
+        "지정학리스크"
+      ],
+      "industries": [
+        "반도체",
+        "자동차",
+        "배터리",
+        "철강"
+      ],
+      "description": "수출대금 미회수 위험 담보, 관세 부과에 따른 수출 피해 보전",
+      "url": "https://www.ksure.or.kr",
+      "urgency": "즉시"
+    },
+    {
+      "id": "SP009",
+      "name": "FTA 활용 지원",
+      "agency": "산업통상자원부·KOTRA",
+      "risk_types": [
+        "관세리스크",
+        "공급망리스크"
+      ],
+      "industries": [
+        "자동차",
+        "철강",
+        "반도체",
+        "배터리"
+      ],
+      "description": "FTA 원산지 증명 및 활용 컨설팅, 관세 절감 전략 수립",
+      "url": "https://www.ftahub.go.kr",
+      "urgency": "즉시"
+    },
+    {
+      "id": "SP010",
+      "name": "해외시장 다변화 지원",
+      "agency": "KOTRA",
+      "risk_types": [
+        "지정학리스크",
+        "관세리스크"
+      ],
+      "industries": [
+        "반도체",
+        "자동차",
+        "배터리",
+        "철강"
+      ],
+      "description": "신흥시장 진출 지원 및 수출시장 다변화 컨설팅",
+      "url": "https://www.kotra.or.kr",
+      "urgency": "중기"
+    },
+    {
+      "id": "SP011",
+      "name": "해외투자 보험",
+      "agency": "한국무역보험공사",
+      "risk_types": [
+        "지정학리스크"
+      ],
+      "industries": [
+        "반도체",
+        "자동차",
+        "배터리",
+        "철강"
+      ],
+      "description": "지정학 리스크 지역 해외투자 손실 보전 보험",
+      "url": "https://www.ksure.or.kr",
+      "urgency": "단기"
+    }
+  ],
+  "immediate": [
+    {
+      "id": "SP002",
+      "name": "무역보험 (단기수출보험)",
+      "agency": "한국무역보험공사",
+      "risk_types": [
+        "관세리스크",
+        "지정학리스크"
+      ],
+      "industries": [
+        "반도체",
+        "자동차",
+        "배터리",
+        "철강"
+      ],
+      "description": "수출대금 미회수 위험 담보, 관세 부과에 따른 수출 피해 보전",
+      "url": "https://www.ksure.or.kr",
+      "urgency": "즉시"
+    },
+    {
+      "id": "SP009",
+      "name": "FTA 활용 지원",
+      "agency": "산업통상자원부·KOTRA",
+      "risk_types": [
+        "관세리스크",
+        "공급망리스크"
+      ],
+      "industries": [
+        "자동차",
+        "철강",
+        "반도체",
+        "배터리"
+      ],
+      "description": "FTA 원산지 증명 및 활용 컨설팅, 관세 절감 전략 수립",
+      "url": "https://www.ftahub.go.kr",
+      "urgency": "즉시"
+    }
+  ],
+  "short_term": [
+    {
+      "id": "SP001",
+      "name": "수출바우처 사업",
+      "agency": "산업통상자원부·KOTRA",
+      "risk_types": [
+        "관세리스크",
+        "수출규제리스크"
+      ],
+      "industries": [
+        "반도체",
+        "자동차",
+        "배터리",
+        "철강"
+      ],
+      "description": "수출 기업 맞춤형 해외마케팅 지원 (시장조사·전시회·수출컨설팅)",
+      "url": "https://www.exportvoucher.com",
+      "urgency": "단기"
+    },
+    {
+      "id": "SP011",
+      "name": "해외투자 보험",
+      "agency": "한국무역보험공사",
+      "risk_types": [
+        "지정학리스크"
+      ],
+      "industries": [
+        "반도체",
+        "자동차",
+        "배터리",
+        "철강"
+      ],
+      "description": "지정학 리스크 지역 해외투자 손실 보전 보험",
+      "url": "https://www.ksure.or.kr",
+      "urgency": "단기"
+    }
+  ],
+  "mid_term": [
+    {
+      "id": "SP010",
+      "name": "해외시장 다변화 지원",
+      "agency": "KOTRA",
+      "risk_types": [
+        "지정학리스크",
+        "관세리스크"
+      ],
+      "industries": [
+        "반도체",
+        "자동차",
+        "배터리",
+        "철강"
+      ],
+      "description": "신흥시장 진출 지원 및 수출시장 다변화 컨설팅",
+      "url": "https://www.kotra.or.kr",
+      "urgency": "중기"
+    }
+  ]
+}

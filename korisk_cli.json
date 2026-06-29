@@ -1,0 +1,30 @@
+{
+  "timestamp": "2026-06-29 13:05",
+  "current_cli": 31.4,
+  "cli_grade": "🟢 안정",
+  "cli_change": 1.2,
+  "industry_cli": {
+    "반도체": {
+      "current": 46.7,
+      "change": 46.7,
+      "grade": "🟢 안정"
+    },
+    "배터리": {
+      "current": 50.7,
+      "change": -5.1,
+      "grade": "🟡 주의"
+    },
+    "자동차": {
+      "current": 41.9,
+      "change": 14.7,
+      "grade": "🟢 안정"
+    },
+    "철강": {
+      "current": 49.7,
+      "change": -19.6,
+      "grade": "🟢 안정"
+    }
+  },
+  "methodology": "Conference Board CLI / OECD Composite Leading Indicator",
+  "reference": "OECD (2012), Composite Leading Indicators: A Tool for Short-Term Analysis"
+}

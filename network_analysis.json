@@ -1,0 +1,51 @@
+{
+  "timestamp": "2026-06-29 13:06",
+  "risk_network": [
+    {
+      "node": "관세리스크",
+      "type": "리스크",
+      "degree": 2.15,
+      "betweenness": 0.167,
+      "eigenvector": 0.959,
+      "hub": "⭐ 허브"
+    },
+    {
+      "node": "원자재리스크",
+      "type": "리스크",
+      "degree": 2.326,
+      "betweenness": 0.5,
+      "eigenvector": 0.975,
+      "hub": "⭐ 허브"
+    },
+    {
+      "node": "공급망리스크",
+      "type": "리스크",
+      "degree": 1.372,
+      "betweenness": 0.0,
+      "eigenvector": 0.648,
+      "hub": "🔗 연결"
+    },
+    {
+      "node": "지정학리스크",
+      "type": "리스크",
+      "degree": 1.817,
+      "betweenness": 0.0,
+      "eigenvector": 0.849,
+      "hub": "⭐ 허브"
+    },
+    {
+      "node": "수출규제리스크",
+      "type": "리스크",
+      "degree": 2.292,
+      "betweenness": 0.167,
+      "eigenvector": 1.0,
+      "hub": "⭐ 허브"
+    }
+  ],
+  "total_nodes": 5,
+  "hub_risks": [
+    "수출규제리스크",
+    "원자재리스크"
+  ],
+  "methodology": "Acemoglu et al. (2012), Network Centrality Analysis"
+}

@@ -1,0 +1,109 @@
+{
+  "timestamp": "2026-06-29 13:06",
+  "month": "2026-06",
+  "overall": "🔴 위험",
+  "alert_count": 11,
+  "alerts": [
+    {
+      "type": "PPI선행지표",
+      "indicator": "PPI_열연강판",
+      "industry": "철강",
+      "risk": "원자재리스크",
+      "value": 158.07,
+      "grade": "🔴 위험",
+      "pct_change": 0.0,
+      "message": "[철강] 열연강판 158.1 (▼0.0%) 🔴 위험",
+      "meaning": "철강 생산원가 상승",
+      "action": "철강 생산원가 상승 → 선제 대응 필요"
+    },
+    {
+      "type": "국제원자재",
+      "indicator": "국제유가_Dubai",
+      "industry": "철강·배터리",
+      "value": 102.28,
+      "grade": "🟡 주의",
+      "pct_change": -2.9,
+      "message": "국제유가_Dubai 🟡 주의: 102.3 (▼2.9%)",
+      "meaning": "에너지비용 상승 → 생산원가 압박",
+      "action": "철강·배터리 에너지비용 상승 → 생산원가 압박"
+    },
+    {
+      "type": "국제원자재",
+      "indicator": "국제구리가격",
+      "industry": "배터리",
+      "value": 4578.46,
+      "grade": "🔴 위험",
+      "pct_change": -3.0,
+      "message": "국제구리가격 🔴 위험: 4578.5 (▼3.0%)",
+      "meaning": "양극재 원가 상승 → 배터리 원자재리스크",
+      "action": "배터리 양극재 원가 상승 → 배터리 원자재리스크"
+    },
+    {
+      "type": "국제원자재",
+      "indicator": "미국산업생산",
+      "industry": "반도체·자동차",
+      "value": 101.7,
+      "grade": "🟡 주의",
+      "pct_change": 0.2,
+      "message": "미국산업생산 🟡 주의: 101.7 (▲0.2%)",
+      "meaning": "미국 수요 변화 → 수출 선행",
+      "action": "반도체·자동차 미국 수요 변화 → 수출 선행"
+    },
+    {
+      "type": "정치리스크",
+      "indicator": "US 정치리스크",
+      "value": 51.0,
+      "grade": "🔴 위험",
+      "message": "미국 정치리스크 51점 🔴 위험",
+      "action": "미국 관련 수출입 리스크 모니터링 강화"
+    },
+    {
+      "type": "정치리스크",
+      "indicator": "MX 정치리스크",
+      "value": 43.0,
+      "grade": "🔴 위험",
+      "message": "멕시코 정치리스크 43점 🔴 위험",
+      "action": "멕시코 관련 수출입 리스크 모니터링 강화"
+    },
+    {
+      "type": "정치리스크",
+      "indicator": "DE 정치리스크",
+      "value": 39.0,
+      "grade": "🟡 주의",
+      "message": "독일 정치리스크 39점 🟡 주의",
+      "action": "독일 관련 수출입 리스크 모니터링 강화"
+    },
+    {
+      "type": "정치리스크",
+      "indicator": "ID 정치리스크",
+      "value": 36.0,
+      "grade": "🟡 주의",
+      "message": "인도네시아 정치리스크 36점 🟡 주의",
+      "action": "인도네시아 관련 수출입 리스크 모니터링 강화"
+    },
+    {
+      "type": "정치리스크",
+      "indicator": "CN 정치리스크",
+      "value": 35.0,
+      "grade": "🟡 주의",
+      "message": "중국 정치리스크 35점 🟡 주의",
+      "action": "중국 관련 수출입 리스크 모니터링 강화"
+    },
+    {
+      "type": "정치리스크",
+      "indicator": "AU 정치리스크",
+      "value": 34.0,
+      "grade": "🟡 주의",
+      "message": "호주 정치리스크 34점 🟡 주의",
+      "action": "호주 관련 수출입 리스크 모니터링 강화"
+    },
+    {
+      "type": "정치리스크",
+      "indicator": "BR 정치리스크",
+      "value": 33.0,
+      "grade": "🟡 주의",
+      "message": "브라질 정치리스크 33점 🟡 주의",
+      "action": "브라질 관련 수출입 리스크 모니터링 강화"
+    }
+  ]
+}

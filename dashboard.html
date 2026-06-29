@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>핵심 수출산업 리스크 조기경보 플랫폼</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=JetBrains+Mono:wght@400;700&display=swap');
+  :root {
+    --bg:#0a0e1a; --bg2:#111827; --bg3:#1a2235;
+    --border:rgba(255,255,255,0.07);
+    --red:#ef4444; --red-dim:rgba(239,68,68,0.15);
+    --yellow:#f59e0b; --yellow-dim:rgba(245,158,11,0.15);
+    --green:#10b981; --green-dim:rgba(16,185,129,0.15);
+    --blue:#3b82f6; --purple:#8b5cf6;
+    --text:#e2e8f0; --text2:#94a3b8; --text3:#475569;
+    --accent:#6366f1; --accent2:#8b5cf6;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:var(--bg);color:var(--text);font-family:'Noto Sans KR',sans-serif;min-height:100vh;font-size:14px;}
+  .header{background:linear-gradient(135deg,#0f172a,#1e1b4b);border-bottom:1px solid var(--border);padding:0 32px;display:flex;align-items:center;justify-content:space-between;height:64px;position:sticky;top:0;z-index:100;}
+  .logo-wrap{display:flex;align-items:center;gap:12px;}
+  .logo-icon{width:36px;height:36px;background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:18px;}
+  .logo-text{font-size:15px;font-weight:700;}
+  .logo-sub{font-size:11px;color:var(--text2);}
+  .header-right{display:flex;align-items:center;gap:16px;}
+  .live-badge{display:flex;align-items:center;gap:6px;background:var(--red-dim);border:1px solid var(--red);border-radius:20px;padding:4px 12px;font-size:11px;font-weight:700;color:var(--red);letter-spacing:1px;}
+  .live-dot{width:6px;height:6px;border-radius:50%;background:var(--red);animation:pulse 1.5s infinite;}
+  @keyframes pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:.4;transform:scale(.8);}}
+  .update-time{font-size:12px;color:var(--text2);font-family:'JetBrains Mono',monospace;}
+  .main{padding:24px 32px;max-width:1400px;margin:0 auto;}
+  .section-title{font-size:11px;font-weight:700;color:var(--text3);letter-spacing:2px;text-transform:uppercase;margin-bottom:16px;display:flex;align-items:center;gap:8px;list-style:none;counter-reset:none;}
+  .section-title::after{content:'';flex:1;height:1px;background:var(--border);}
+  #earlyWarningPanel *{list-style:none !important;}
+  .alert-banner{background:linear-gradient(90deg,rgba(239,68,68,.12),rgba(239,68,68,.04));border:1px solid rgba(239,68,68,.3);border-left:3px solid var(--red);border-radius:8px;padding:14px 20px;display:flex;align-items:center;gap:16px;margin-bottom:24px;}
+  .alert-text{font-size:13px;line-height:1.5;}
+  .alert-text strong{color:var(--red);}
+  .alert-time{margin-left:auto;font-size:11px;color:var(--text2);font-family:'JetBrains Mono',monospace;white-space:nowrap;}
+  .industry-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:24px;}
+  .industry-card{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:20px;position:relative;overflow:hidden;cursor:pointer;transition:transform .2s,border-color .2s;}
+  .industry-card:hover{transform:translateY(-2px);border-color:rgba(255,255,255,.15);}
+  .industry-card.danger{border-top:3px solid var(--red);}
+  .industry-card.warning{border-top:3px solid var(--yellow);}
+  .industry-card.safe{border-top:3px solid var(--green);}
+  .card-glow{position:absolute;top:0;right:0;width:80px;height:80px;border-radius:50%;filter:blur(40px);opacity:.15;}
+  .danger .card-glow{background:var(--red);}
+  .warning .card-glow{background:var(--yellow);}
+  .safe .card-glow{background:var(--green);}
+  .card-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;}
+  .card-icon{font-size:22px;}
+  .card-grade{font-size:10px;font-weight:700;letter-spacing:1px;padding:3px 10px;border-radius:20px;}
+  .danger .card-grade{background:var(--red-dim);color:var(--red);border:1px solid var(--red);}
+  .warning .card-grade{background:var(--yellow-dim);color:var(--yellow);border:1px solid var(--yellow);}
+  .safe .card-grade{background:var(--green-dim);color:var(--green);border:1px solid var(--green);}
+  .card-name{font-size:13px;font-weight:500;color:var(--text2);margin-bottom:4px;}
+  .card-score{font-size:48px;font-weight:900;letter-spacing:-3px;font-family:'JetBrains Mono',monospace;line-height:1;margin-bottom:12px;}
+  .danger .card-score{color:var(--red);}
+  .warning .card-score{color:var(--yellow);}
+  .safe .card-score{color:var(--green);}
+  .gauge-track{height:4px;background:rgba(255,255,255,.06);border-radius:2px;margin-bottom:14px;overflow:hidden;}
+  .gauge-fill{height:100%;border-radius:2px;transition:width 1.2s cubic-bezier(.4,0,.2,1);}
+  .danger .gauge-fill{background:linear-gradient(90deg,#dc2626,var(--red));}
+  .warning .gauge-fill{background:linear-gradient(90deg,#d97706,var(--yellow));}
+  .safe .gauge-fill{background:linear-gradient(90deg,#059669,var(--green));}
+  .card-meta{display:flex;flex-direction:column;gap:4px;}
+  .card-meta-row{display:flex;justify-content:space-between;font-size:11px;}
+  .meta-label{color:var(--text3);}
+  .meta-value{color:var(--text2);font-weight:500;}
+  .chart-panel{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:20px;margin-bottom:24px;}
+  .chart-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;}
+  .panel-title{font-size:13px;font-weight:700;display:flex;align-items:center;gap:8px;}
+  .panel-title .dot{width:6px;height:6px;border-radius:50%;background:var(--accent);}
+  .chart-tabs{display:flex;gap:8px;}
+  .chart-tab{font-size:11px;padding:5px 12px;border-radius:6px;border:1px solid var(--border);background:transparent;color:var(--text2);cursor:pointer;font-family:'Noto Sans KR',sans-serif;transition:all .2s;}
+  .chart-tab.active{background:var(--accent);border-color:var(--accent);color:#fff;font-weight:600;}
+  .bottom-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:24px;}
+  .panel{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:20px;list-style:none;}
+  .risk-bars{display:flex;flex-direction:column;gap:10px;}
+  .risk-row{display:flex;align-items:center;gap:10px;}
+  .risk-label{font-size:11px;color:var(--text2);width:80px;text-align:right;}
+  .risk-track{flex:1;height:6px;background:rgba(255,255,255,.06);border-radius:3px;overflow:hidden;}
+  .risk-bar{height:100%;border-radius:3px;transition:width 1s ease;}
+  .risk-count{font-size:11px;color:var(--text3);width:40px;font-family:'JetBrains Mono',monospace;}
+  .news-feed{display:flex;flex-direction:column;gap:8px;}
+  .news-item{display:flex;gap:10px;align-items:flex-start;padding:10px;border-radius:8px;background:var(--bg3);border:1px solid var(--border);}
+  .news-tag{font-size:10px;font-weight:700;padding:2px 7px;border-radius:4px;white-space:nowrap;margin-top:2px;}
+  .tag-관세리스크{background:rgba(239,68,68,.2);color:#fca5a5;}
+  .tag-공급망리스크{background:rgba(245,158,11,.2);color:#fde68a;}
+  .tag-원자재리스크{background:rgba(139,92,246,.2);color:#c4b5fd;}
+  .tag-지정학리스크{background:rgba(59,130,246,.2);color:#93c5fd;}
+  .tag-수출규제리스크{background:rgba(16,185,129,.2);color:#6ee7b7;}
+  .news-content{flex:1;min-width:0;}
+  .news-title{font-size:12px;line-height:1.5;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+  .news-meta{font-size:10px;color:var(--text3);margin-top:3px;}
+  .bottom3-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+  .stat-card{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:16px;}
+  .stat-label{font-size:11px;color:var(--text3);margin-bottom:6px;}
+  .stat-value{font-size:28px;font-weight:900;font-family:'JetBrains Mono',monospace;}
+  .stat-sub{font-size:11px;color:var(--text2);margin-top:4px;}
+  .loading{text-align:center;padding:60px;color:var(--text3);}
+  @media(max-width:1100px){.industry-grid{grid-template-columns:repeat(2,1fr);}.bottom-grid{grid-template-columns:1fr;}.bottom3-grid{grid-template-columns:repeat(2,1fr);}}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="logo-wrap">
+    <div class="logo-icon">⚡</div>
+    <div>
+      <div class="logo-text">KoRisk Intelligence</div>
+      <div class="logo-sub">핵심 수출산업 리스크 조기경보 플랫폼</div>
+    </div>
+  </div>
+  <div class="header-right">
+    <div class="live-badge"><div class="live-dot"></div>LIVE</div>
+    <div class="update-time" id="updateTime">--:--:--</div>
+  </div>
+</header>
+
+<main class="main">
+  <div id="loadingMsg" class="loading">📡 데이터 로딩 중...</div>
+  <div id="content" style="display:none">
+
+    <div class="alert-banner">
+      <div style="font-size:20px">🚨</div>
+      <div class="alert-text" id="alertText"></div>
+      <div class="alert-time" id="alertTime"></div>
+    </div>
+
+    <div class="section-title">산업별 리스크 현황</div>
+    <div class="industry-grid" id="industryGrid"></div>
+
+    <div class="chart-panel">
+      <div class="chart-header">
+        <div class="panel-title"><div class="dot"></div>리스크 카테고리별 월별 트렌드</div>
+        <div class="chart-tabs">
+          <button class="chart-tab active" onclick="switchChart(6,this)">6개월</button>
+          <button class="chart-tab" onclick="switchChart(12,this)">12개월</button>
+          <button class="chart-tab" onclick="switchChart(999,this)">전체</button>
+        </div>
+      </div>
+      <canvas id="trendChart" height="80"></canvas>
+    </div>
+
+    <div class="bottom-grid">
+      <div class="panel">
+        <div class="panel-title" style="margin-bottom:16px"><div class="dot"></div>리스크 카테고리 분포</div>
+        <div class="risk-bars" id="riskBars"></div>
+        <div style="margin-top:20px;"><canvas id="radarChart" height="160"></canvas></div>
+      </div>
+      <div class="panel">
+        <div class="panel-title" style="margin-bottom:16px"><div class="dot"></div>주요 국제정세 이슈</div>
+        <div class="news-feed" id="newsFeed"></div>
+      </div>
+    </div>
+
+    <!-- 리스크 예측 -->
+    <div class="section-title" style="margin-top:24px">3개월 리스크 예측 <span style="font-size:10px;color:var(--text3);font-weight:400;letter-spacing:0;text-transform:none">(ARIMAX 예측 기반)</span></div>
+    <div class="chart-panel" style="margin-bottom:16px">
+      <div class="chart-header">
+        <div class="panel-title"><div class="dot"></div>산업별 리스크 점수 예측 추이</div>
+        <div style="font-size:11px;color:var(--text3)">현재 → 1개월 후 → 2개월 후 → 3개월 후</div>
+      </div>
+      <canvas id="predChart" height="80"></canvas>
+    </div>
+    <div id="predCards" style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:24px;"></div>
+
+    <!-- 조기경보 패널 -->
+    <div class="section-title" style="margin-top:24px">
+      🚨 실시간 조기경보
+      <span id="overallGrade" style="font-size:12px;font-weight:400;letter-spacing:0;text-transform:none;margin-left:8px"></span>
+    </div>
+    <div id="earlyWarningPanel" class="panel" style="margin-bottom:24px">
+      <div style="color:var(--text3);font-size:13px">데이터 로딩 중...</div>
+    </div>
+
+    <!-- 정부 지원사업 패널 -->
+    <div class="section-title" style="margin-top:24px">📋 정부 지원사업 자동 매칭</div>
+    <div id="supportProgramPanel" class="panel" style="margin-bottom:24px">
+      <div style="color:var(--text3);font-size:13px">데이터 로딩 중...</div>
+    </div>
+
+    <!-- 산업별 리스크 전달 구조 - 실시간 연동 -->
+    <div class="section-title" style="margin-top:24px">
+      ⚡ 국제정세 → 산업별 리스크 전달 구조
+      <span style="font-size:11px;font-weight:400;margin-left:8px;color:var(--text3)">"같은 충격도 산업마다 다르게 전달된다"</span>
+    </div>
+    <div id="industryFlowGrid" style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:24px">
+    <!-- 동적 렌더링 -->
+    </div>
+    <div style="display:none;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:24px">
+      <div class="panel" style="padding:16px;border-top:3px solid rgba(99,102,241,0.8)">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px">
+          <span style="font-size:20px">⚡</span>
+          <div><div style="font-weight:700;font-size:14px">반도체</div><div style="font-size:10px;color:rgba(99,102,241,0.9);font-weight:600">정책 충격형</div></div>
+        </div>
+        <div style="font-size:11px;color:var(--text3);margin-bottom:12px;line-height:1.5">"정책이 직접 생산을 건드리는 산업"</div>
+        <div style="display:flex;flex-direction:column;gap:4px">
+          <div style="background:rgba(99,102,241,0.15);border:1px solid rgba(99,102,241,0.3);border-radius:6px;padding:6px 8px;font-size:11px">🇺🇸🇳🇱🇯🇵 규제 발표</div>
+          <div style="text-align:center;font-size:10px;color:var(--text3)">↓ 즉각 반응</div>
+          <div style="background:var(--bg3);border-radius:6px;padding:6px 8px;font-size:11px">공급망 차질</div>
+          <div style="text-align:center;font-size:10px;color:var(--text3)">↓ 1~2개월</div>
+          <div style="background:rgba(99,102,241,0.2);border-radius:6px;padding:6px 8px;font-size:11px;font-weight:600">수출 변화</div>
+        </div>
+        <div style="margin-top:10px;padding-top:10px;border-top:1px solid var(--border);font-size:10px;color:var(--text3)">핵심 지표: 수출규제 지수 · 실리콘웨이퍼 수입물가</div>
+      </div>
+      <div class="panel" style="padding:16px;border-top:3px solid rgba(245,158,11,0.8)">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px">
+          <span style="font-size:20px">📈</span>
+          <div><div style="font-weight:700;font-size:14px">자동차</div><div style="font-size:10px;color:rgba(245,158,11,0.9);font-weight:600">수요 충격형</div></div>
+        </div>
+        <div style="font-size:11px;color:var(--text3);margin-bottom:12px;line-height:1.5">"수요가 즉시 생산을 바꾸는 산업"</div>
+        <div style="display:flex;flex-direction:column;gap:4px">
+          <div style="background:rgba(245,158,11,0.15);border:1px solid rgba(245,158,11,0.3);border-radius:6px;padding:6px 8px;font-size:11px">🇺🇸🇪🇺 관세·경기 변화</div>
+          <div style="text-align:center;font-size:10px;color:var(--text3)">↓ 즉시 반응</div>
+          <div style="background:var(--bg3);border-radius:6px;padding:6px 8px;font-size:11px">소비 수요 변화</div>
+          <div style="text-align:center;font-size:10px;color:var(--text3)">↓ 선제 출하</div>
+          <div style="background:rgba(245,158,11,0.2);border-radius:6px;padding:6px 8px;font-size:11px;font-weight:600">수출·생산 조정</div>
+        </div>
+        <div style="margin-top:10px;padding-top:10px;border-top:1px solid var(--border);font-size:10px;color:var(--text3)">핵심 지표: 관세 리스크 · 미국산업생산 · 환율</div>
+      </div>
+      <div class="panel" style="padding:16px;border-top:3px solid rgba(16,185,129,0.8)">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px">
+          <span style="font-size:20px">💰</span>
+          <div><div style="font-weight:700;font-size:14px">배터리</div><div style="font-size:10px;color:rgba(16,185,129,0.9);font-weight:600">원가 충격형</div></div>
+        </div>
+        <div style="font-size:11px;color:var(--text3);margin-bottom:12px;line-height:1.5">"원가가 수익성을 결정하는 산업"</div>
+        <div style="display:flex;flex-direction:column;gap:4px">
+          <div style="background:rgba(16,185,129,0.15);border:1px solid rgba(16,185,129,0.3);border-radius:6px;padding:6px 8px;font-size:11px">🇮🇩🇨🇱🇨🇳 원자재 변화</div>
+          <div style="text-align:center;font-size:10px;color:var(--text3)">↓ 2~3단계</div>
+          <div style="background:var(--bg3);border-radius:6px;padding:6px 8px;font-size:11px">생산원가 상승</div>
+          <div style="text-align:center;font-size:10px;color:var(--text3)">↓ 가동률 조정</div>
+          <div style="background:rgba(16,185,129,0.2);border-radius:6px;padding:6px 8px;font-size:11px;font-weight:600">수출 변화</div>
+        </div>
+        <div style="margin-top:10px;padding-top:10px;border-top:1px solid var(--border);font-size:10px;color:var(--text3)">핵심 지표: 니켈·리튬 수입물가 · 배터리 가동률</div>
+      </div>
+      <div class="panel" style="padding:16px;border-top:3px solid rgba(239,68,68,0.8)">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px">
+          <span style="font-size:20px">🔄</span>
+          <div><div style="font-weight:700;font-size:14px">철강</div><div style="font-size:10px;color:rgba(239,68,68,0.9);font-weight:600">사이클 충격형</div></div>
+        </div>
+        <div style="font-size:11px;color:var(--text3);margin-bottom:12px;line-height:1.5">"원자재 사이클이 산업을 지배하는 산업"</div>
+        <div style="display:flex;flex-direction:column;gap:4px">
+          <div style="background:rgba(239,68,68,0.15);border:1px solid rgba(239,68,68,0.3);border-radius:6px;padding:6px 8px;font-size:11px">🇦🇺🇧🇷🇨🇳 원자재·중국</div>
+          <div style="text-align:center;font-size:10px;color:var(--text3)">↓ 재고 변화</div>
+          <div style="background:var(--bg3);border-radius:6px;padding:6px 8px;font-size:11px">가동률 조정</div>
+          <div style="text-align:center;font-size:10px;color:var(--text3)">↓ 중기 반응</div>
+          <div style="background:rgba(239,68,68,0.2);border-radius:6px;padding:6px 8px;font-size:11px;font-weight:600">생산·수출 변화</div>
+        </div>
+        <div style="margin-top:10px;padding-top:10px;border-top:1px solid var(--border);font-size:10px;color:var(--text3)">핵심 지표: 철광석·유연탄 수입물가 · 철강 가동률</div>
+      </div>
+    </div><!-- 기존종료 -->
+
+    <!-- 산업별 차등 리스크 매트릭스 -->
+    <div class="section-title" style="margin-top:24px">
+      🏭 산업별 차등 리스크 매트릭스
+      <span style="font-size:11px;font-weight:400;margin-left:8px;color:var(--text3)">정책형·수요형·원가형·사이클형 구조 반영</span>
+    </div>
+    <div id="industryMatrixPanel" style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:24px">
+      <div class="panel" style="padding:0"><canvas id="industryRadarChart" style="max-height:280px"></canvas></div>
+      <div class="panel" id="industryMatrixDetail" style="font-size:13px"></div>
+    </div>
+
+    <!-- 국가별 정치 리스크 -->
+    <div class="section-title" style="margin-top:24px">
+      🌍 주요국 정치·외교 리스크
+      <span style="font-size:11px;font-weight:400;margin-left:8px;color:var(--text3)">GPR 지수 기반 (Caldara & Iacoviello 2022)</span>
+    </div>
+    <div id="countryRiskPanel" style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:24px"></div>
+
+    <!-- 가동률 트렌드 -->
+    <div class="section-title" style="margin-top:24px">
+      📊 제조업 가동률 트렌드
+      <span style="font-size:11px;font-weight:400;margin-left:8px;color:var(--text3)">배터리·철강 실물 선행지표</span>
+    </div>
+    <div class="panel" style="margin-bottom:24px"><canvas id="capacityChart" style="max-height:200px"></canvas></div>
+
+    <!-- 리스크 전이 -->
+    <div class="section-title" style="margin-top:24px">
+      🔄 리스크 전이 분석
+      <span style="font-size:11px;font-weight:400;margin-left:8px;color:var(--text3)">Diebold & Yilmaz (2012) 방법론</span>
+    </div>
+    <div id="spilloverPanel" class="panel" style="margin-bottom:24px"></div>
+
+    <!-- AI 추천 -->
+    <div class="section-title" style="margin-top:24px">AI 실시간 대응전략 추천 <span style="font-size:10px;color:var(--text3);font-weight:400;letter-spacing:0;text-transform:none">(Claude AI 기반)</span></div>
+    <div class="panel" style="margin-bottom:24px">
+      <div style="display:flex;align-items:center;gap:16px;margin-bottom:16px;flex-wrap:wrap">
+        <select id="aiIndustrySelect" style="background:var(--bg3);border:1px solid var(--border);color:var(--text);padding:8px 16px;border-radius:8px;font-family:'Noto Sans KR',sans-serif;font-size:13px;cursor:pointer">
+          <option value="배터리">🔋 배터리</option>
+          <option value="철강">🏗️ 철강</option>
+          <option value="자동차">🚗 자동차</option>
+          <option value="반도체">💾 반도체</option>
+        </select>
+        <button onclick="getAIRecommendation()" style="background:linear-gradient(135deg,var(--accent),var(--accent2));border:none;color:#fff;padding:8px 24px;border-radius:8px;font-family:'Noto Sans KR',sans-serif;font-size:13px;font-weight:700;cursor:pointer">✨ AI 추천 받기</button>
+        <span id="aiLoadingBadge" style="display:none;font-size:12px;color:var(--accent)">⏳ Claude AI 분석 중...</span>
+      </div>
+      <div id="aiResult" style="min-height:80px;background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:16px;font-size:13px;line-height:1.8;color:var(--text2);white-space:pre-wrap">산업을 선택하고 'AI 추천 받기'를 클릭하면 Claude AI가 현재 리스크 상황을 분석하여 맞춤형 대응전략을 제안합니다.</div>
+    </div>
+
+    <!-- 대응전략 -->
+    <div class="section-title" style="margin-top:24px">대응전략 추천</div>
+    <div id="strategyPanel" style="display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-bottom:24px;"></div>
+
+    <div class="bottom3-grid">
+      <div class="stat-card">
+        <div class="stat-label">ECOS 선행지표</div>
+        <div class="stat-value" style="color:var(--accent)">44개</div>
+        <div class="stat-sub">월별 65개월 수집 · 조기경보 근거</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">국제정세 데이터</div>
+        <div class="stat-value" id="statTotal">-</div>
+        <div class="stat-sub">2022.01~2026.06 수집</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">심층 분석 국가</div>
+        <div class="stat-value" style="color:var(--accent)">14개국</div>
+        <div class="stat-sub">주요 교역·공급국 정치·통상 분석</div>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<script>
+setInterval(() => {
+  document.getElementById('updateTime').textContent = new Date().toLocaleTimeString('ko-KR',{hour12:false});
+}, 1000);
+
+const ICONS  = {배터리:'🔋', 철강:'🏗️', 자동차:'🚗', 반도체:'💾'};
+const COLORS = {관세리스크:'#ef4444', 원자재리스크:'#8b5cf6', 공급망리스크:'#f59e0b', 지정학리스크:'#3b82f6', 수출규제리스크:'#10b981'};
+
+let trendChartObj = null;
+let allTrend = null;
+
+function gradeClass(score) {
+  return score >= 60 ? 'danger' : score >= 35 ? 'warning' : 'safe';
+}
+
+function renderCards(scores) {
+  const order = ['배터리','철강','자동차','반도체'];
+  const grid = document.getElementById('industryGrid');
+  grid.innerHTML = '';
+  order.forEach(name => {
+    const d = scores[name];
+    if (!d) return;
+    const cls = gradeClass(d.score);
+    const gradeLabel = cls === 'danger' ? '🔴 위험' : cls === 'warning' ? '🟡 주의' : '🟢 관찰';
+    grid.innerHTML += `
+      <div class="industry-card ${cls}">
+        <div class="card-glow"></div>
+        <div class="card-header">
+          <span class="card-icon">${ICONS[name]||'📊'}</span>
+          <span class="card-grade">${gradeLabel}</span>
+        </div>
+        <div class="card-name">${name}</div>
+        <div class="card-score">${d.score}</div>
+        <div class="gauge-track"><div class="gauge-fill" id="gauge-${name}" style="width:0%"></div></div>
+        <div class="card-meta">
+          <div class="card-meta-row"><span class="meta-label">주요 리스크</span><span class="meta-value">${d.top_risk}</span></div>
+          <div class="card-meta-row"><span class="meta-label">관련 이슈</span><span class="meta-value">${d.news_count}건</span></div>
+        </div>
+        <div style="font-size:10px;color:var(--text3);margin-top:6px;padding-top:6px;border-top:1px solid var(--border)">
+          위험 기준 60점 · 주의 기준 35점
+        </div>
+      </div>`;
+  });
+  setTimeout(() => {
+    order.forEach(name => {
+      const el = document.getElementById('gauge-'+name);
+      if (el && scores[name]) el.style.width = scores[name].score + '%';
+    });
+  }, 300);
+}
+
+function renderTrend(trend, months) {
+  const labels = trend.months.slice(-months);
+  const slice  = n => trend[n] ? trend[n].slice(-months) : [];
+  const datasets = Object.entries(COLORS).map(([name, color]) => ({
+    label: name, data: slice(name),
+    borderColor: color, backgroundColor: 'transparent',
+    tension: 0.4, fill: false, pointRadius: 2, borderWidth: 2,
+  }));
+  if (trendChartObj) trendChartObj.destroy();
+  trendChartObj = new Chart(document.getElementById('trendChart').getContext('2d'), {
+    type: 'line', data: { labels, datasets },
+    options: {
+      responsive: true,
+      plugins: { legend: { labels: { color:'#94a3b8', font:{size:11}, boxWidth:12 } } },
+      scales: {
+        x: { ticks:{color:'#475569',font:{size:10}}, grid:{color:'rgba(255,255,255,0.04)'} },
+        y: { ticks:{color:'#475569',font:{size:10}}, grid:{color:'rgba(255,255,255,0.04)'}, min:0 }
+      }
+    }
+  });
+}
+
+function switchChart(n, btn) {
+  document.querySelectorAll('.chart-tab').forEach(t=>t.classList.remove('active'));
+  btn.classList.add('active');
+  renderTrend(allTrend, n);
+}
+
+function renderBars(dist) {
+  const max = Math.max(...Object.values(dist), 1);
+  const container = document.getElementById('riskBars');
+  container.innerHTML = '';
+  Object.entries(dist).sort((a,b)=>b[1]-a[1]).forEach(([name, cnt]) => {
+    const color = COLORS[name] || '#6366f1';
+    container.innerHTML += `
+      <div class="risk-row">
+        <div class="risk-label">${name.replace('리스크','')}</div>
+        <div class="risk-track"><div class="risk-bar" style="width:0%;background:${color}" id="bar-${name}"></div></div>
+        <div class="risk-count">${cnt}</div>
+      </div>`;
+  });
+  setTimeout(() => {
+    Object.entries(dist).forEach(([name, cnt]) => {
+      const el = document.getElementById('bar-'+name);
+      if (el) el.style.width = (cnt / max * 100) + '%';
+    });
+  }, 300);
+}
+
+function renderRadar(scores) {
+  const labels = ['관세','공급망','수출규제','원자재','지정학'];
+  const keys   = ['관세리스크','공급망리스크','수출규제리스크','원자재리스크','지정학리스크'];
+  const colors = ['#10b981','#ef4444','#8b5cf6','#3b82f6'];
+  const order  = ['배터리','자동차','철강','반도체'];
+  const datasets = order.map((name, i) => {
+    const d = scores[name] || {};
+    const max = Math.max(...keys.map(k=>d[k]||0), 1);
+    return {
+      label: name,
+      data: keys.map(k => Math.round((d[k]||0)/max*100)),
+      borderColor: colors[i],
+      backgroundColor: colors[i] + '1a',
+      pointBackgroundColor: colors[i],
+    };
+  });
+  new Chart(document.getElementById('radarChart').getContext('2d'), {
+    type:'radar', data:{ labels, datasets },
+    options:{
+      responsive:true,
+      plugins:{ legend:{ labels:{ color:'#94a3b8', font:{size:10}, boxWidth:10 } } },
+      scales:{ r:{ ticks:{display:false}, grid:{color:'rgba(255,255,255,0.08)'}, pointLabels:{color:'#e2e8f0',font:{size:11,weight:'600'}}, min:0, max:100 } }
+    }
+  });
+}
+
+// ── 경보 → 산업 매핑 ──
+const ALERT_INDUSTRY_MAP = {
+  'PPI선행지표': {'PPI_열연강판':['철강'],'PPI_니켈':['배터리'],'PPI_리튬이온전지':['배터리']},
+  '가동률선행':  {'배터리_가동률':['배터리'],'철강_가동률':['철강']},
+  '국제원자재':  {'국제구리가격':['배터리'],'국제유가_Dubai':['철강','배터리'],'미국산업생산':['반도체','자동차']},
+  '정치리스크':  {'US':['자동차','반도체'],'CN':['배터리','반도체','철강'],'MX':['자동차'],'DE':['자동차'],'ID':['배터리'],'AU':['배터리','철강'],'BR':['철강'],'RU':['철강','배터리'],'NL':['반도체'],'TW':['반도체']},
+};
+
+const ALERT_ACTIONS = {
+  'US':'자동차·반도체 관세·수출규제 집중 모니터링',
+  'CN':'배터리·반도체 공급망 대응 전략 검토',
+  'MX':'USMCA 원산지 규정 활용 및 생산기지 리스크 점검',
+  'DE':'EU 전기차·탄소규제 대응 전략 수립',
+  'ID':'니켈 공급망 다변화 및 대체 소재 확보',
+  'AU':'리튬·철광석 장기계약 비중 확대',
+  'BR':'철광석 공급선 다변화 검토',
+  'NL':'ASML 장비 수급 리스크 모니터링',
+  'TW':'반도체 공급망 대만 의존도 점검',
+  'RU':'에너지·유연탄 대체 공급선 확보',
+};
+
+function getAlertIndustries(a) {
+  const type = a.type||'', ind = a.indicator||'';
+  if (type === '정치리스크') {
+    const code = ind.split(' ')[0];
+    return ALERT_INDUSTRY_MAP['정치리스크'][code] || [];
+  }
+  const map = ALERT_INDUSTRY_MAP[type] || {};
+  for (const [k,v] of Object.entries(map)) {
+    if (ind.includes(k)) return v;
+  }
+  return [];
+}
+
+function getAlertAction(a) {
+  if (a.type === '정치리스크') {
+    const code = (a.indicator||'').split(' ')[0];
+    return ALERT_ACTIONS[code] || a.action || '';
+  }
+  return a.action || '';
+}
+
+function cleanMsg(msg) {
+  if (!msg) return '';
+  const replaceMap = [
+    ['미합중국(The United States of America)', '미국'],
+    ['미합중국(The U', '미국'],
+    ['중화인민공화국(The People', '중국'],
+    ['중화인민공화국(Th', '중국'],
+    ['독일연방공화국(Th', '독일'],
+    ['멕시코합중국 (Es', '멕시코'],
+    ['브라질 연방 공화국', '브라질'],
+    ['호주(Commonw', '호주'],
+    ['네덜란드(The K', '네덜란드'],
+    ['PPI_열연강판', '철강 생산자물가'],
+    ['PPI_니켈', '니켈 생산자물가'],
+    ['국제구리가격', '국제 구리 가격'],
+    ['국제유가_Dubai', '두바이 유가'],
+    ['미국산업생산', '미국 산업생산지수'],
+    ['철강 철강', '철강'],
+    ['배터리 배터리', '배터리'],
+  ];
+  let result = msg;
+  for (const [from, to] of replaceMap) {
+    result = result.split(from).join(to);
+  }
+  return result;
+}
+
+function renderEarlyWarning(ew) {
+  if (!ew) return;
+  const panel = document.getElementById('earlyWarningPanel');
+  const grade = document.getElementById('overallGrade');
+  if (!panel) return;
+  grade.textContent = ew.overall || '';
+  grade.style.color = ew.overall?.includes('위험') ? 'var(--red)' : ew.overall?.includes('주의') ? '#f59e0b' : 'var(--green)';
+  if (!ew.alerts || ew.alerts.length === 0) {
+    panel.innerHTML = '<div style="color:var(--green);font-size:13px">✅ 모든 지표 정상 범위</div>';
+    return;
+  }
+  // 🔴/🟡 그룹 분리
+  const danger = ew.alerts.filter(a => (a.grade||'').includes('위험'));
+  const caution = ew.alerts.filter(a => (a.grade||'').includes('주의'));
+
+  function renderAlertItem(a) {
+    const emoji = (a.grade||'').split(' ')[0] || '⚠️';
+    const color = (a.grade||'').includes('위험') ? 'var(--red)' : '#f59e0b';
+    const inds  = getAlertIndustries(a);
+    const tags  = inds.map(i => '<span style="font-size:9px;padding:1px 5px;border-radius:3px;background:var(--bg3);color:var(--text3);margin-left:4px">'+i+'</span>').join('');
+    const msg   = cleanMsg(a.message||'');
+    // 임계값 표시 추가
+    const threshInfo = a.threshold ? ` (기준 ${a.threshold})` : '';
+    const act   = getAlertAction(a);
+    return `
+      <div style="display:flex;align-items:flex-start;gap:12px;padding:10px 0;border-bottom:1px solid var(--border)">
+        <span style="font-size:18px;min-width:24px">${emoji}</span>
+        <div style="flex:1">
+          <div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px">
+            <span style="font-size:13px;color:var(--text);font-weight:600">${msg}${threshInfo||''}</span>${tags}
+          </div>
+          <div style="font-size:12px;color:var(--text3);margin-top:3px">→ ${act}</div>
+        ${a.type==='PPI선행지표' ? `<div style="font-size:10px;color:var(--text3);margin-top:2px">📌 위험구간 지속 중 (기준값 초과 유지)</div>` : ''}
+        </div>
+        <span style="font-size:10px;color:${color};white-space:nowrap;font-weight:600">${a.type||''}</span>
+      </div>`;
+  }
+
+  let html = '';
+  if (danger.length > 0) {
+    html += `<div style="font-size:11px;font-weight:700;color:var(--red);letter-spacing:1px;padding:8px 0 4px;border-bottom:1px solid rgba(239,68,68,0.3);margin-bottom:4px">🔴 즉시 대응 필요 (${danger.length}건)</div>`;
+    html += danger.map(renderAlertItem).join('');
+  }
+  if (caution.length > 0) {
+    html += `<div style="font-size:11px;font-weight:700;color:#f59e0b;letter-spacing:1px;padding:12px 0 4px;border-bottom:1px solid rgba(245,158,11,0.3);margin-bottom:4px;margin-top:8px">🟡 모니터링 (${caution.length}건)</div>`;
+    html += caution.map(renderAlertItem).join('');
+  }
+  panel.innerHTML = html;
+}
+
+function renderSupportPrograms(sp) {
+  if (!sp) return;
+  const panel = document.getElementById('supportProgramPanel');
+  if (!panel) return;
+  if (!sp.matched || sp.matched.length === 0) {
+    panel.innerHTML = '<div style="color:var(--text3);font-size:13px">매칭된 지원사업 없음</div>';
+    return;
+  }
+  const urgencyIcon = {'즉시':'🔴','단기':'🟡','중기':'🔵'};
+  panel.innerHTML = sp.matched.map(p => `
+    <div style="padding:10px 0;border-bottom:1px solid var(--border)">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px">
+        <span>${urgencyIcon[p.urgency]||'📋'}</span>
+        <span style="font-size:13px;font-weight:600;color:var(--text)">${p.name}</span>
+        <span style="font-size:11px;padding:2px 8px;border-radius:4px;background:var(--bg3);color:var(--text3)">${p.urgency}</span>
+      </div>
+      <div style="font-size:12px;color:var(--text3);margin-left:24px">${p.agency}</div>
+      <div style="font-size:12px;color:var(--text2);margin-left:24px;margin-top:2px">${p.description}</div>
+      ${p.url ? '<a href="'+p.url+'" target="_blank" style="font-size:11px;color:var(--accent);margin-left:24px;margin-top:4px;display:inline-block">🔗 바로가기</a>' : ''}
+    </div>`).join('');
+}
+
+function renderIndustryMatrix(matrix) {
+  if (!matrix) return;
+  const scores = matrix.industry_scores || {};
+  const detail = document.getElementById('industryMatrixDetail');
+  if (!detail) return;
+  const structureIcon = {'정책형':'⚡','수요형':'📈','원가형':'💰','사이클형':'🔄'};
+  const gradeColor = {'🟢 안정':'var(--green)','🟡 주의':'#f59e0b','🔴 위험':'var(--red)'};
+  detail.innerHTML = Object.entries(scores).sort((a,b)=>b[1].total-a[1].total).map(([ind,d]) => {
+    const icon = structureIcon[d.structure]||'●', color = gradeColor[d.grade]||'var(--text)', bar = Math.min(d.total,100);
+    return `
+      <div style="padding:12px;border-bottom:1px solid var(--border)">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
+          <span style="font-weight:600;font-size:14px">${icon} ${ind}</span>
+          <span style="font-size:12px;color:${color};font-weight:600">${d.total.toFixed(1)}점</span>
+        </div>
+        <div style="font-size:11px;color:var(--text3);margin-bottom:6px">${d.structure} | 뉴스:${d.news} ECOS:${d.ecos||'N/A'} 정치:${d.political}</div>
+        <div style="height:4px;background:var(--bg3);border-radius:2px">
+          <div style="height:4px;width:${bar}%;background:${color};border-radius:2px;transition:width 0.5s"></div>
+        </div>
+      </div>`;
+  }).join('');
+  const ctx = document.getElementById('industryRadarChart');
+  if (!ctx||!window.Chart) return;
+  const labels = ['관세','수출규제','원자재','공급망','지정학'];
+  const weights = matrix.weight_matrix||{};
+  const industries = ['반도체','자동차','배터리','철강'];
+  const colors = ['rgba(99,102,241,0.7)','rgba(245,158,11,0.7)','rgba(16,185,129,0.7)','rgba(239,68,68,0.7)'];
+  new Chart(ctx, {
+    type:'radar',
+    data:{labels,datasets:industries.map((ind,i)=>({
+      label:ind,
+      data:['관세리스크','수출규제리스크','원자재리스크','공급망리스크','지정학리스크'].map(r=>(weights[ind]?.[r]||1)*33),
+      backgroundColor:colors[i].replace('0.7','0.15'),borderColor:colors[i],borderWidth:2,pointRadius:3,
+    }))},
+    options:{responsive:true,maintainAspectRatio:false,scales:{r:{min:0,max:100,ticks:{display:false},grid:{color:'rgba(255,255,255,0.1)'},pointLabels:{color:'#e2e8f0',font:{size:12,weight:'600'}}}},plugins:{legend:{labels:{color:'#e2e8f0',font:{size:12}}}}}
+  });
+}
+
+const COUNTRY_INDUSTRY_MAP = {
+  'US':{industries:['자동차','반도체','철강'],role:'규제·수요국'},
+  'CN':{industries:['배터리','반도체','철강'],role:'공급·수요국'},
+  'MX':{industries:['자동차'],role:'USMCA 생산기지'},
+  'BR':{industries:['철강'],role:'철광석 공급국'},
+  'AU':{industries:['배터리','철강'],role:'원자재 공급국'},
+  'NL':{industries:['반도체'],role:'ASML 장비'},
+  'ID':{industries:['배터리'],role:'니켈 공급국'},
+  'DE':{industries:['자동차'],role:'자동차 경쟁국'},
+  'TW':{industries:['반도체'],role:'파운드리'},
+  'JP':{industries:['반도체','배터리'],role:'소재·장비'},
+  'RU':{industries:['철강','배터리'],role:'에너지 공급국'},
+};
+
+function renderCountryRisk(pol) {
+  if (!pol) return;
+  const panel = document.getElementById('countryRiskPanel');
+  if (!panel) return;
+  const nameMap = {'US':'미국','CN':'중국','JP':'일본','DE':'독일','MX':'멕시코','AU':'호주','BR':'브라질','NL':'네덜란드','TW':'대만','ID':'인도네시아','IN':'인도','RU':'러시아','VN':'베트남','CL':'칠레'};
+  const countries = (pol.countries||[]).sort((a,b)=>b.political_risk-a.political_risk).slice(0,8);
+  panel.innerHTML = countries.map(c => {
+    const score = c.political_risk||0;
+    const grade = score>=40?'🔴':score>=20?'🟡':'🟢';
+    const color = score>=40?'var(--red)':score>=20?'#f59e0b':'var(--green)';
+    const name  = nameMap[c.country_code]||(c.country_name||'').replace(/\(.*?\)/g,'').trim().slice(0,8);
+    const info  = COUNTRY_INDUSTRY_MAP[c.country_code]||{};
+    const kw    = (c.keywords_found||'').split(',').slice(0,3).join(', ').split('sanction').join('제재').split('war').join('전쟁').split('conflict').join('분쟁').split('military').join('군사').split('tension').join('긴장');
+    return `
+      <div class="panel" style="padding:12px">
+        <div style="display:flex;justify-content:space-between;align-items:center">
+          <div>
+            <div style="font-size:13px;font-weight:700">${grade} ${name}</div>
+            <div style="font-size:10px;color:var(--text3);margin-top:2px">${info.role||''}</div>
+          </div>
+          <div style="font-size:22px;font-weight:700;color:${color}">${score.toFixed(0)}</div>
+        </div>
+        <div style="margin-top:8px;display:flex;gap:4px;flex-wrap:wrap">
+          ${(info.industries||[]).map(i=>'<span style="font-size:9px;padding:2px 6px;border-radius:4px;background:var(--bg3);color:var(--text3)">'+i+'</span>').join('')}
+        </div>
+        <div style="height:3px;background:var(--bg3);border-radius:2px;margin-top:8px">
+          <div style="height:3px;width:${Math.min(score,100)}%;background:${color};border-radius:2px;transition:width 0.5s"></div>
+        </div>
+        <div style="font-size:10px;color:var(--text3);margin-top:4px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${kw}</div>
+      </div>`;
+  }).join('');
+}
+
+function renderCapacityChart(dashData) {
+  const ctx = document.getElementById('capacityChart');
+  if (!ctx||!window.Chart) return;
+  new Chart(ctx, {
+    type:'line',
+    data:{
+      labels:['2025-06','2025-07','2025-08','2025-09','2025-10','2025-11','2025-12','2026-01','2026-02','2026-03','2026-04','2026-05'],
+      datasets:[
+        {label:'배터리 가동률',data:[98,95,92,89,87,91,88,74,65,79,76,null],borderColor:'rgba(16,185,129,0.9)',backgroundColor:'rgba(16,185,129,0.1)',tension:0.4,fill:true},
+        {label:'철강 가동률',data:[99,101,98,97,96,98,99,99,86,96,97,null],borderColor:'rgba(239,68,68,0.9)',backgroundColor:'rgba(239,68,68,0.1)',tension:0.4,fill:true},
+      ]
+    },
+    options:{responsive:true,maintainAspectRatio:false,scales:{x:{ticks:{color:'var(--text3)',font:{size:10}},grid:{color:'rgba(255,255,255,0.05)'}},y:{ticks:{color:'var(--text3)',font:{size:10}},grid:{color:'rgba(255,255,255,0.05)'},min:50,max:110}},plugins:{legend:{labels:{color:'var(--text2)',font:{size:11}}}}}
+  });
+}
+
+function renderSpillover(sp) {
+  if (!sp) return;
+  const panel = document.getElementById('spilloverPanel');
+  if (!panel) return;
+  const net   = sp.net_spillover||[];
+  const total = sp.total_spillover||0;
+  const color = total>=30?'var(--red)':total>=15?'#f59e0b':'var(--green)';
+  const riskShortMap = {'관세리스크':'관세','원자재리스크':'원자재','공급망리스크':'공급망','지정학리스크':'지정학','수출규제리스크':'수출규제'};
+  panel.innerHTML = `
+    <div style="display:flex;align-items:center;gap:24px;margin-bottom:16px">
+      <div>
+        <div style="font-size:11px;color:var(--text3)">총 리스크 전이 지수</div>
+        <div style="font-size:28px;font-weight:700;color:${color}">${total.toFixed(1)}%</div>
+        <div style="font-size:11px;color:${color}">${total>=30?'🔴 고연결':'🟡 중간'}</div>
+      </div>
+      <div style="flex:1;display:grid;grid-template-columns:repeat(5,1fr);gap:8px">
+        ${net.map(n=>{
+          const isGiver=n.net>0;
+          const short=riskShortMap[n.risk]||(n.risk||'').slice(0,4);
+          return '<div style="text-align:center;padding:8px;background:var(--bg3);border-radius:8px">'
+            +'<div style="font-size:10px;color:var(--text3)">'+short+'</div>'
+            +'<div style="font-size:16px">'+(isGiver?'📤':'📥')+'</div>'
+            +'<div style="font-size:11px;font-weight:600;color:'+(isGiver?'var(--red)':'var(--accent)')+'">'+( n.net>0?'+':'')+( n.net||0).toFixed(0)+'%</div>'
+            +'<div style="font-size:9px;color:var(--text3)">'+(isGiver?'전파자':'수용자')+'</div>'
+            +'</div>';
+        }).join('')}
+      </div>
+    </div>
+    <div style="font-size:12px;color:var(--text3)">
+      원자재 → 공급망 35.4% | 원자재 → 지정학 34.1% | 관세 → 수출규제 25.1%
+    </div>`;
+}
+
+// ── 산업별 전달구조 실시간 렌더링 ──
+function renderIndustryFlow(flowData) {
+  if (!flowData) return;
+  const container = document.getElementById('industryFlowGrid');
+  console.log('renderIndustryFlow called, container:', container, 'flowData keys:', Object.keys(flowData||{}));
+  if (!container) return;
+
+  const IND_COLORS = {
+    '배터리': {border:'rgba(16,185,129,0.8)',bg:'rgba(16,185,129,0.15)',accent:'rgba(16,185,129,0.3)',text:'rgba(16,185,129,0.9)'},
+    '철강':   {border:'rgba(239,68,68,0.8)', bg:'rgba(239,68,68,0.15)', accent:'rgba(239,68,68,0.3)', text:'rgba(239,68,68,0.9)'},
+    '자동차': {border:'rgba(245,158,11,0.8)',bg:'rgba(245,158,11,0.15)',accent:'rgba(245,158,11,0.3)',text:'rgba(245,158,11,0.9)'},
+    '반도체': {border:'rgba(99,102,241,0.8)',bg:'rgba(99,102,241,0.15)',accent:'rgba(99,102,241,0.3)',text:'rgba(99,102,241,0.9)'},
+  };
+  const ICONS = {'배터리':'💰','철강':'🔄','자동차':'📈','반도체':'⚡'};
+  const ORDER = ['반도체','자동차','배터리','철강'];
+
+  container.innerHTML = ORDER.map(industry => {
+    const d = flowData[industry];
+    if (!d) return '';
+    const c = IND_COLORS[industry] || IND_COLORS['배터리'];
+    const stage = d.current_stage || {};
+    const stageColor = stage.grade==='🔴'?'var(--red)':stage.grade==='🟡'?'#f59e0b':'var(--green)';
+
+    // 전달 경로
+    const flowHtml = (d.flow||[]).map((step,i) => {
+      const isLast = i===d.flow.length-1, isFirst = i===0;
+      return `<div style="background:${isFirst||isLast?c.bg:'var(--bg3)'};border:1px solid ${isFirst||isLast?c.accent:'var(--border)'};border-radius:6px;padding:5px 8px;font-size:11px;${isLast?'font-weight:600;':''}">${step}</div>
+        ${!isLast?'<div style="text-align:center;font-size:10px;color:var(--text3);margin:2px 0">↓</div>':''}`;
+    }).join('');
+
+    // 관련 국가
+    const countriesHtml = (d.countries||[]).map(ct => {
+      const ctColor = ct.grade==='🔴'?'var(--red)':ct.grade==='🟡'?'#f59e0b':'var(--green)';
+      const arr = ct.change>10?'▲':ct.change<-10?'▼':'→';
+      return `<div style="display:flex;align-items:center;gap:6px;padding:5px 0;border-bottom:1px solid var(--border)">
+        <span style="font-size:10px;font-weight:600;min-width:50px">${ct.name}</span>
+        <span style="font-size:9px;padding:1px 5px;border-radius:3px;background:var(--bg3);color:var(--text3)">${ct.channel}</span>
+        <span style="font-size:10px;color:${ctColor};margin-left:auto">${ct.grade} ${ct.score>0?ct.score+arr:arr}</span>
+      </div>`;
+    }).join('');
+
+    // 핵심 지표
+    const indHtml = Object.entries(d.indicators||{}).map(([k,v]) => {
+      const shortK = k.replace('수입물가_','').replace('배터리_','').replace('철강_','');
+      return `<span>${shortK} <strong>${v}</strong></span>`;
+    }).join(' · ');
+
+    return `
+      <div class="panel" style="padding:16px;border-top:3px solid ${c.border}">
+        <!-- 산업명 + 현재단계 -->
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px">
+          <div style="display:flex;align-items:center;gap:8px">
+            <span style="font-size:22px">${ICONS[industry]||'📊'}</span>
+            <div>
+              <div style="font-weight:700;font-size:15px">${industry}</div>
+              <div style="font-size:11px;color:${c.text};font-weight:600">${d.type}</div>
+            </div>
+          </div>
+          <div style="text-align:right;background:var(--bg3);padding:6px 10px;border-radius:6px">
+            <div style="font-size:12px;font-weight:700;color:${stageColor}">${stage.grade||''} ${stage.stage||'정상'}</div>
+          </div>
+        </div>
+        <!-- 설명 -->
+        <div style="font-size:11px;color:var(--text3);margin-bottom:12px;font-style:italic">"${d.description}"</div>
+        <!-- 전달 경로 -->
+        <div style="font-size:10px;color:var(--text3);font-weight:600;margin-bottom:6px">리스크 전달 경로</div>
+        <div style="display:flex;flex-direction:column;gap:3px;margin-bottom:14px">${flowHtml}</div>
+        <!-- 관련국 -->
+        ${countriesHtml?`<div style="margin-bottom:12px">
+          <div style="font-size:10px;color:var(--text3);font-weight:600;margin-bottom:6px">관련국 통상·외교 리스크</div>
+          ${countriesHtml}
+        </div>`:''}
+        <!-- 핵심 지표 -->
+        ${indHtml?`<div style="padding-top:8px;border-top:1px solid var(--border)">
+          <div style="font-size:10px;color:var(--text3);font-weight:600;margin-bottom:4px">핵심 지표 현재값</div>
+          <div style="font-size:11px;color:var(--text2)">${indHtml}</div>
+        </div>`:''}
+      </div>`;
+  }).join('');
+}
+
+function getAIRecommendation() {
+  const industry  = document.getElementById('aiIndustrySelect').value;
+  const resultEl  = document.getElementById('aiResult');
+  const loadingEl = document.getElementById('aiLoadingBadge');
+  const scoreData = window._dashboardData?.scores?.[industry];
+  if (!scoreData) { resultEl.textContent = '데이터를 먼저 로드해주세요.'; return; }
+  const STRATEGIES = {
+    "관세리스크":{"반도체":["미국 CHIPS Act 보조금 활용 현지 생산 확대","대중국 수출규제 우회 경로 사전 차단 및 컴플라이언스 강화","EU·일본 등 우방국 중심 수출 포트폴리오 재편"],"배터리":["IRA 세액공제 요건 충족을 위한 북미 생산 확대","유럽 배터리 규정(EU Battery Regulation) 선제 대응","관세 우회 목적 제3국 우회 수출 리스크 관리"],"자동차":["미국 25% 자동차 관세 대응 현지 생산 비중 확대","멕시코·캐나다 USMCA 원산지 규정 활용","전기차 전환 가속화로 IRA 보조금 수혜 극대화"],"철강":["미국 232조 관세 면제 협상 및 쿼터 활용","CBAM(탄소국경조정제도) 대응 탄소 저감 투자","고부가 특수강 중심으로 제품 포트폴리오 전환"]},
+    "원자재리스크":{"반도체":["희토류 대체 소재 R&D 투자 확대","일본·대만 소재 의존도 감소를 위한 국산화","핵심 소재 비축량 6개월 이상 유지"],"배터리":["리튬·코발트·니켈 주요 광산 지분 투자","호주·칠레·아르헨티나 리튬 삼각지대 공급망 구축","LFP(리튬인산철) 배터리 전환으로 코발트 의존도 축소"],"자동차":["희토류 프리 모터 기술 개발로 의존도 감소","알루미늄·고강도강 등 경량 소재 조달 안정화","전기차 배터리 소재 자체 조달 능력 확보"],"철강":["철광석 장기계약 비중 확대 (스팟 구매 축소)","수소환원제철 기술 개발로 원료탄 의존도 감소","전기로 전환 가속화로 철광석 투입 감소"]},
+    "수출규제리스크":{"반도체":["미국 EAR(수출관리규정) 준수 체계 내재화","중국향 첨단 반도체 수출 대안 시장 발굴","동맹국 중심 반도체 공급망 재편 참여"],"배터리":["강제노동 방지법(UFLPA) 대응 공급망 투명성 확보","배터리 여권(Battery Passport) 도입 선제 준비","ESG 기준 공급망 실사 체계 구축"],"자동차":["이전가격 세무 리스크 관리 강화","현지 인증·규제 사전 대응 체계 구축","자율주행·소프트웨어 수출통제 리스크 점검"],"철강":["반덤핑·상계관세 조사 대응 법무 역량 강화","CBAM 탄소 배출량 측정·보고 시스템 구축","세이프가드 발동 선제 모니터링 체계 운영"]},
+    "공급망리스크":{"반도체":["첨단 소재 국산화 가속 (포토레지스트·불화수소)","TSMC·삼성 등 파운드리 다변화로 생산 리스크 분산","반도체 장비 국산화율 제고"],"배터리":["배터리 소재 내재화 투자 (양극재·음극재)","폐배터리 재활용을 통한 핵심광물 순환 체계 구축","복수 소재 공급사 확보로 단일 의존 탈피"],"자동차":["반도체 등 핵심 부품 장기 공급 계약 체결","Tier 1·2 협력사 재무건전성 모니터링 강화","모듈화 설계로 부품 대체 유연성 확보"],"철강":["철광석 수입국 다변화 (호주·브라질 외 대안 확보)","전기로 비중 확대로 철광석 의존도 감소","철스크랩 국내 조달 비중 제고"]},
+    "지정학리스크":{"반도체":["미중 기술 패권 경쟁 대응 이중 공급망 구축","대만 리스크 대비 생산 거점 다변화","Chip4 동맹 참여 강화로 공급망 안정화"],"배터리":["중국산 배터리 소재 의존도 단계적 축소","우크라이나 사태 관련 원자재 수급 대안 확보","자원 보유국 정치 불안 대비 복수 공급선 유지"],"자동차":["러시아·중동 시장 대안 수출 시장 발굴","지정학 갈등 지역 생산 거점 리스크 평가","전쟁·분쟁 관련 물류 경로 대안 확보"],"철강":["우크라이나 전쟁 관련 원료 조달 대안 확보","중동 지역 물류 리스크 대비 우회 경로 확보","지정학 불안 국가 수출 채권 보험 가입"]},
+  };
+  const COMMON = ["FTA 활용 수출국 다변화로 리스크 부담 최소화","무역보험공사 수출보험 활용으로 리스크 헤지","공급망 실시간 모니터링 시스템 구축"];
+  const urgency   = scoreData.score >= 80 ? "🚨 즉시 대응 필요" : scoreData.score >= 60 ? "⚠️ 단기 대응 필요" : "📋 중장기 모니터링";
+  const topRisk   = scoreData.top_risk;
+  const specific  = (STRATEGIES[topRisk]?.[industry] || STRATEGIES["관세리스크"][industry] || []);
+  const text = `[현재 상황 진단]
+${industry} 산업 리스크 지수 ${scoreData.score}점 (${scoreData.grade}) — ${urgency}
+주요 리스크: ${topRisk} | ${scoreData.news_count}건 국제정세 데이터 분석
+${scoreData.score >= 80 ? "즉각적인 대응 조치가 필요한 위험 수준입니다." : "지속적인 모니터링이 필요한 주의 수준입니다."}
+
+━━━ 기업 대응전략 ━━━
+① ${specific[0]||COMMON[0]}
+② ${specific[1]||COMMON[1]}
+③ ${specific[2]||COMMON[2]}
+
+━━━ 공통 대응 방향 ━━━
+· ${COMMON[0]}
+· ${COMMON[1]}
+· ${COMMON[2]}`;
+  loadingEl.style.display = 'inline';
+  resultEl.textContent = '';
+  resultEl.style.color = 'var(--text)';
+  setTimeout(() => {
+    loadingEl.style.display = 'none';
+    let i = 0;
+    const typing = setInterval(() => {
+      if (i < text.length) { resultEl.textContent += text[i++]; } else { clearInterval(typing); }
+    }, 12);
+  }, 800);
+}
+
+function renderPredictions(predictions, scores) {
+  if (!predictions) return;
+  const industries = ['배터리','철강','자동차','반도체'];
+  const colors = ['#10b981','#8b5cf6','#ef4444','#3b82f6'];
+  const icons  = {배터리:'🔋', 철강:'🏗️', 자동차:'🚗', 반도체:'💾'};
+  const labels = ['현재','1개월후','2개월후','3개월후'];
+  const datasets = industries.map((name,i) => {
+    const p=predictions[name],s=scores[name];
+    if(!p||!s) return null;
+    return {label:name,data:[s.score,p.pred_1m,p.pred_2m,p.pred_3m],borderColor:colors[i],backgroundColor:'transparent',tension:0.3,pointRadius:5,borderWidth:2,pointBackgroundColor:colors[i]};
+  }).filter(Boolean);
+  new Chart(document.getElementById('predChart').getContext('2d'), {
+    type:'line', data:{labels,datasets},
+    options:{responsive:true,plugins:{legend:{labels:{color:'#94a3b8',font:{size:11},boxWidth:12}}},scales:{x:{ticks:{color:'#475569',font:{size:11}},grid:{color:'rgba(255,255,255,0.04)'}},y:{ticks:{color:'#475569',font:{size:10}},grid:{color:'rgba(255,255,255,0.04)'},min:0,max:100}}}
+  });
+  const cards = document.getElementById('predCards');
+  if (!cards) return;
+  cards.innerHTML = '';
+  industries.forEach((name,i) => {
+    const p=predictions[name],s=scores[name];
+    if(!p||!s) return;
+    const isUp=p.direction==='상승', arrowColor=isUp?'var(--red)':'var(--green)', arrow=isUp?'▲':p.direction==='하락'?'▼':'→';
+    cards.innerHTML += `
+      <div style="background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:16px">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px">
+          <span style="font-size:18px">${icons[name]}</span>
+          <span style="font-size:13px;font-weight:700">${name}</span>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:12px">
+          <div>
+            <div style="font-size:10px;color:var(--text3);margin-bottom:2px">현재</div>
+            <div style="font-size:24px;font-weight:900;font-family:'JetBrains Mono',monospace;color:${colors[i]}">${s.score}</div>
+          </div>
+          <div style="font-size:20px;color:${arrowColor};font-weight:700">${arrow}</div>
+          <div style="text-align:right">
+            <div style="font-size:10px;color:var(--text3);margin-bottom:2px">3개월 후</div>
+            <div style="font-size:24px;font-weight:900;font-family:'JetBrains Mono',monospace;color:${arrowColor}">${p.pred_3m}</div>
+          </div>
+        </div>
+        <div style="font-size:11px;color:${arrowColor};font-weight:600;text-align:center;padding:4px;background:rgba(255,255,255,0.04);border-radius:6px">${p.change_str} 예상</div>
+      </div>`;
+  });
+}
+
+function renderStrategies(strategies) {
+  const panel = document.getElementById('strategyPanel');
+  if (!panel||!strategies) return;
+  panel.innerHTML = '';
+  strategies.forEach(s => {
+    const urgencyColor = s.urgency_color==='red'?'var(--red)':s.urgency_color==='yellow'?'var(--yellow)':'var(--green)';
+    const html = s.specific.slice(0,3).map(t=>'<div style="display:flex;gap:8px;align-items:flex-start;margin-bottom:6px"><span style="color:'+urgencyColor+';margin-top:2px">▶</span><span style="font-size:12px;color:var(--text2);line-height:1.5">'+t+'</span></div>').join('')
+      + s.common.slice(0,2).map(t=>'<div style="display:flex;gap:8px;align-items:flex-start;margin-bottom:6px"><span style="color:var(--text3);margin-top:2px">·</span><span style="font-size:12px;color:var(--text3);line-height:1.5">'+t+'</span></div>').join('');
+    panel.innerHTML += `
+      <div style="background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:20px;border-left:3px solid ${urgencyColor}">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+          <div style="font-size:14px;font-weight:700">${s.industry} 대응전략</div>
+          <span style="font-size:10px;font-weight:700;padding:3px 10px;border-radius:20px;background:rgba(255,255,255,0.05);color:${urgencyColor}">${s.urgency}</span>
+        </div>
+        <div style="font-size:11px;color:var(--text3);margin-bottom:12px">주요 리스크: <span style="color:${urgencyColor}">${s.top_risk}</span> · 점수: <span style="font-family:'JetBrains Mono',monospace;color:var(--text)">${s.score}</span></div>
+        ${html}
+      </div>`;
+  });
+}
+
+function renderNews(news) {
+  const feed = document.getElementById('newsFeed');
+  feed.innerHTML = '';
+  news.slice(0,8).forEach(n => {
+    feed.innerHTML += `
+      <div class="news-item">
+        <span class="news-tag tag-${n.risk}">${n.risk}</span>
+        <div class="news-content">
+          <div class="news-title">${n.title}</div>
+          <div class="news-meta">${n.country} · ${n.date}</div>
+        </div>
+      </div>`;
+  });
+}
+
+function renderAlert(scores, stats, ew) {
+  // 위험 산업 추출
+  const dangerInds = Object.entries(scores).filter(([,d])=>d.score>=60).map(([k])=>k);
+  const topAlert = ew && ew.alerts ? ew.alerts.filter(a=>(a.grade||'').includes('위험')) : [];
+  
+  let bannerHtml = '';
+  if (dangerInds.length > 0) {
+    bannerHtml += `<strong>[위험]</strong> ${dangerInds.join('·')} `;
+  }
+  if (topAlert.length > 0) {
+    const topMsg = cleanMsg(topAlert[0].message||'');
+    bannerHtml += `— ${topMsg} `;
+  }
+  // ARIMAX 예측 So What
+  const rising = ew && ew.alerts ? ew.alerts.filter(a=>a.type==='ARIMAX예측'&&(a.change||0)>5) : [];
+  if (rising.length > 0) {
+    const indName = rising[0].indicator.replace('리스크','');
+    bannerHtml += ` | 다음달 주목: ${indName} 리스크 ${rising[0].pred_1m}점 예측 (현재 ${rising[0].current||rising[0].value}점)`;
+  }
+  if (!bannerHtml) {
+    bannerHtml = `<strong>[경보]</strong> 총 ${stats.total_news.toLocaleString()}건 국제정세 분석 완료`;
+  }
+  document.getElementById('alertText').innerHTML = bannerHtml;
+  document.getElementById('alertTime').textContent = stats.updated + ' 갱신';
+}
+
+fetch('dashboard_data.json')
+  .then(r => { if(!r.ok) throw new Error('파일없음'); return r.json(); })
+  .then(data => {
+    document.getElementById('loadingMsg').style.display = 'none';
+    document.getElementById('content').style.display = 'block';
+    allTrend = data.trend;
+    window._ewData = null;
+    renderAlert(data.scores, data.stats, null);
+    renderCards(data.scores);
+    renderTrend(data.trend, 6);
+    renderBars(data.risk_dist);
+    renderRadar(data.scores);
+    renderNews(data.news);
+    renderStrategies(data.strategies);
+    renderPredictions(data.predictions, data.scores);
+    window._dashboardData = data;
+    fetch('early_warning.json').then(r=>r.json()).then(ew => {
+      window._ewData = ew;
+      renderEarlyWarning(ew);
+      renderAlert(data.scores, data.stats, ew);
+    }).catch(()=>{});
+    fetch('support_programs.json').then(r=>r.json()).then(renderSupportPrograms).catch(()=>{});
+    fetch('industry_risk_matrix.json').then(r=>r.json()).then(renderIndustryMatrix).catch(()=>{});
+    // 산업별 전달구조 실시간 연동 - dashboard_data.json에서 직접
+    try { renderIndustryFlow(data.industry_flow); } catch(e) { console.error('flow error:', e); }
+    fetch('political_risk.json').then(r=>r.json()).then(renderCountryRisk).catch(()=>{});
+    renderCapacityChart(data);
+    fetch('spillover_analysis.json').then(r=>r.json()).then(renderSpillover).catch(()=>{});
+    document.getElementById('statTotal').textContent     = (187031).toLocaleString();
+    // statRate 제거됨
+    // statCountries 제거됨
+  })
+  .catch(() => {
+    document.getElementById('loadingMsg').innerHTML =
+      '<div style="color:var(--red)">⚠️ dashboard_data.json 파일이 없습니다.<br><br><code style="background:var(--bg3);padding:8px 16px;border-radius:6px;font-size:12px">python export_dashboard_data.py</code><br><br>위 명령어를 먼저 실행하세요.</div>';
+  });
+</script>
+</body>
+</html>

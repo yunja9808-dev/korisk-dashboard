@@ -1,0 +1,6712 @@
+{
+  "timestamp": "2026-06-29 13:48",
+  "latest_month": "2026-06",
+  "alerts": [
+    {
+      "country": "CN",
+      "name": "중국",
+      "score": 48.0,
+      "change": 48.0,
+      "grade": "🟡",
+      "industries": [
+        "배터리",
+        "반도체",
+        "철강"
+      ],
+      "keywords": "무역분쟁(12), 분쟁(12), 개선(12)",
+      "is_rising": true
+    }
+  ],
+  "timeseries": [
+    {
+      "month": "2022-01",
+      "country_code": "AU",
+      "country_name": "호주",
+      "news_count": 24,
+      "pol_score": -12,
+      "keywords": "협력(12)",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2022-02",
+      "country_code": "AU",
+      "country_name": "호주",
+      "news_count": 36,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": -12.0,
+      "score_change": 12.0
+    },
+    {
+      "month": "2022-03",
+      "country_code": "AU",
+      "country_name": "호주",
+      "news_count": 48,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2022-04",
+      "country_code": "AU",
+      "country_name": "호주",
+      "news_count": 36,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2022-05",
+      "country_code": "AU",
+      "country_name": "호주",
+      "news_count": 108,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2022-06",
+      "country_code": "AU",
+      "country_name": "호주",
+      "news_count": 36,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2022-07",
+      "country_code": "AU",
+      "country_name": "호주",
+      "news_count": 96,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2022-08",
+      "country_code": "AU",
+      "country_name": "호주",
+      "news_count": 48,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2022-09",
+      "country_code": "AU",
+      "country_name": "호주",
+      "news_count": 72,
+      "pol_score": 36,
+      "keywords": "제재(12)",
+      "prev_score": 0.0,
+      "score_change": 36.0
+    },
+    {
+      "month": "2022-10",
+      "country_code": "AU",
+      "country_name": "호주",
+      "news_count": 72,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 36.0,
+      "score_change": -36.0
+    },
+    {
+      "month": "2022-11",
+      "country_code": "AU",
+      "country_name": "호주",
+      "news_count": 120,
+      "pol_score": -12,
+      "keywords": "협력(12)",
+      "prev_score": 0.0,
+      "score_change": -12.0
+    },
+    {
+      "month": "2022-12",
+      "country_code": "AU",
+      "country_name": "호주",
+      "news_count": 108,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": -12.0,
+      "score_change": 12.0
+    },
+    {
+      "month": "2023-01",
+      "country_code": "AU",
+      "country_name": "호주",
+      "news_count": 12,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2023-02",
+      "country_code": "AU",
+      "country_name": "호주",
+      "news_count": 24,
+      "pol_score": -36,
+      "keywords": "협력(12), 협정(12)",
+      "prev_score": 0.0,
+      "score_change": -36.0
+    },
+    {
+      "month": "2023-03",
+      "country_code": "AU",
+      "country_name": "호주",
+      "news_count": 48,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": -36.0,
+      "score_change": 36.0
+    },
+    {
+      "month": "2023-04",
+      "country_code": "AU",
+      "country_name": "호주",
+      "news_count": 48,
+      "pol_score": 0,
+      "keywords": "관세(12), 합의(12)",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2023-05",
+      "country_code": "AU",
+      "country_name": "호주",
+      "news_count": 96,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2023-06",
+      "country_code": "AU",
+      "country_name": "호주",
+      "news_count": 84,
+      "pol_score": -24,
+      "keywords": "협정(12)",
+      "prev_score": 0.0,
+      "score_change": -24.0
+    },
+    {
+      "month": "2023-07",
+      "country_code": "AU",
+      "country_name": "호주",
+      "news_count": 96,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": -24.0,
+      "score_change": 24.0
+    },
+    {
+      "month": "2023-08",
+      "country_code": "AU",
+      "country_name": "호주",
+      "news_count": 96,
+      "pol_score": 24,
+      "keywords": "분쟁(12)",
+      "prev_score": 0.0,
+      "score_change": 24.0
+    },
+    {
+      "month": "2023-09",
+      "country_code": "AU",
+      "country_name": "호주",
+      "news_count": 96,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 24.0,
+      "score_change": -24.0
+    },
+    {
+      "month": "2023-10",
+      "country_code": "AU",
+      "country_name": "호주",
+      "news_count": 144,
+      "pol_score": -12,
+      "keywords": "협력(12)",
+      "prev_score": 0.0,
+      "score_change": -12.0
+    },
+    {
+      "month": "2023-11",
+      "country_code": "AU",
+      "country_name": "호주",
+      "news_count": 48,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": -12.0,
+      "score_change": 12.0
+    },
+    {
+      "month": "2023-12",
+      "country_code": "AU",
+      "country_name": "호주",
+      "news_count": 96,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2024-01",
+      "country_code": "AU",
+      "country_name": "호주",
+      "news_count": 20,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2024-02",
+      "country_code": "AU",
+      "country_name": "호주",
+      "news_count": 20,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2024-03",
+      "country_code": "AU",
+      "country_name": "호주",
+      "news_count": 60,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2024-04",
+      "country_code": "AU",
+      "country_name": "호주",
+      "news_count": 140,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2024-05",
+      "country_code": "AU",
+      "country_name": "호주",
+      "news_count": 120,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2024-06",
+      "country_code": "AU",
+      "country_name": "호주",
+      "news_count": 80,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2024-07",
+      "country_code": "AU",
+      "country_name": "호주",
+      "news_count": 100,
+      "pol_score": 40,
+      "keywords": "분쟁(20)",
+      "prev_score": 0.0,
+      "score_change": 40.0
+    },
+    {
+      "month": "2024-08",
+      "country_code": "AU",
+      "country_name": "호주",
+      "news_count": 120,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 40.0,
+      "score_change": -40.0
+    },
+    {
+      "month": "2024-09",
+      "country_code": "AU",
+      "country_name": "호주",
+      "news_count": 140,
+      "pol_score": 40,
+      "keywords": "관세(20)",
+      "prev_score": 0.0,
+      "score_change": 40.0
+    },
+    {
+      "month": "2024-10",
+      "country_code": "AU",
+      "country_name": "호주",
+      "news_count": 100,
+      "pol_score": -20,
+      "keywords": "협력(20)",
+      "prev_score": 40.0,
+      "score_change": -60.0
+    },
+    {
+      "month": "2024-11",
+      "country_code": "AU",
+      "country_name": "호주",
+      "news_count": 140,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": -20.0,
+      "score_change": 20.0
+    },
+    {
+      "month": "2024-12",
+      "country_code": "AU",
+      "country_name": "호주",
+      "news_count": 80,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2025-01",
+      "country_code": "AU",
+      "country_name": "호주",
+      "news_count": 12,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2025-02",
+      "country_code": "AU",
+      "country_name": "호주",
+      "news_count": 60,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2025-03",
+      "country_code": "AU",
+      "country_name": "호주",
+      "news_count": 60,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2025-04",
+      "country_code": "AU",
+      "country_name": "호주",
+      "news_count": 84,
+      "pol_score": -12,
+      "keywords": "협력(12)",
+      "prev_score": 0.0,
+      "score_change": -12.0
+    },
+    {
+      "month": "2025-05",
+      "country_code": "AU",
+      "country_name": "호주",
+      "news_count": 48,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": -12.0,
+      "score_change": 12.0
+    },
+    {
+      "month": "2025-06",
+      "country_code": "AU",
+      "country_name": "호주",
+      "news_count": 72,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2025-07",
+      "country_code": "AU",
+      "country_name": "호주",
+      "news_count": 132,
+      "pol_score": 24,
+      "keywords": "분쟁(12)",
+      "prev_score": 0.0,
+      "score_change": 24.0
+    },
+    {
+      "month": "2025-08",
+      "country_code": "AU",
+      "country_name": "호주",
+      "news_count": 120,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 24.0,
+      "score_change": -24.0
+    },
+    {
+      "month": "2025-09",
+      "country_code": "AU",
+      "country_name": "호주",
+      "news_count": 84,
+      "pol_score": -24,
+      "keywords": "협력(24)",
+      "prev_score": 0.0,
+      "score_change": -24.0
+    },
+    {
+      "month": "2025-10",
+      "country_code": "AU",
+      "country_name": "호주",
+      "news_count": 48,
+      "pol_score": -24,
+      "keywords": "협정(12)",
+      "prev_score": -24.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2025-11",
+      "country_code": "AU",
+      "country_name": "호주",
+      "news_count": 60,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": -24.0,
+      "score_change": 24.0
+    },
+    {
+      "month": "2025-12",
+      "country_code": "AU",
+      "country_name": "호주",
+      "news_count": 24,
+      "pol_score": -12,
+      "keywords": "협력(12)",
+      "prev_score": 0.0,
+      "score_change": -12.0
+    },
+    {
+      "month": "2026-01",
+      "country_code": "AU",
+      "country_name": "호주",
+      "news_count": 36,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": -12.0,
+      "score_change": 12.0
+    },
+    {
+      "month": "2026-02",
+      "country_code": "AU",
+      "country_name": "호주",
+      "news_count": 60,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2026-03",
+      "country_code": "AU",
+      "country_name": "호주",
+      "news_count": 132,
+      "pol_score": 12,
+      "keywords": "규제(12)",
+      "prev_score": 0.0,
+      "score_change": 12.0
+    },
+    {
+      "month": "2026-04",
+      "country_code": "AU",
+      "country_name": "호주",
+      "news_count": 36,
+      "pol_score": -48,
+      "keywords": "협정(12), 타결(12)",
+      "prev_score": 12.0,
+      "score_change": -60.0
+    },
+    {
+      "month": "2026-05",
+      "country_code": "AU",
+      "country_name": "호주",
+      "news_count": 84,
+      "pol_score": 24,
+      "keywords": "분쟁(12)",
+      "prev_score": -48.0,
+      "score_change": 72.0
+    },
+    {
+      "month": "2026-06",
+      "country_code": "AU",
+      "country_name": "호주",
+      "news_count": 98,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 24.0,
+      "score_change": -24.0
+    },
+    {
+      "month": "2022-01",
+      "country_code": "BR",
+      "country_name": "브라질",
+      "news_count": 48,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2022-02",
+      "country_code": "BR",
+      "country_name": "브라질",
+      "news_count": 48,
+      "pol_score": -12,
+      "keywords": "개선(12)",
+      "prev_score": 0.0,
+      "score_change": -12.0
+    },
+    {
+      "month": "2022-03",
+      "country_code": "BR",
+      "country_name": "브라질",
+      "news_count": 72,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": -12.0,
+      "score_change": 12.0
+    },
+    {
+      "month": "2022-04",
+      "country_code": "BR",
+      "country_name": "브라질",
+      "news_count": 60,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2022-05",
+      "country_code": "BR",
+      "country_name": "브라질",
+      "news_count": 72,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2022-06",
+      "country_code": "BR",
+      "country_name": "브라질",
+      "news_count": 60,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2022-07",
+      "country_code": "BR",
+      "country_name": "브라질",
+      "news_count": 36,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2022-08",
+      "country_code": "BR",
+      "country_name": "브라질",
+      "news_count": 36,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2022-09",
+      "country_code": "BR",
+      "country_name": "브라질",
+      "news_count": 108,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2022-10",
+      "country_code": "BR",
+      "country_name": "브라질",
+      "news_count": 60,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2022-11",
+      "country_code": "BR",
+      "country_name": "브라질",
+      "news_count": 108,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2022-12",
+      "country_code": "BR",
+      "country_name": "브라질",
+      "news_count": 96,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2023-01",
+      "country_code": "BR",
+      "country_name": "브라질",
+      "news_count": 96,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2023-02",
+      "country_code": "BR",
+      "country_name": "브라질",
+      "news_count": 12,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2023-03",
+      "country_code": "BR",
+      "country_name": "브라질",
+      "news_count": 12,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2023-04",
+      "country_code": "BR",
+      "country_name": "브라질",
+      "news_count": 60,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2023-05",
+      "country_code": "BR",
+      "country_name": "브라질",
+      "news_count": 60,
+      "pol_score": -12,
+      "keywords": "협력(12)",
+      "prev_score": 0.0,
+      "score_change": -12.0
+    },
+    {
+      "month": "2023-06",
+      "country_code": "BR",
+      "country_name": "브라질",
+      "news_count": 60,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": -12.0,
+      "score_change": 12.0
+    },
+    {
+      "month": "2023-07",
+      "country_code": "BR",
+      "country_name": "브라질",
+      "news_count": 48,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2023-08",
+      "country_code": "BR",
+      "country_name": "브라질",
+      "news_count": 84,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2023-09",
+      "country_code": "BR",
+      "country_name": "브라질",
+      "news_count": 60,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2023-10",
+      "country_code": "BR",
+      "country_name": "브라질",
+      "news_count": 36,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2023-11",
+      "country_code": "BR",
+      "country_name": "브라질",
+      "news_count": 48,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2023-12",
+      "country_code": "BR",
+      "country_name": "브라질",
+      "news_count": 48,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2024-01",
+      "country_code": "BR",
+      "country_name": "브라질",
+      "news_count": 60,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2024-02",
+      "country_code": "BR",
+      "country_name": "브라질",
+      "news_count": 40,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2024-03",
+      "country_code": "BR",
+      "country_name": "브라질",
+      "news_count": 40,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2024-04",
+      "country_code": "BR",
+      "country_name": "브라질",
+      "news_count": 80,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2024-05",
+      "country_code": "BR",
+      "country_name": "브라질",
+      "news_count": 80,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2024-06",
+      "country_code": "BR",
+      "country_name": "브라질",
+      "news_count": 100,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2024-07",
+      "country_code": "BR",
+      "country_name": "브라질",
+      "news_count": 40,
+      "pol_score": 40,
+      "keywords": "긴장(20)",
+      "prev_score": 0.0,
+      "score_change": 40.0
+    },
+    {
+      "month": "2024-08",
+      "country_code": "BR",
+      "country_name": "브라질",
+      "news_count": 80,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 40.0,
+      "score_change": -40.0
+    },
+    {
+      "month": "2024-09",
+      "country_code": "BR",
+      "country_name": "브라질",
+      "news_count": 100,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2024-10",
+      "country_code": "BR",
+      "country_name": "브라질",
+      "news_count": 80,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2024-11",
+      "country_code": "BR",
+      "country_name": "브라질",
+      "news_count": 140,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2024-12",
+      "country_code": "BR",
+      "country_name": "브라질",
+      "news_count": 120,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2025-02",
+      "country_code": "BR",
+      "country_name": "브라질",
+      "news_count": 36,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2025-03",
+      "country_code": "BR",
+      "country_name": "브라질",
+      "news_count": 48,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2025-04",
+      "country_code": "BR",
+      "country_name": "브라질",
+      "news_count": 60,
+      "pol_score": 24,
+      "keywords": "관세(12)",
+      "prev_score": 0.0,
+      "score_change": 24.0
+    },
+    {
+      "month": "2025-05",
+      "country_code": "BR",
+      "country_name": "브라질",
+      "news_count": 48,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 24.0,
+      "score_change": -24.0
+    },
+    {
+      "month": "2025-06",
+      "country_code": "BR",
+      "country_name": "브라질",
+      "news_count": 24,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2025-07",
+      "country_code": "BR",
+      "country_name": "브라질",
+      "news_count": 48,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2025-08",
+      "country_code": "BR",
+      "country_name": "브라질",
+      "news_count": 60,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2025-09",
+      "country_code": "BR",
+      "country_name": "브라질",
+      "news_count": 24,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2025-10",
+      "country_code": "BR",
+      "country_name": "브라질",
+      "news_count": 48,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2025-11",
+      "country_code": "BR",
+      "country_name": "브라질",
+      "news_count": 72,
+      "pol_score": -12,
+      "keywords": "협력(12)",
+      "prev_score": 0.0,
+      "score_change": -12.0
+    },
+    {
+      "month": "2025-12",
+      "country_code": "BR",
+      "country_name": "브라질",
+      "news_count": 36,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": -12.0,
+      "score_change": 12.0
+    },
+    {
+      "month": "2026-01",
+      "country_code": "BR",
+      "country_name": "브라질",
+      "news_count": 12,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2026-02",
+      "country_code": "BR",
+      "country_name": "브라질",
+      "news_count": 24,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2026-03",
+      "country_code": "BR",
+      "country_name": "브라질",
+      "news_count": 84,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2026-04",
+      "country_code": "BR",
+      "country_name": "브라질",
+      "news_count": 60,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2026-05",
+      "country_code": "BR",
+      "country_name": "브라질",
+      "news_count": 12,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2026-06",
+      "country_code": "BR",
+      "country_name": "브라질",
+      "news_count": 84,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2022-01",
+      "country_code": "CL",
+      "country_name": "칠레",
+      "news_count": 60,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2022-05",
+      "country_code": "CL",
+      "country_name": "칠레",
+      "news_count": 60,
+      "pol_score": 12,
+      "keywords": "제한(12)",
+      "prev_score": 0.0,
+      "score_change": 12.0
+    },
+    {
+      "month": "2022-06",
+      "country_code": "CL",
+      "country_name": "칠레",
+      "news_count": 12,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 12.0,
+      "score_change": -12.0
+    },
+    {
+      "month": "2022-07",
+      "country_code": "CL",
+      "country_name": "칠레",
+      "news_count": 24,
+      "pol_score": -12,
+      "keywords": "협력(12)",
+      "prev_score": 0.0,
+      "score_change": -12.0
+    },
+    {
+      "month": "2022-08",
+      "country_code": "CL",
+      "country_name": "칠레",
+      "news_count": 12,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": -12.0,
+      "score_change": 12.0
+    },
+    {
+      "month": "2022-09",
+      "country_code": "CL",
+      "country_name": "칠레",
+      "news_count": 36,
+      "pol_score": -24,
+      "keywords": "협력(24)",
+      "prev_score": 0.0,
+      "score_change": -24.0
+    },
+    {
+      "month": "2022-10",
+      "country_code": "CL",
+      "country_name": "칠레",
+      "news_count": 24,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": -24.0,
+      "score_change": 24.0
+    },
+    {
+      "month": "2022-11",
+      "country_code": "CL",
+      "country_name": "칠레",
+      "news_count": 48,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2022-12",
+      "country_code": "CL",
+      "country_name": "칠레",
+      "news_count": 36,
+      "pol_score": -12,
+      "keywords": "협력(12)",
+      "prev_score": 0.0,
+      "score_change": -12.0
+    },
+    {
+      "month": "2023-01",
+      "country_code": "CL",
+      "country_name": "칠레",
+      "news_count": 12,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": -12.0,
+      "score_change": 12.0
+    },
+    {
+      "month": "2023-04",
+      "country_code": "CL",
+      "country_name": "칠레",
+      "news_count": 12,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2023-05",
+      "country_code": "CL",
+      "country_name": "칠레",
+      "news_count": 36,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2023-07",
+      "country_code": "CL",
+      "country_name": "칠레",
+      "news_count": 24,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2023-08",
+      "country_code": "CL",
+      "country_name": "칠레",
+      "news_count": 12,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2023-10",
+      "country_code": "CL",
+      "country_name": "칠레",
+      "news_count": 36,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2023-11",
+      "country_code": "CL",
+      "country_name": "칠레",
+      "news_count": 24,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2023-12",
+      "country_code": "CL",
+      "country_name": "칠레",
+      "news_count": 36,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2024-01",
+      "country_code": "CL",
+      "country_name": "칠레",
+      "news_count": 80,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2024-02",
+      "country_code": "CL",
+      "country_name": "칠레",
+      "news_count": 20,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2024-04",
+      "country_code": "CL",
+      "country_name": "칠레",
+      "news_count": 60,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2024-05",
+      "country_code": "CL",
+      "country_name": "칠레",
+      "news_count": 60,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2024-06",
+      "country_code": "CL",
+      "country_name": "칠레",
+      "news_count": 40,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2024-07",
+      "country_code": "CL",
+      "country_name": "칠레",
+      "news_count": 40,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2024-08",
+      "country_code": "CL",
+      "country_name": "칠레",
+      "news_count": 60,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2024-09",
+      "country_code": "CL",
+      "country_name": "칠레",
+      "news_count": 20,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2024-10",
+      "country_code": "CL",
+      "country_name": "칠레",
+      "news_count": 60,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2024-11",
+      "country_code": "CL",
+      "country_name": "칠레",
+      "news_count": 60,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2024-12",
+      "country_code": "CL",
+      "country_name": "칠레",
+      "news_count": 80,
+      "pol_score": 20,
+      "keywords": "규제(20)",
+      "prev_score": 0.0,
+      "score_change": 20.0
+    },
+    {
+      "month": "2025-02",
+      "country_code": "CL",
+      "country_name": "칠레",
+      "news_count": 24,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 20.0,
+      "score_change": -20.0
+    },
+    {
+      "month": "2025-03",
+      "country_code": "CL",
+      "country_name": "칠레",
+      "news_count": 24,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2025-04",
+      "country_code": "CL",
+      "country_name": "칠레",
+      "news_count": 60,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2025-05",
+      "country_code": "CL",
+      "country_name": "칠레",
+      "news_count": 24,
+      "pol_score": 24,
+      "keywords": "관세(12)",
+      "prev_score": 0.0,
+      "score_change": 24.0
+    },
+    {
+      "month": "2025-06",
+      "country_code": "CL",
+      "country_name": "칠레",
+      "news_count": 12,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 24.0,
+      "score_change": -24.0
+    },
+    {
+      "month": "2025-07",
+      "country_code": "CL",
+      "country_name": "칠레",
+      "news_count": 12,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2025-08",
+      "country_code": "CL",
+      "country_name": "칠레",
+      "news_count": 12,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2025-09",
+      "country_code": "CL",
+      "country_name": "칠레",
+      "news_count": 12,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2025-10",
+      "country_code": "CL",
+      "country_name": "칠레",
+      "news_count": 48,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2025-11",
+      "country_code": "CL",
+      "country_name": "칠레",
+      "news_count": 36,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2026-03",
+      "country_code": "CL",
+      "country_name": "칠레",
+      "news_count": 36,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2026-04",
+      "country_code": "CL",
+      "country_name": "칠레",
+      "news_count": 24,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2026-05",
+      "country_code": "CL",
+      "country_name": "칠레",
+      "news_count": 12,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2026-06",
+      "country_code": "CL",
+      "country_name": "칠레",
+      "news_count": 36,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2022-01",
+      "country_code": "CN",
+      "country_name": "중국",
+      "news_count": 312,
+      "pol_score": 48,
+      "keywords": "관세(24)",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2022-02",
+      "country_code": "CN",
+      "country_name": "중국",
+      "news_count": 288,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 48.0,
+      "score_change": -48.0
+    },
+    {
+      "month": "2022-03",
+      "country_code": "CN",
+      "country_name": "중국",
+      "news_count": 312,
+      "pol_score": -12,
+      "keywords": "협력(12)",
+      "prev_score": 0.0,
+      "score_change": -12.0
+    },
+    {
+      "month": "2022-04",
+      "country_code": "CN",
+      "country_name": "중국",
+      "news_count": 264,
+      "pol_score": 84,
+      "keywords": "봉쇄(24), 분쟁(12), 협력(12)",
+      "prev_score": -12.0,
+      "score_change": 96.0
+    },
+    {
+      "month": "2022-05",
+      "country_code": "CN",
+      "country_name": "중국",
+      "news_count": 504,
+      "pol_score": 36,
+      "keywords": "봉쇄(12)",
+      "prev_score": 84.0,
+      "score_change": -48.0
+    },
+    {
+      "month": "2022-06",
+      "country_code": "CN",
+      "country_name": "중국",
+      "news_count": 312,
+      "pol_score": 24,
+      "keywords": "봉쇄(12), 협력(12)",
+      "prev_score": 36.0,
+      "score_change": -12.0
+    },
+    {
+      "month": "2022-07",
+      "country_code": "CN",
+      "country_name": "중국",
+      "news_count": 516,
+      "pol_score": 72,
+      "keywords": "분쟁(24), 협력(24), 봉쇄(12)",
+      "prev_score": 24.0,
+      "score_change": 48.0
+    },
+    {
+      "month": "2022-08",
+      "country_code": "CN",
+      "country_name": "중국",
+      "news_count": 432,
+      "pol_score": -12,
+      "keywords": "협력(12)",
+      "prev_score": 72.0,
+      "score_change": -84.0
+    },
+    {
+      "month": "2022-09",
+      "country_code": "CN",
+      "country_name": "중국",
+      "news_count": 324,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": -12.0,
+      "score_change": 12.0
+    },
+    {
+      "month": "2022-10",
+      "country_code": "CN",
+      "country_name": "중국",
+      "news_count": 432,
+      "pol_score": 12,
+      "keywords": "규제(12), 제한(12), 협력(12)",
+      "prev_score": 0.0,
+      "score_change": 12.0
+    },
+    {
+      "month": "2022-11",
+      "country_code": "CN",
+      "country_name": "중국",
+      "news_count": 636,
+      "pol_score": 0,
+      "keywords": "분쟁(12), 규제(12), 협력(12)",
+      "prev_score": 12.0,
+      "score_change": -12.0
+    },
+    {
+      "month": "2022-12",
+      "country_code": "CN",
+      "country_name": "중국",
+      "news_count": 516,
+      "pol_score": -12,
+      "keywords": "규제(12), 제한(12), 협력(12)",
+      "prev_score": 0.0,
+      "score_change": -12.0
+    },
+    {
+      "month": "2023-01",
+      "country_code": "CN",
+      "country_name": "중국",
+      "news_count": 192,
+      "pol_score": 24,
+      "keywords": "관세(12)",
+      "prev_score": -12.0,
+      "score_change": 36.0
+    },
+    {
+      "month": "2023-02",
+      "country_code": "CN",
+      "country_name": "중국",
+      "news_count": 204,
+      "pol_score": 24,
+      "keywords": "분쟁(12)",
+      "prev_score": 24.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2023-03",
+      "country_code": "CN",
+      "country_name": "중국",
+      "news_count": 396,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 24.0,
+      "score_change": -24.0
+    },
+    {
+      "month": "2023-04",
+      "country_code": "CN",
+      "country_name": "중국",
+      "news_count": 276,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2023-05",
+      "country_code": "CN",
+      "country_name": "중국",
+      "news_count": 384,
+      "pol_score": 72,
+      "keywords": "제재(24)",
+      "prev_score": 0.0,
+      "score_change": 72.0
+    },
+    {
+      "month": "2023-06",
+      "country_code": "CN",
+      "country_name": "중국",
+      "news_count": 420,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 72.0,
+      "score_change": -72.0
+    },
+    {
+      "month": "2023-07",
+      "country_code": "CN",
+      "country_name": "중국",
+      "news_count": 408,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2023-08",
+      "country_code": "CN",
+      "country_name": "중국",
+      "news_count": 360,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2023-09",
+      "country_code": "CN",
+      "country_name": "중국",
+      "news_count": 528,
+      "pol_score": 36,
+      "keywords": "봉쇄(12)",
+      "prev_score": 0.0,
+      "score_change": 36.0
+    },
+    {
+      "month": "2023-10",
+      "country_code": "CN",
+      "country_name": "중국",
+      "news_count": 420,
+      "pol_score": 36,
+      "keywords": "수출통제(12)",
+      "prev_score": 36.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2023-11",
+      "country_code": "CN",
+      "country_name": "중국",
+      "news_count": 600,
+      "pol_score": 36,
+      "keywords": "수출통제(12)",
+      "prev_score": 36.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2023-12",
+      "country_code": "CN",
+      "country_name": "중국",
+      "news_count": 480,
+      "pol_score": 72,
+      "keywords": "수출통제(24)",
+      "prev_score": 36.0,
+      "score_change": 36.0
+    },
+    {
+      "month": "2024-01",
+      "country_code": "CN",
+      "country_name": "중국",
+      "news_count": 320,
+      "pol_score": 40,
+      "keywords": "관세(20)",
+      "prev_score": 72.0,
+      "score_change": -32.0
+    },
+    {
+      "month": "2024-02",
+      "country_code": "CN",
+      "country_name": "중국",
+      "news_count": 260,
+      "pol_score": -20,
+      "keywords": "규제(20), 완화(20)",
+      "prev_score": 40.0,
+      "score_change": -60.0
+    },
+    {
+      "month": "2024-03",
+      "country_code": "CN",
+      "country_name": "중국",
+      "news_count": 580,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": -20.0,
+      "score_change": 20.0
+    },
+    {
+      "month": "2024-04",
+      "country_code": "CN",
+      "country_name": "중국",
+      "news_count": 740,
+      "pol_score": -40,
+      "keywords": "완화(20)",
+      "prev_score": 0.0,
+      "score_change": -40.0
+    },
+    {
+      "month": "2024-05",
+      "country_code": "CN",
+      "country_name": "중국",
+      "news_count": 660,
+      "pol_score": 40,
+      "keywords": "관세(20)",
+      "prev_score": -40.0,
+      "score_change": 80.0
+    },
+    {
+      "month": "2024-06",
+      "country_code": "CN",
+      "country_name": "중국",
+      "news_count": 560,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 40.0,
+      "score_change": -40.0
+    },
+    {
+      "month": "2024-07",
+      "country_code": "CN",
+      "country_name": "중국",
+      "news_count": 860,
+      "pol_score": 40,
+      "keywords": "규제(20), 제한(20)",
+      "prev_score": 0.0,
+      "score_change": 40.0
+    },
+    {
+      "month": "2024-08",
+      "country_code": "CN",
+      "country_name": "중국",
+      "news_count": 580,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 40.0,
+      "score_change": -40.0
+    },
+    {
+      "month": "2024-09",
+      "country_code": "CN",
+      "country_name": "중국",
+      "news_count": 660,
+      "pol_score": 20,
+      "keywords": "규제(20)",
+      "prev_score": 0.0,
+      "score_change": 20.0
+    },
+    {
+      "month": "2024-10",
+      "country_code": "CN",
+      "country_name": "중국",
+      "news_count": 880,
+      "pol_score": -60,
+      "keywords": "협력(20), 협정(20)",
+      "prev_score": 20.0,
+      "score_change": -80.0
+    },
+    {
+      "month": "2024-11",
+      "country_code": "CN",
+      "country_name": "중국",
+      "news_count": 880,
+      "pol_score": 100,
+      "keywords": "제한(40), 수출통제(20)",
+      "prev_score": -60.0,
+      "score_change": 160.0
+    },
+    {
+      "month": "2024-12",
+      "country_code": "CN",
+      "country_name": "중국",
+      "news_count": 840,
+      "pol_score": -20,
+      "keywords": "협력(20)",
+      "prev_score": 100.0,
+      "score_change": -120.0
+    },
+    {
+      "month": "2025-01",
+      "country_code": "CN",
+      "country_name": "중국",
+      "news_count": 48,
+      "pol_score": 24,
+      "keywords": "관세(12)",
+      "prev_score": -20.0,
+      "score_change": 44.0
+    },
+    {
+      "month": "2025-02",
+      "country_code": "CN",
+      "country_name": "중국",
+      "news_count": 324,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 24.0,
+      "score_change": -24.0
+    },
+    {
+      "month": "2025-03",
+      "country_code": "CN",
+      "country_name": "중국",
+      "news_count": 588,
+      "pol_score": 96,
+      "keywords": "수출규제(12), 관세(12), 갈등(12)",
+      "prev_score": 0.0,
+      "score_change": 96.0
+    },
+    {
+      "month": "2025-04",
+      "country_code": "CN",
+      "country_name": "중국",
+      "news_count": 600,
+      "pol_score": -24,
+      "keywords": "협력(24)",
+      "prev_score": 96.0,
+      "score_change": -120.0
+    },
+    {
+      "month": "2025-05",
+      "country_code": "CN",
+      "country_name": "중국",
+      "news_count": 336,
+      "pol_score": -48,
+      "keywords": "협력(24), 합의(12)",
+      "prev_score": -24.0,
+      "score_change": -24.0
+    },
+    {
+      "month": "2025-06",
+      "country_code": "CN",
+      "country_name": "중국",
+      "news_count": 216,
+      "pol_score": 12,
+      "keywords": "관세(12), 협력(12)",
+      "prev_score": -48.0,
+      "score_change": 60.0
+    },
+    {
+      "month": "2025-07",
+      "country_code": "CN",
+      "country_name": "중국",
+      "news_count": 576,
+      "pol_score": -12,
+      "keywords": "협력(12)",
+      "prev_score": 12.0,
+      "score_change": -24.0
+    },
+    {
+      "month": "2025-08",
+      "country_code": "CN",
+      "country_name": "중국",
+      "news_count": 372,
+      "pol_score": -24,
+      "keywords": "협력(24)",
+      "prev_score": -12.0,
+      "score_change": -12.0
+    },
+    {
+      "month": "2025-09",
+      "country_code": "CN",
+      "country_name": "중국",
+      "news_count": 480,
+      "pol_score": 36,
+      "keywords": "분쟁(12), 제한(12)",
+      "prev_score": -24.0,
+      "score_change": 60.0
+    },
+    {
+      "month": "2025-10",
+      "country_code": "CN",
+      "country_name": "중국",
+      "news_count": 360,
+      "pol_score": 12,
+      "keywords": "관세(12), 협력(12)",
+      "prev_score": 36.0,
+      "score_change": -24.0
+    },
+    {
+      "month": "2025-11",
+      "country_code": "CN",
+      "country_name": "중국",
+      "news_count": 312,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 12.0,
+      "score_change": -12.0
+    },
+    {
+      "month": "2025-12",
+      "country_code": "CN",
+      "country_name": "중국",
+      "news_count": 456,
+      "pol_score": -36,
+      "keywords": "협력(36)",
+      "prev_score": 0.0,
+      "score_change": -36.0
+    },
+    {
+      "month": "2026-01",
+      "country_code": "CN",
+      "country_name": "중국",
+      "news_count": 72,
+      "pol_score": 24,
+      "keywords": "관세(12)",
+      "prev_score": -36.0,
+      "score_change": 60.0
+    },
+    {
+      "month": "2026-02",
+      "country_code": "CN",
+      "country_name": "중국",
+      "news_count": 180,
+      "pol_score": 48,
+      "keywords": "규제(36), 봉쇄(12), 완화(12)",
+      "prev_score": 24.0,
+      "score_change": 24.0
+    },
+    {
+      "month": "2026-03",
+      "country_code": "CN",
+      "country_name": "중국",
+      "news_count": 396,
+      "pol_score": 0,
+      "keywords": "협력(24), 관세(12)",
+      "prev_score": 48.0,
+      "score_change": -48.0
+    },
+    {
+      "month": "2026-04",
+      "country_code": "CN",
+      "country_name": "중국",
+      "news_count": 504,
+      "pol_score": 0,
+      "keywords": "규제(12), 협력(12)",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2026-05",
+      "country_code": "CN",
+      "country_name": "중국",
+      "news_count": 564,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2026-06",
+      "country_code": "CN",
+      "country_name": "중국",
+      "news_count": 396,
+      "pol_score": 48,
+      "keywords": "무역분쟁(12), 분쟁(12), 개선(12)",
+      "prev_score": 0.0,
+      "score_change": 48.0
+    },
+    {
+      "month": "2022-01",
+      "country_code": "DE",
+      "country_name": "독일",
+      "news_count": 96,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2022-02",
+      "country_code": "DE",
+      "country_name": "독일",
+      "news_count": 84,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2022-03",
+      "country_code": "DE",
+      "country_name": "독일",
+      "news_count": 72,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2022-04",
+      "country_code": "DE",
+      "country_name": "독일",
+      "news_count": 48,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2022-05",
+      "country_code": "DE",
+      "country_name": "독일",
+      "news_count": 96,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2022-06",
+      "country_code": "DE",
+      "country_name": "독일",
+      "news_count": 72,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2022-07",
+      "country_code": "DE",
+      "country_name": "독일",
+      "news_count": 96,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2022-08",
+      "country_code": "DE",
+      "country_name": "독일",
+      "news_count": 60,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2022-09",
+      "country_code": "DE",
+      "country_name": "독일",
+      "news_count": 132,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2022-10",
+      "country_code": "DE",
+      "country_name": "독일",
+      "news_count": 72,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2022-11",
+      "country_code": "DE",
+      "country_name": "독일",
+      "news_count": 72,
+      "pol_score": 12,
+      "keywords": "우려(12)",
+      "prev_score": 0.0,
+      "score_change": 12.0
+    },
+    {
+      "month": "2022-12",
+      "country_code": "DE",
+      "country_name": "독일",
+      "news_count": 72,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 12.0,
+      "score_change": -12.0
+    },
+    {
+      "month": "2023-01",
+      "country_code": "DE",
+      "country_name": "독일",
+      "news_count": 72,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2023-02",
+      "country_code": "DE",
+      "country_name": "독일",
+      "news_count": 108,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2023-03",
+      "country_code": "DE",
+      "country_name": "독일",
+      "news_count": 72,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2023-04",
+      "country_code": "DE",
+      "country_name": "독일",
+      "news_count": 36,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2023-05",
+      "country_code": "DE",
+      "country_name": "독일",
+      "news_count": 72,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2023-06",
+      "country_code": "DE",
+      "country_name": "독일",
+      "news_count": 60,
+      "pol_score": -12,
+      "keywords": "협력(12)",
+      "prev_score": 0.0,
+      "score_change": -12.0
+    },
+    {
+      "month": "2023-07",
+      "country_code": "DE",
+      "country_name": "독일",
+      "news_count": 96,
+      "pol_score": -12,
+      "keywords": "협력(12)",
+      "prev_score": -12.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2023-08",
+      "country_code": "DE",
+      "country_name": "독일",
+      "news_count": 72,
+      "pol_score": -12,
+      "keywords": "협력(12)",
+      "prev_score": -12.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2023-09",
+      "country_code": "DE",
+      "country_name": "독일",
+      "news_count": 84,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": -12.0,
+      "score_change": 12.0
+    },
+    {
+      "month": "2023-10",
+      "country_code": "DE",
+      "country_name": "독일",
+      "news_count": 96,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2023-11",
+      "country_code": "DE",
+      "country_name": "독일",
+      "news_count": 108,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2023-12",
+      "country_code": "DE",
+      "country_name": "독일",
+      "news_count": 84,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2024-01",
+      "country_code": "DE",
+      "country_name": "독일",
+      "news_count": 120,
+      "pol_score": 20,
+      "keywords": "규제(20)",
+      "prev_score": 0.0,
+      "score_change": 20.0
+    },
+    {
+      "month": "2024-02",
+      "country_code": "DE",
+      "country_name": "독일",
+      "news_count": 80,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 20.0,
+      "score_change": -20.0
+    },
+    {
+      "month": "2024-03",
+      "country_code": "DE",
+      "country_name": "독일",
+      "news_count": 200,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2024-04",
+      "country_code": "DE",
+      "country_name": "독일",
+      "news_count": 60,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2024-05",
+      "country_code": "DE",
+      "country_name": "독일",
+      "news_count": 200,
+      "pol_score": -20,
+      "keywords": "개선(20)",
+      "prev_score": 0.0,
+      "score_change": -20.0
+    },
+    {
+      "month": "2024-06",
+      "country_code": "DE",
+      "country_name": "독일",
+      "news_count": 100,
+      "pol_score": 40,
+      "keywords": "관세(20)",
+      "prev_score": -20.0,
+      "score_change": 60.0
+    },
+    {
+      "month": "2024-07",
+      "country_code": "DE",
+      "country_name": "독일",
+      "news_count": 120,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 40.0,
+      "score_change": -40.0
+    },
+    {
+      "month": "2024-08",
+      "country_code": "DE",
+      "country_name": "독일",
+      "news_count": 100,
+      "pol_score": -20,
+      "keywords": "협력(20)",
+      "prev_score": 0.0,
+      "score_change": -20.0
+    },
+    {
+      "month": "2024-09",
+      "country_code": "DE",
+      "country_name": "독일",
+      "news_count": 160,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": -20.0,
+      "score_change": 20.0
+    },
+    {
+      "month": "2024-10",
+      "country_code": "DE",
+      "country_name": "독일",
+      "news_count": 200,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2024-11",
+      "country_code": "DE",
+      "country_name": "독일",
+      "news_count": 120,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2024-12",
+      "country_code": "DE",
+      "country_name": "독일",
+      "news_count": 100,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2025-01",
+      "country_code": "DE",
+      "country_name": "독일",
+      "news_count": 96,
+      "pol_score": -24,
+      "keywords": "완화(12)",
+      "prev_score": 0.0,
+      "score_change": -24.0
+    },
+    {
+      "month": "2025-02",
+      "country_code": "DE",
+      "country_name": "독일",
+      "news_count": 120,
+      "pol_score": 12,
+      "keywords": "규제(12)",
+      "prev_score": -24.0,
+      "score_change": 36.0
+    },
+    {
+      "month": "2025-03",
+      "country_code": "DE",
+      "country_name": "독일",
+      "news_count": 108,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 12.0,
+      "score_change": -12.0
+    },
+    {
+      "month": "2025-04",
+      "country_code": "DE",
+      "country_name": "독일",
+      "news_count": 96,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2025-05",
+      "country_code": "DE",
+      "country_name": "독일",
+      "news_count": 48,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2025-06",
+      "country_code": "DE",
+      "country_name": "독일",
+      "news_count": 72,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2025-07",
+      "country_code": "DE",
+      "country_name": "독일",
+      "news_count": 144,
+      "pol_score": -12,
+      "keywords": "관세(12), 협력(12), 합의(12)",
+      "prev_score": 0.0,
+      "score_change": -12.0
+    },
+    {
+      "month": "2025-08",
+      "country_code": "DE",
+      "country_name": "독일",
+      "news_count": 24,
+      "pol_score": -12,
+      "keywords": "협력(12)",
+      "prev_score": -12.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2025-09",
+      "country_code": "DE",
+      "country_name": "독일",
+      "news_count": 72,
+      "pol_score": 12,
+      "keywords": "불확실(12)",
+      "prev_score": -12.0,
+      "score_change": 24.0
+    },
+    {
+      "month": "2025-10",
+      "country_code": "DE",
+      "country_name": "독일",
+      "news_count": 24,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 12.0,
+      "score_change": -12.0
+    },
+    {
+      "month": "2025-11",
+      "country_code": "DE",
+      "country_name": "독일",
+      "news_count": 48,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2025-12",
+      "country_code": "DE",
+      "country_name": "독일",
+      "news_count": 72,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2026-01",
+      "country_code": "DE",
+      "country_name": "독일",
+      "news_count": 72,
+      "pol_score": 0,
+      "keywords": "규제(12), 우려(12), 완화(12)",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2026-02",
+      "country_code": "DE",
+      "country_name": "독일",
+      "news_count": 108,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2026-03",
+      "country_code": "DE",
+      "country_name": "독일",
+      "news_count": 72,
+      "pol_score": 0,
+      "keywords": "규제(12), 협력(12)",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2026-04",
+      "country_code": "DE",
+      "country_name": "독일",
+      "news_count": 84,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2026-05",
+      "country_code": "DE",
+      "country_name": "독일",
+      "news_count": 120,
+      "pol_score": 12,
+      "keywords": "규제(12), 제한(12), 협력(12)",
+      "prev_score": 0.0,
+      "score_change": 12.0
+    },
+    {
+      "month": "2026-06",
+      "country_code": "DE",
+      "country_name": "독일",
+      "news_count": 36,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 12.0,
+      "score_change": -12.0
+    },
+    {
+      "month": "2022-01",
+      "country_code": "ID",
+      "country_name": "인도네시아",
+      "news_count": 108,
+      "pol_score": 12,
+      "keywords": "제한(12)",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2022-02",
+      "country_code": "ID",
+      "country_name": "인도네시아",
+      "news_count": 60,
+      "pol_score": 12,
+      "keywords": "제한(12)",
+      "prev_score": 12.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2022-03",
+      "country_code": "ID",
+      "country_name": "인도네시아",
+      "news_count": 72,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 12.0,
+      "score_change": -12.0
+    },
+    {
+      "month": "2022-04",
+      "country_code": "ID",
+      "country_name": "인도네시아",
+      "news_count": 48,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2022-05",
+      "country_code": "ID",
+      "country_name": "인도네시아",
+      "news_count": 96,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2022-06",
+      "country_code": "ID",
+      "country_name": "인도네시아",
+      "news_count": 96,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2022-07",
+      "country_code": "ID",
+      "country_name": "인도네시아",
+      "news_count": 96,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2022-08",
+      "country_code": "ID",
+      "country_name": "인도네시아",
+      "news_count": 72,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2022-09",
+      "country_code": "ID",
+      "country_name": "인도네시아",
+      "news_count": 48,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2022-10",
+      "country_code": "ID",
+      "country_name": "인도네시아",
+      "news_count": 108,
+      "pol_score": -12,
+      "keywords": "협력(12)",
+      "prev_score": 0.0,
+      "score_change": -12.0
+    },
+    {
+      "month": "2022-11",
+      "country_code": "ID",
+      "country_name": "인도네시아",
+      "news_count": 48,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": -12.0,
+      "score_change": 12.0
+    },
+    {
+      "month": "2022-12",
+      "country_code": "ID",
+      "country_name": "인도네시아",
+      "news_count": 108,
+      "pol_score": 24,
+      "keywords": "관세(12)",
+      "prev_score": 0.0,
+      "score_change": 24.0
+    },
+    {
+      "month": "2023-01",
+      "country_code": "ID",
+      "country_name": "인도네시아",
+      "news_count": 36,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 24.0,
+      "score_change": -24.0
+    },
+    {
+      "month": "2023-03",
+      "country_code": "ID",
+      "country_name": "인도네시아",
+      "news_count": 48,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2023-04",
+      "country_code": "ID",
+      "country_name": "인도네시아",
+      "news_count": 48,
+      "pol_score": -12,
+      "keywords": "협력(12)",
+      "prev_score": 0.0,
+      "score_change": -12.0
+    },
+    {
+      "month": "2023-05",
+      "country_code": "ID",
+      "country_name": "인도네시아",
+      "news_count": 120,
+      "pol_score": 24,
+      "keywords": "관세(12)",
+      "prev_score": -12.0,
+      "score_change": 36.0
+    },
+    {
+      "month": "2023-06",
+      "country_code": "ID",
+      "country_name": "인도네시아",
+      "news_count": 84,
+      "pol_score": -12,
+      "keywords": "협력(12)",
+      "prev_score": 24.0,
+      "score_change": -36.0
+    },
+    {
+      "month": "2023-07",
+      "country_code": "ID",
+      "country_name": "인도네시아",
+      "news_count": 120,
+      "pol_score": 12,
+      "keywords": "관세(12), 협력(12)",
+      "prev_score": -12.0,
+      "score_change": 24.0
+    },
+    {
+      "month": "2023-08",
+      "country_code": "ID",
+      "country_name": "인도네시아",
+      "news_count": 72,
+      "pol_score": -24,
+      "keywords": "완화(12)",
+      "prev_score": 12.0,
+      "score_change": -36.0
+    },
+    {
+      "month": "2023-09",
+      "country_code": "ID",
+      "country_name": "인도네시아",
+      "news_count": 84,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": -24.0,
+      "score_change": 24.0
+    },
+    {
+      "month": "2023-10",
+      "country_code": "ID",
+      "country_name": "인도네시아",
+      "news_count": 96,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2023-11",
+      "country_code": "ID",
+      "country_name": "인도네시아",
+      "news_count": 48,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2023-12",
+      "country_code": "ID",
+      "country_name": "인도네시아",
+      "news_count": 132,
+      "pol_score": -12,
+      "keywords": "규제(12), 완화(12)",
+      "prev_score": 0.0,
+      "score_change": -12.0
+    },
+    {
+      "month": "2024-01",
+      "country_code": "ID",
+      "country_name": "인도네시아",
+      "news_count": 60,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": -12.0,
+      "score_change": 12.0
+    },
+    {
+      "month": "2024-02",
+      "country_code": "ID",
+      "country_name": "인도네시아",
+      "news_count": 20,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2024-03",
+      "country_code": "ID",
+      "country_name": "인도네시아",
+      "news_count": 80,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2024-04",
+      "country_code": "ID",
+      "country_name": "인도네시아",
+      "news_count": 80,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2024-05",
+      "country_code": "ID",
+      "country_name": "인도네시아",
+      "news_count": 180,
+      "pol_score": -20,
+      "keywords": "규제(20), 완화(20)",
+      "prev_score": 0.0,
+      "score_change": -20.0
+    },
+    {
+      "month": "2024-06",
+      "country_code": "ID",
+      "country_name": "인도네시아",
+      "news_count": 100,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": -20.0,
+      "score_change": 20.0
+    },
+    {
+      "month": "2024-07",
+      "country_code": "ID",
+      "country_name": "인도네시아",
+      "news_count": 80,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2024-08",
+      "country_code": "ID",
+      "country_name": "인도네시아",
+      "news_count": 120,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2024-09",
+      "country_code": "ID",
+      "country_name": "인도네시아",
+      "news_count": 120,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2024-10",
+      "country_code": "ID",
+      "country_name": "인도네시아",
+      "news_count": 120,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2024-11",
+      "country_code": "ID",
+      "country_name": "인도네시아",
+      "news_count": 160,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2024-12",
+      "country_code": "ID",
+      "country_name": "인도네시아",
+      "news_count": 120,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2025-02",
+      "country_code": "ID",
+      "country_name": "인도네시아",
+      "news_count": 60,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2025-03",
+      "country_code": "ID",
+      "country_name": "인도네시아",
+      "news_count": 96,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2025-04",
+      "country_code": "ID",
+      "country_name": "인도네시아",
+      "news_count": 72,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2025-05",
+      "country_code": "ID",
+      "country_name": "인도네시아",
+      "news_count": 72,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2025-06",
+      "country_code": "ID",
+      "country_name": "인도네시아",
+      "news_count": 48,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2025-07",
+      "country_code": "ID",
+      "country_name": "인도네시아",
+      "news_count": 60,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2025-08",
+      "country_code": "ID",
+      "country_name": "인도네시아",
+      "news_count": 48,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2025-09",
+      "country_code": "ID",
+      "country_name": "인도네시아",
+      "news_count": 60,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2025-10",
+      "country_code": "ID",
+      "country_name": "인도네시아",
+      "news_count": 72,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2025-11",
+      "country_code": "ID",
+      "country_name": "인도네시아",
+      "news_count": 96,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2025-12",
+      "country_code": "ID",
+      "country_name": "인도네시아",
+      "news_count": 48,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2026-02",
+      "country_code": "ID",
+      "country_name": "인도네시아",
+      "news_count": 12,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2026-03",
+      "country_code": "ID",
+      "country_name": "인도네시아",
+      "news_count": 72,
+      "pol_score": -24,
+      "keywords": "협정(12)",
+      "prev_score": 0.0,
+      "score_change": -24.0
+    },
+    {
+      "month": "2026-04",
+      "country_code": "ID",
+      "country_name": "인도네시아",
+      "news_count": 84,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": -24.0,
+      "score_change": 24.0
+    },
+    {
+      "month": "2026-05",
+      "country_code": "ID",
+      "country_name": "인도네시아",
+      "news_count": 96,
+      "pol_score": 12,
+      "keywords": "제한(12)",
+      "prev_score": 0.0,
+      "score_change": 12.0
+    },
+    {
+      "month": "2026-06",
+      "country_code": "ID",
+      "country_name": "인도네시아",
+      "news_count": 88,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 12.0,
+      "score_change": -12.0
+    },
+    {
+      "month": "2022-01",
+      "country_code": "IN",
+      "country_name": "인도",
+      "news_count": 156,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2022-02",
+      "country_code": "IN",
+      "country_name": "인도",
+      "news_count": 24,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2022-03",
+      "country_code": "IN",
+      "country_name": "인도",
+      "news_count": 84,
+      "pol_score": 48,
+      "keywords": "관세(24)",
+      "prev_score": 0.0,
+      "score_change": 48.0
+    },
+    {
+      "month": "2022-04",
+      "country_code": "IN",
+      "country_name": "인도",
+      "news_count": 24,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 48.0,
+      "score_change": -48.0
+    },
+    {
+      "month": "2022-05",
+      "country_code": "IN",
+      "country_name": "인도",
+      "news_count": 144,
+      "pol_score": -12,
+      "keywords": "협력(12)",
+      "prev_score": 0.0,
+      "score_change": -12.0
+    },
+    {
+      "month": "2022-06",
+      "country_code": "IN",
+      "country_name": "인도",
+      "news_count": 96,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": -12.0,
+      "score_change": 12.0
+    },
+    {
+      "month": "2022-07",
+      "country_code": "IN",
+      "country_name": "인도",
+      "news_count": 96,
+      "pol_score": -12,
+      "keywords": "개선(12)",
+      "prev_score": 0.0,
+      "score_change": -12.0
+    },
+    {
+      "month": "2022-08",
+      "country_code": "IN",
+      "country_name": "인도",
+      "news_count": 192,
+      "pol_score": 12,
+      "keywords": "제한(12)",
+      "prev_score": -12.0,
+      "score_change": 24.0
+    },
+    {
+      "month": "2022-09",
+      "country_code": "IN",
+      "country_name": "인도",
+      "news_count": 108,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 12.0,
+      "score_change": -12.0
+    },
+    {
+      "month": "2022-10",
+      "country_code": "IN",
+      "country_name": "인도",
+      "news_count": 180,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2022-11",
+      "country_code": "IN",
+      "country_name": "인도",
+      "news_count": 132,
+      "pol_score": 12,
+      "keywords": "관세(12), 개선(12)",
+      "prev_score": 0.0,
+      "score_change": 12.0
+    },
+    {
+      "month": "2022-12",
+      "country_code": "IN",
+      "country_name": "인도",
+      "news_count": 96,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 12.0,
+      "score_change": -12.0
+    },
+    {
+      "month": "2023-01",
+      "country_code": "IN",
+      "country_name": "인도",
+      "news_count": 84,
+      "pol_score": -24,
+      "keywords": "협력(12), 개선(12)",
+      "prev_score": 0.0,
+      "score_change": -24.0
+    },
+    {
+      "month": "2023-03",
+      "country_code": "IN",
+      "country_name": "인도",
+      "news_count": 156,
+      "pol_score": 24,
+      "keywords": "관세(12)",
+      "prev_score": -24.0,
+      "score_change": 48.0
+    },
+    {
+      "month": "2023-04",
+      "country_code": "IN",
+      "country_name": "인도",
+      "news_count": 108,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 24.0,
+      "score_change": -24.0
+    },
+    {
+      "month": "2023-05",
+      "country_code": "IN",
+      "country_name": "인도",
+      "news_count": 132,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2023-06",
+      "country_code": "IN",
+      "country_name": "인도",
+      "news_count": 120,
+      "pol_score": 0,
+      "keywords": "관세(12), 협정(12)",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2023-07",
+      "country_code": "IN",
+      "country_name": "인도",
+      "news_count": 132,
+      "pol_score": 24,
+      "keywords": "규제(24)",
+      "prev_score": 0.0,
+      "score_change": 24.0
+    },
+    {
+      "month": "2023-08",
+      "country_code": "IN",
+      "country_name": "인도",
+      "news_count": 120,
+      "pol_score": 60,
+      "keywords": "관세(24), 규제(12)",
+      "prev_score": 24.0,
+      "score_change": 36.0
+    },
+    {
+      "month": "2023-09",
+      "country_code": "IN",
+      "country_name": "인도",
+      "news_count": 108,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 60.0,
+      "score_change": -60.0
+    },
+    {
+      "month": "2023-10",
+      "country_code": "IN",
+      "country_name": "인도",
+      "news_count": 144,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2023-11",
+      "country_code": "IN",
+      "country_name": "인도",
+      "news_count": 120,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2023-12",
+      "country_code": "IN",
+      "country_name": "인도",
+      "news_count": 96,
+      "pol_score": 12,
+      "keywords": "규제(12)",
+      "prev_score": 0.0,
+      "score_change": 12.0
+    },
+    {
+      "month": "2024-01",
+      "country_code": "IN",
+      "country_name": "인도",
+      "news_count": 40,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 12.0,
+      "score_change": -12.0
+    },
+    {
+      "month": "2024-02",
+      "country_code": "IN",
+      "country_name": "인도",
+      "news_count": 60,
+      "pol_score": 40,
+      "keywords": "관세(20)",
+      "prev_score": 0.0,
+      "score_change": 40.0
+    },
+    {
+      "month": "2024-03",
+      "country_code": "IN",
+      "country_name": "인도",
+      "news_count": 60,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 40.0,
+      "score_change": -40.0
+    },
+    {
+      "month": "2024-04",
+      "country_code": "IN",
+      "country_name": "인도",
+      "news_count": 280,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2024-05",
+      "country_code": "IN",
+      "country_name": "인도",
+      "news_count": 160,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2024-06",
+      "country_code": "IN",
+      "country_name": "인도",
+      "news_count": 120,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2024-07",
+      "country_code": "IN",
+      "country_name": "인도",
+      "news_count": 300,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2024-08",
+      "country_code": "IN",
+      "country_name": "인도",
+      "news_count": 240,
+      "pol_score": -20,
+      "keywords": "제한(20), 완화(20)",
+      "prev_score": 0.0,
+      "score_change": -20.0
+    },
+    {
+      "month": "2024-09",
+      "country_code": "IN",
+      "country_name": "인도",
+      "news_count": 320,
+      "pol_score": 80,
+      "keywords": "관세(40)",
+      "prev_score": -20.0,
+      "score_change": 100.0
+    },
+    {
+      "month": "2024-10",
+      "country_code": "IN",
+      "country_name": "인도",
+      "news_count": 300,
+      "pol_score": 40,
+      "keywords": "관세(40), 협정(20)",
+      "prev_score": 80.0,
+      "score_change": -40.0
+    },
+    {
+      "month": "2024-11",
+      "country_code": "IN",
+      "country_name": "인도",
+      "news_count": 160,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 40.0,
+      "score_change": -40.0
+    },
+    {
+      "month": "2024-12",
+      "country_code": "IN",
+      "country_name": "인도",
+      "news_count": 220,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2025-01",
+      "country_code": "IN",
+      "country_name": "인도",
+      "news_count": 36,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2025-02",
+      "country_code": "IN",
+      "country_name": "인도",
+      "news_count": 96,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2025-03",
+      "country_code": "IN",
+      "country_name": "인도",
+      "news_count": 168,
+      "pol_score": 0,
+      "keywords": "관세(12), 완화(12)",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2025-04",
+      "country_code": "IN",
+      "country_name": "인도",
+      "news_count": 132,
+      "pol_score": 36,
+      "keywords": "관세(24), 협력(12)",
+      "prev_score": 0.0,
+      "score_change": 36.0
+    },
+    {
+      "month": "2025-05",
+      "country_code": "IN",
+      "country_name": "인도",
+      "news_count": 96,
+      "pol_score": 12,
+      "keywords": "규제(12)",
+      "prev_score": 36.0,
+      "score_change": -24.0
+    },
+    {
+      "month": "2025-06",
+      "country_code": "IN",
+      "country_name": "인도",
+      "news_count": 60,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 12.0,
+      "score_change": -12.0
+    },
+    {
+      "month": "2025-07",
+      "country_code": "IN",
+      "country_name": "인도",
+      "news_count": 156,
+      "pol_score": -12,
+      "keywords": "협력(12)",
+      "prev_score": 0.0,
+      "score_change": -12.0
+    },
+    {
+      "month": "2025-08",
+      "country_code": "IN",
+      "country_name": "인도",
+      "news_count": 132,
+      "pol_score": -12,
+      "keywords": "규제(12), 타결(12)",
+      "prev_score": -12.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2025-09",
+      "country_code": "IN",
+      "country_name": "인도",
+      "news_count": 228,
+      "pol_score": 36,
+      "keywords": "관세(24), 협력(24), 제한(12)",
+      "prev_score": -12.0,
+      "score_change": 48.0
+    },
+    {
+      "month": "2025-10",
+      "country_code": "IN",
+      "country_name": "인도",
+      "news_count": 120,
+      "pol_score": 24,
+      "keywords": "규제(24)",
+      "prev_score": 36.0,
+      "score_change": -12.0
+    },
+    {
+      "month": "2025-11",
+      "country_code": "IN",
+      "country_name": "인도",
+      "news_count": 72,
+      "pol_score": 24,
+      "keywords": "관세(12)",
+      "prev_score": 24.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2025-12",
+      "country_code": "IN",
+      "country_name": "인도",
+      "news_count": 120,
+      "pol_score": 0,
+      "keywords": "관세(12), 타결(12)",
+      "prev_score": 24.0,
+      "score_change": -24.0
+    },
+    {
+      "month": "2026-02",
+      "country_code": "IN",
+      "country_name": "인도",
+      "news_count": 24,
+      "pol_score": 0,
+      "keywords": "불확실(12), 협력(12)",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2026-03",
+      "country_code": "IN",
+      "country_name": "인도",
+      "news_count": 48,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2026-04",
+      "country_code": "IN",
+      "country_name": "인도",
+      "news_count": 84,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2026-05",
+      "country_code": "IN",
+      "country_name": "인도",
+      "news_count": 204,
+      "pol_score": 24,
+      "keywords": "관세(12)",
+      "prev_score": 0.0,
+      "score_change": 24.0
+    },
+    {
+      "month": "2026-06",
+      "country_code": "IN",
+      "country_name": "인도",
+      "news_count": 116,
+      "pol_score": 24,
+      "keywords": "관세(12)",
+      "prev_score": 24.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2022-01",
+      "country_code": "JP",
+      "country_name": "일본",
+      "news_count": 60,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2022-02",
+      "country_code": "JP",
+      "country_name": "일본",
+      "news_count": 48,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2022-03",
+      "country_code": "JP",
+      "country_name": "일본",
+      "news_count": 120,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2022-04",
+      "country_code": "JP",
+      "country_name": "일본",
+      "news_count": 216,
+      "pol_score": -24,
+      "keywords": "제한(24), 완화(24)",
+      "prev_score": 0.0,
+      "score_change": -24.0
+    },
+    {
+      "month": "2022-05",
+      "country_code": "JP",
+      "country_name": "일본",
+      "news_count": 252,
+      "pol_score": -24,
+      "keywords": "협정(12)",
+      "prev_score": -24.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2022-06",
+      "country_code": "JP",
+      "country_name": "일본",
+      "news_count": 240,
+      "pol_score": 24,
+      "keywords": "관세(12)",
+      "prev_score": -24.0,
+      "score_change": 48.0
+    },
+    {
+      "month": "2022-07",
+      "country_code": "JP",
+      "country_name": "일본",
+      "news_count": 276,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 24.0,
+      "score_change": -24.0
+    },
+    {
+      "month": "2022-08",
+      "country_code": "JP",
+      "country_name": "일본",
+      "news_count": 216,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2022-09",
+      "country_code": "JP",
+      "country_name": "일본",
+      "news_count": 264,
+      "pol_score": 12,
+      "keywords": "규제(12)",
+      "prev_score": 0.0,
+      "score_change": 12.0
+    },
+    {
+      "month": "2022-10",
+      "country_code": "JP",
+      "country_name": "일본",
+      "news_count": 240,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 12.0,
+      "score_change": -12.0
+    },
+    {
+      "month": "2022-11",
+      "country_code": "JP",
+      "country_name": "일본",
+      "news_count": 300,
+      "pol_score": 12,
+      "keywords": "규제(12)",
+      "prev_score": 0.0,
+      "score_change": 12.0
+    },
+    {
+      "month": "2022-12",
+      "country_code": "JP",
+      "country_name": "일본",
+      "news_count": 192,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 12.0,
+      "score_change": -12.0
+    },
+    {
+      "month": "2023-01",
+      "country_code": "JP",
+      "country_name": "일본",
+      "news_count": 60,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2023-02",
+      "country_code": "JP",
+      "country_name": "일본",
+      "news_count": 84,
+      "pol_score": 12,
+      "keywords": "규제(12)",
+      "prev_score": 0.0,
+      "score_change": 12.0
+    },
+    {
+      "month": "2023-03",
+      "country_code": "JP",
+      "country_name": "일본",
+      "news_count": 228,
+      "pol_score": 48,
+      "keywords": "수출규제(12), 규제(12)",
+      "prev_score": 12.0,
+      "score_change": 36.0
+    },
+    {
+      "month": "2023-04",
+      "country_code": "JP",
+      "country_name": "일본",
+      "news_count": 132,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 48.0,
+      "score_change": -48.0
+    },
+    {
+      "month": "2023-05",
+      "country_code": "JP",
+      "country_name": "일본",
+      "news_count": 252,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2023-06",
+      "country_code": "JP",
+      "country_name": "일본",
+      "news_count": 324,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2023-07",
+      "country_code": "JP",
+      "country_name": "일본",
+      "news_count": 144,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2023-08",
+      "country_code": "JP",
+      "country_name": "일본",
+      "news_count": 156,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2023-09",
+      "country_code": "JP",
+      "country_name": "일본",
+      "news_count": 204,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2023-10",
+      "country_code": "JP",
+      "country_name": "일본",
+      "news_count": 168,
+      "pol_score": -24,
+      "keywords": "규제(24), 완화(24)",
+      "prev_score": 0.0,
+      "score_change": -24.0
+    },
+    {
+      "month": "2023-11",
+      "country_code": "JP",
+      "country_name": "일본",
+      "news_count": 168,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": -24.0,
+      "score_change": 24.0
+    },
+    {
+      "month": "2023-12",
+      "country_code": "JP",
+      "country_name": "일본",
+      "news_count": 252,
+      "pol_score": -12,
+      "keywords": "개선(12)",
+      "prev_score": 0.0,
+      "score_change": -12.0
+    },
+    {
+      "month": "2024-01",
+      "country_code": "JP",
+      "country_name": "일본",
+      "news_count": 120,
+      "pol_score": 0,
+      "keywords": "규제(20), 개선(20)",
+      "prev_score": -12.0,
+      "score_change": 12.0
+    },
+    {
+      "month": "2024-02",
+      "country_code": "JP",
+      "country_name": "일본",
+      "news_count": 160,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2024-03",
+      "country_code": "JP",
+      "country_name": "일본",
+      "news_count": 220,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2024-04",
+      "country_code": "JP",
+      "country_name": "일본",
+      "news_count": 460,
+      "pol_score": 40,
+      "keywords": "관세(20)",
+      "prev_score": 0.0,
+      "score_change": 40.0
+    },
+    {
+      "month": "2024-05",
+      "country_code": "JP",
+      "country_name": "일본",
+      "news_count": 320,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 40.0,
+      "score_change": -40.0
+    },
+    {
+      "month": "2024-06",
+      "country_code": "JP",
+      "country_name": "일본",
+      "news_count": 400,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2024-07",
+      "country_code": "JP",
+      "country_name": "일본",
+      "news_count": 420,
+      "pol_score": 20,
+      "keywords": "규제(20)",
+      "prev_score": 0.0,
+      "score_change": 20.0
+    },
+    {
+      "month": "2024-08",
+      "country_code": "JP",
+      "country_name": "일본",
+      "news_count": 280,
+      "pol_score": 20,
+      "keywords": "규제(20)",
+      "prev_score": 20.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2024-09",
+      "country_code": "JP",
+      "country_name": "일본",
+      "news_count": 320,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 20.0,
+      "score_change": -20.0
+    },
+    {
+      "month": "2024-10",
+      "country_code": "JP",
+      "country_name": "일본",
+      "news_count": 540,
+      "pol_score": 40,
+      "keywords": "관세(20)",
+      "prev_score": 0.0,
+      "score_change": 40.0
+    },
+    {
+      "month": "2024-11",
+      "country_code": "JP",
+      "country_name": "일본",
+      "news_count": 420,
+      "pol_score": 20,
+      "keywords": "규제(20)",
+      "prev_score": 40.0,
+      "score_change": -20.0
+    },
+    {
+      "month": "2024-12",
+      "country_code": "JP",
+      "country_name": "일본",
+      "news_count": 300,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 20.0,
+      "score_change": -20.0
+    },
+    {
+      "month": "2025-01",
+      "country_code": "JP",
+      "country_name": "일본",
+      "news_count": 48,
+      "pol_score": 12,
+      "keywords": "규제(12)",
+      "prev_score": 0.0,
+      "score_change": 12.0
+    },
+    {
+      "month": "2025-02",
+      "country_code": "JP",
+      "country_name": "일본",
+      "news_count": 156,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 12.0,
+      "score_change": -12.0
+    },
+    {
+      "month": "2025-03",
+      "country_code": "JP",
+      "country_name": "일본",
+      "news_count": 288,
+      "pol_score": 96,
+      "keywords": "관세(24), 수출규제(12), 규제(12)",
+      "prev_score": 0.0,
+      "score_change": 96.0
+    },
+    {
+      "month": "2025-04",
+      "country_code": "JP",
+      "country_name": "일본",
+      "news_count": 252,
+      "pol_score": 12,
+      "keywords": "규제(12)",
+      "prev_score": 96.0,
+      "score_change": -84.0
+    },
+    {
+      "month": "2025-05",
+      "country_code": "JP",
+      "country_name": "일본",
+      "news_count": 252,
+      "pol_score": 12,
+      "keywords": "관세(12), 협력(12)",
+      "prev_score": 12.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2025-06",
+      "country_code": "JP",
+      "country_name": "일본",
+      "news_count": 144,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 12.0,
+      "score_change": -12.0
+    },
+    {
+      "month": "2025-07",
+      "country_code": "JP",
+      "country_name": "일본",
+      "news_count": 372,
+      "pol_score": 12,
+      "keywords": "규제(12)",
+      "prev_score": 0.0,
+      "score_change": 12.0
+    },
+    {
+      "month": "2025-08",
+      "country_code": "JP",
+      "country_name": "일본",
+      "news_count": 204,
+      "pol_score": 12,
+      "keywords": "규제(12)",
+      "prev_score": 12.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2025-09",
+      "country_code": "JP",
+      "country_name": "일본",
+      "news_count": 168,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 12.0,
+      "score_change": -12.0
+    },
+    {
+      "month": "2025-10",
+      "country_code": "JP",
+      "country_name": "일본",
+      "news_count": 240,
+      "pol_score": -12,
+      "keywords": "협력(12)",
+      "prev_score": 0.0,
+      "score_change": -12.0
+    },
+    {
+      "month": "2025-11",
+      "country_code": "JP",
+      "country_name": "일본",
+      "news_count": 204,
+      "pol_score": 0,
+      "keywords": "관세(12), 완화(12)",
+      "prev_score": -12.0,
+      "score_change": 12.0
+    },
+    {
+      "month": "2025-12",
+      "country_code": "JP",
+      "country_name": "일본",
+      "news_count": 204,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2026-02",
+      "country_code": "JP",
+      "country_name": "일본",
+      "news_count": 84,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2026-03",
+      "country_code": "JP",
+      "country_name": "일본",
+      "news_count": 168,
+      "pol_score": 0,
+      "keywords": "규제(24), 완화(12)",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2026-04",
+      "country_code": "JP",
+      "country_name": "일본",
+      "news_count": 204,
+      "pol_score": 48,
+      "keywords": "수출규제(12), 규제(12)",
+      "prev_score": 0.0,
+      "score_change": 48.0
+    },
+    {
+      "month": "2026-05",
+      "country_code": "JP",
+      "country_name": "일본",
+      "news_count": 288,
+      "pol_score": -12,
+      "keywords": "개선(12)",
+      "prev_score": 48.0,
+      "score_change": -60.0
+    },
+    {
+      "month": "2026-06",
+      "country_code": "JP",
+      "country_name": "일본",
+      "news_count": 204,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": -12.0,
+      "score_change": 12.0
+    },
+    {
+      "month": "2022-01",
+      "country_code": "MX",
+      "country_name": "멕시코",
+      "news_count": 96,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2022-03",
+      "country_code": "MX",
+      "country_name": "멕시코",
+      "news_count": 48,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2022-04",
+      "country_code": "MX",
+      "country_name": "멕시코",
+      "news_count": 12,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2022-05",
+      "country_code": "MX",
+      "country_name": "멕시코",
+      "news_count": 84,
+      "pol_score": -24,
+      "keywords": "협정(12)",
+      "prev_score": 0.0,
+      "score_change": -24.0
+    },
+    {
+      "month": "2022-06",
+      "country_code": "MX",
+      "country_name": "멕시코",
+      "news_count": 48,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": -24.0,
+      "score_change": 24.0
+    },
+    {
+      "month": "2022-07",
+      "country_code": "MX",
+      "country_name": "멕시코",
+      "news_count": 24,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2022-08",
+      "country_code": "MX",
+      "country_name": "멕시코",
+      "news_count": 108,
+      "pol_score": 24,
+      "keywords": "갈등(12)",
+      "prev_score": 0.0,
+      "score_change": 24.0
+    },
+    {
+      "month": "2022-09",
+      "country_code": "MX",
+      "country_name": "멕시코",
+      "news_count": 60,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 24.0,
+      "score_change": -24.0
+    },
+    {
+      "month": "2022-10",
+      "country_code": "MX",
+      "country_name": "멕시코",
+      "news_count": 72,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2022-11",
+      "country_code": "MX",
+      "country_name": "멕시코",
+      "news_count": 60,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2022-12",
+      "country_code": "MX",
+      "country_name": "멕시코",
+      "news_count": 48,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2023-01",
+      "country_code": "MX",
+      "country_name": "멕시코",
+      "news_count": 48,
+      "pol_score": -12,
+      "keywords": "정상회담(12)",
+      "prev_score": 0.0,
+      "score_change": -12.0
+    },
+    {
+      "month": "2023-02",
+      "country_code": "MX",
+      "country_name": "멕시코",
+      "news_count": 24,
+      "pol_score": 24,
+      "keywords": "분쟁(12)",
+      "prev_score": -12.0,
+      "score_change": 36.0
+    },
+    {
+      "month": "2023-03",
+      "country_code": "MX",
+      "country_name": "멕시코",
+      "news_count": 24,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 24.0,
+      "score_change": -24.0
+    },
+    {
+      "month": "2023-04",
+      "country_code": "MX",
+      "country_name": "멕시코",
+      "news_count": 24,
+      "pol_score": 12,
+      "keywords": "제한(12)",
+      "prev_score": 0.0,
+      "score_change": 12.0
+    },
+    {
+      "month": "2023-05",
+      "country_code": "MX",
+      "country_name": "멕시코",
+      "news_count": 36,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 12.0,
+      "score_change": -12.0
+    },
+    {
+      "month": "2023-06",
+      "country_code": "MX",
+      "country_name": "멕시코",
+      "news_count": 48,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2023-07",
+      "country_code": "MX",
+      "country_name": "멕시코",
+      "news_count": 36,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2023-08",
+      "country_code": "MX",
+      "country_name": "멕시코",
+      "news_count": 84,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2023-09",
+      "country_code": "MX",
+      "country_name": "멕시코",
+      "news_count": 60,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2023-10",
+      "country_code": "MX",
+      "country_name": "멕시코",
+      "news_count": 60,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2023-11",
+      "country_code": "MX",
+      "country_name": "멕시코",
+      "news_count": 72,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2023-12",
+      "country_code": "MX",
+      "country_name": "멕시코",
+      "news_count": 36,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2024-01",
+      "country_code": "MX",
+      "country_name": "멕시코",
+      "news_count": 20,
+      "pol_score": 20,
+      "keywords": "규제(20)",
+      "prev_score": 0.0,
+      "score_change": 20.0
+    },
+    {
+      "month": "2024-02",
+      "country_code": "MX",
+      "country_name": "멕시코",
+      "news_count": 100,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 20.0,
+      "score_change": -20.0
+    },
+    {
+      "month": "2024-03",
+      "country_code": "MX",
+      "country_name": "멕시코",
+      "news_count": 80,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2024-04",
+      "country_code": "MX",
+      "country_name": "멕시코",
+      "news_count": 60,
+      "pol_score": 20,
+      "keywords": "규제(20)",
+      "prev_score": 0.0,
+      "score_change": 20.0
+    },
+    {
+      "month": "2024-05",
+      "country_code": "MX",
+      "country_name": "멕시코",
+      "news_count": 140,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 20.0,
+      "score_change": -20.0
+    },
+    {
+      "month": "2024-06",
+      "country_code": "MX",
+      "country_name": "멕시코",
+      "news_count": 80,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2024-07",
+      "country_code": "MX",
+      "country_name": "멕시코",
+      "news_count": 20,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2024-08",
+      "country_code": "MX",
+      "country_name": "멕시코",
+      "news_count": 40,
+      "pol_score": -20,
+      "keywords": "협력(20)",
+      "prev_score": 0.0,
+      "score_change": -20.0
+    },
+    {
+      "month": "2024-09",
+      "country_code": "MX",
+      "country_name": "멕시코",
+      "news_count": 60,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": -20.0,
+      "score_change": 20.0
+    },
+    {
+      "month": "2024-10",
+      "country_code": "MX",
+      "country_name": "멕시코",
+      "news_count": 100,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2024-11",
+      "country_code": "MX",
+      "country_name": "멕시코",
+      "news_count": 60,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2024-12",
+      "country_code": "MX",
+      "country_name": "멕시코",
+      "news_count": 60,
+      "pol_score": 20,
+      "keywords": "규제(20)",
+      "prev_score": 0.0,
+      "score_change": 20.0
+    },
+    {
+      "month": "2025-02",
+      "country_code": "MX",
+      "country_name": "멕시코",
+      "news_count": 36,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 20.0,
+      "score_change": -20.0
+    },
+    {
+      "month": "2025-03",
+      "country_code": "MX",
+      "country_name": "멕시코",
+      "news_count": 72,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2025-04",
+      "country_code": "MX",
+      "country_name": "멕시코",
+      "news_count": 48,
+      "pol_score": 24,
+      "keywords": "관세(12)",
+      "prev_score": 0.0,
+      "score_change": 24.0
+    },
+    {
+      "month": "2025-05",
+      "country_code": "MX",
+      "country_name": "멕시코",
+      "news_count": 24,
+      "pol_score": -12,
+      "keywords": "협력(12)",
+      "prev_score": 24.0,
+      "score_change": -36.0
+    },
+    {
+      "month": "2025-06",
+      "country_code": "MX",
+      "country_name": "멕시코",
+      "news_count": 48,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": -12.0,
+      "score_change": 12.0
+    },
+    {
+      "month": "2025-07",
+      "country_code": "MX",
+      "country_name": "멕시코",
+      "news_count": 48,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2025-08",
+      "country_code": "MX",
+      "country_name": "멕시코",
+      "news_count": 24,
+      "pol_score": 12,
+      "keywords": "규제(12)",
+      "prev_score": 0.0,
+      "score_change": 12.0
+    },
+    {
+      "month": "2025-09",
+      "country_code": "MX",
+      "country_name": "멕시코",
+      "news_count": 72,
+      "pol_score": 48,
+      "keywords": "관세(24)",
+      "prev_score": 12.0,
+      "score_change": 36.0
+    },
+    {
+      "month": "2025-10",
+      "country_code": "MX",
+      "country_name": "멕시코",
+      "news_count": 24,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 48.0,
+      "score_change": -48.0
+    },
+    {
+      "month": "2025-11",
+      "country_code": "MX",
+      "country_name": "멕시코",
+      "news_count": 72,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2025-12",
+      "country_code": "MX",
+      "country_name": "멕시코",
+      "news_count": 12,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2026-01",
+      "country_code": "MX",
+      "country_name": "멕시코",
+      "news_count": 24,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2026-02",
+      "country_code": "MX",
+      "country_name": "멕시코",
+      "news_count": 60,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2026-03",
+      "country_code": "MX",
+      "country_name": "멕시코",
+      "news_count": 60,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2026-04",
+      "country_code": "MX",
+      "country_name": "멕시코",
+      "news_count": 72,
+      "pol_score": 12,
+      "keywords": "불확실(12)",
+      "prev_score": 0.0,
+      "score_change": 12.0
+    },
+    {
+      "month": "2026-05",
+      "country_code": "MX",
+      "country_name": "멕시코",
+      "news_count": 24,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 12.0,
+      "score_change": -12.0
+    },
+    {
+      "month": "2026-06",
+      "country_code": "MX",
+      "country_name": "멕시코",
+      "news_count": 61,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2022-01",
+      "country_code": "NL",
+      "country_name": "네덜란드",
+      "news_count": 12,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2022-03",
+      "country_code": "NL",
+      "country_name": "네덜란드",
+      "news_count": 24,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2022-04",
+      "country_code": "NL",
+      "country_name": "네덜란드",
+      "news_count": 24,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2022-05",
+      "country_code": "NL",
+      "country_name": "네덜란드",
+      "news_count": 24,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2022-06",
+      "country_code": "NL",
+      "country_name": "네덜란드",
+      "news_count": 72,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2022-07",
+      "country_code": "NL",
+      "country_name": "네덜란드",
+      "news_count": 24,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2022-09",
+      "country_code": "NL",
+      "country_name": "네덜란드",
+      "news_count": 48,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2022-10",
+      "country_code": "NL",
+      "country_name": "네덜란드",
+      "news_count": 48,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2022-11",
+      "country_code": "NL",
+      "country_name": "네덜란드",
+      "news_count": 48,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2022-12",
+      "country_code": "NL",
+      "country_name": "네덜란드",
+      "news_count": 36,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2023-01",
+      "country_code": "NL",
+      "country_name": "네덜란드",
+      "news_count": 12,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2023-03",
+      "country_code": "NL",
+      "country_name": "네덜란드",
+      "news_count": 36,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2023-04",
+      "country_code": "NL",
+      "country_name": "네덜란드",
+      "news_count": 24,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2023-05",
+      "country_code": "NL",
+      "country_name": "네덜란드",
+      "news_count": 36,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2023-06",
+      "country_code": "NL",
+      "country_name": "네덜란드",
+      "news_count": 72,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2023-07",
+      "country_code": "NL",
+      "country_name": "네덜란드",
+      "news_count": 36,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2023-08",
+      "country_code": "NL",
+      "country_name": "네덜란드",
+      "news_count": 24,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2023-09",
+      "country_code": "NL",
+      "country_name": "네덜란드",
+      "news_count": 12,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2023-10",
+      "country_code": "NL",
+      "country_name": "네덜란드",
+      "news_count": 12,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2023-11",
+      "country_code": "NL",
+      "country_name": "네덜란드",
+      "news_count": 36,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2023-12",
+      "country_code": "NL",
+      "country_name": "네덜란드",
+      "news_count": 48,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2024-01",
+      "country_code": "NL",
+      "country_name": "네덜란드",
+      "news_count": 20,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2024-03",
+      "country_code": "NL",
+      "country_name": "네덜란드",
+      "news_count": 80,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2024-04",
+      "country_code": "NL",
+      "country_name": "네덜란드",
+      "news_count": 60,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2024-05",
+      "country_code": "NL",
+      "country_name": "네덜란드",
+      "news_count": 60,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2024-06",
+      "country_code": "NL",
+      "country_name": "네덜란드",
+      "news_count": 40,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2024-07",
+      "country_code": "NL",
+      "country_name": "네덜란드",
+      "news_count": 40,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2024-08",
+      "country_code": "NL",
+      "country_name": "네덜란드",
+      "news_count": 60,
+      "pol_score": 20,
+      "keywords": "규제(20)",
+      "prev_score": 0.0,
+      "score_change": 20.0
+    },
+    {
+      "month": "2024-09",
+      "country_code": "NL",
+      "country_name": "네덜란드",
+      "news_count": 80,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 20.0,
+      "score_change": -20.0
+    },
+    {
+      "month": "2024-10",
+      "country_code": "NL",
+      "country_name": "네덜란드",
+      "news_count": 40,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2024-11",
+      "country_code": "NL",
+      "country_name": "네덜란드",
+      "news_count": 60,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2024-12",
+      "country_code": "NL",
+      "country_name": "네덜란드",
+      "news_count": 40,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2025-01",
+      "country_code": "NL",
+      "country_name": "네덜란드",
+      "news_count": 12,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2025-02",
+      "country_code": "NL",
+      "country_name": "네덜란드",
+      "news_count": 12,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2025-03",
+      "country_code": "NL",
+      "country_name": "네덜란드",
+      "news_count": 24,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2025-04",
+      "country_code": "NL",
+      "country_name": "네덜란드",
+      "news_count": 36,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2025-05",
+      "country_code": "NL",
+      "country_name": "네덜란드",
+      "news_count": 36,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2025-06",
+      "country_code": "NL",
+      "country_name": "네덜란드",
+      "news_count": 12,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2025-07",
+      "country_code": "NL",
+      "country_name": "네덜란드",
+      "news_count": 12,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2025-08",
+      "country_code": "NL",
+      "country_name": "네덜란드",
+      "news_count": 60,
+      "pol_score": 12,
+      "keywords": "규제(12)",
+      "prev_score": 0.0,
+      "score_change": 12.0
+    },
+    {
+      "month": "2025-09",
+      "country_code": "NL",
+      "country_name": "네덜란드",
+      "news_count": 48,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 12.0,
+      "score_change": -12.0
+    },
+    {
+      "month": "2025-10",
+      "country_code": "NL",
+      "country_name": "네덜란드",
+      "news_count": 12,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2025-11",
+      "country_code": "NL",
+      "country_name": "네덜란드",
+      "news_count": 24,
+      "pol_score": -12,
+      "keywords": "협력(12)",
+      "prev_score": 0.0,
+      "score_change": -12.0
+    },
+    {
+      "month": "2025-12",
+      "country_code": "NL",
+      "country_name": "네덜란드",
+      "news_count": 36,
+      "pol_score": -12,
+      "keywords": "협력(12)",
+      "prev_score": -12.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2026-04",
+      "country_code": "NL",
+      "country_name": "네덜란드",
+      "news_count": 24,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": -12.0,
+      "score_change": 12.0
+    },
+    {
+      "month": "2026-05",
+      "country_code": "NL",
+      "country_name": "네덜란드",
+      "news_count": 36,
+      "pol_score": 12,
+      "keywords": "규제(12)",
+      "prev_score": 0.0,
+      "score_change": 12.0
+    },
+    {
+      "month": "2026-06",
+      "country_code": "NL",
+      "country_name": "네덜란드",
+      "news_count": 32,
+      "pol_score": 8,
+      "keywords": "규제(8)",
+      "prev_score": 12.0,
+      "score_change": -4.0
+    },
+    {
+      "month": "2022-01",
+      "country_code": "TW",
+      "country_name": "대만",
+      "news_count": 12,
+      "pol_score": 12,
+      "keywords": "규제(12)",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2022-02",
+      "country_code": "TW",
+      "country_name": "대만",
+      "news_count": 48,
+      "pol_score": -12,
+      "keywords": "규제(12), 완화(12)",
+      "prev_score": 12.0,
+      "score_change": -24.0
+    },
+    {
+      "month": "2022-03",
+      "country_code": "TW",
+      "country_name": "대만",
+      "news_count": 24,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": -12.0,
+      "score_change": 12.0
+    },
+    {
+      "month": "2022-04",
+      "country_code": "TW",
+      "country_name": "대만",
+      "news_count": 24,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2022-05",
+      "country_code": "TW",
+      "country_name": "대만",
+      "news_count": 24,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2022-06",
+      "country_code": "TW",
+      "country_name": "대만",
+      "news_count": 12,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2022-07",
+      "country_code": "TW",
+      "country_name": "대만",
+      "news_count": 48,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2022-08",
+      "country_code": "TW",
+      "country_name": "대만",
+      "news_count": 24,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2022-09",
+      "country_code": "TW",
+      "country_name": "대만",
+      "news_count": 12,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2022-10",
+      "country_code": "TW",
+      "country_name": "대만",
+      "news_count": 36,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2022-11",
+      "country_code": "TW",
+      "country_name": "대만",
+      "news_count": 12,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2022-12",
+      "country_code": "TW",
+      "country_name": "대만",
+      "news_count": 48,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2023-02",
+      "country_code": "TW",
+      "country_name": "대만",
+      "news_count": 12,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2023-03",
+      "country_code": "TW",
+      "country_name": "대만",
+      "news_count": 24,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2023-04",
+      "country_code": "TW",
+      "country_name": "대만",
+      "news_count": 12,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2023-05",
+      "country_code": "TW",
+      "country_name": "대만",
+      "news_count": 24,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2023-06",
+      "country_code": "TW",
+      "country_name": "대만",
+      "news_count": 12,
+      "pol_score": -24,
+      "keywords": "협정(12)",
+      "prev_score": 0.0,
+      "score_change": -24.0
+    },
+    {
+      "month": "2023-07",
+      "country_code": "TW",
+      "country_name": "대만",
+      "news_count": 12,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": -24.0,
+      "score_change": 24.0
+    },
+    {
+      "month": "2023-08",
+      "country_code": "TW",
+      "country_name": "대만",
+      "news_count": 36,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2023-09",
+      "country_code": "TW",
+      "country_name": "대만",
+      "news_count": 48,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2023-10",
+      "country_code": "TW",
+      "country_name": "대만",
+      "news_count": 60,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2023-11",
+      "country_code": "TW",
+      "country_name": "대만",
+      "news_count": 72,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2023-12",
+      "country_code": "TW",
+      "country_name": "대만",
+      "news_count": 24,
+      "pol_score": 24,
+      "keywords": "관세(12)",
+      "prev_score": 0.0,
+      "score_change": 24.0
+    },
+    {
+      "month": "2024-02",
+      "country_code": "TW",
+      "country_name": "대만",
+      "news_count": 40,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 24.0,
+      "score_change": -24.0
+    },
+    {
+      "month": "2024-03",
+      "country_code": "TW",
+      "country_name": "대만",
+      "news_count": 120,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2024-04",
+      "country_code": "TW",
+      "country_name": "대만",
+      "news_count": 140,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2024-06",
+      "country_code": "TW",
+      "country_name": "대만",
+      "news_count": 80,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2024-07",
+      "country_code": "TW",
+      "country_name": "대만",
+      "news_count": 80,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2024-08",
+      "country_code": "TW",
+      "country_name": "대만",
+      "news_count": 60,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2024-09",
+      "country_code": "TW",
+      "country_name": "대만",
+      "news_count": 140,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2024-11",
+      "country_code": "TW",
+      "country_name": "대만",
+      "news_count": 140,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2024-12",
+      "country_code": "TW",
+      "country_name": "대만",
+      "news_count": 60,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2025-01",
+      "country_code": "TW",
+      "country_name": "대만",
+      "news_count": 36,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2025-02",
+      "country_code": "TW",
+      "country_name": "대만",
+      "news_count": 60,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2025-03",
+      "country_code": "TW",
+      "country_name": "대만",
+      "news_count": 60,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2025-04",
+      "country_code": "TW",
+      "country_name": "대만",
+      "news_count": 36,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2025-05",
+      "country_code": "TW",
+      "country_name": "대만",
+      "news_count": 48,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2025-06",
+      "country_code": "TW",
+      "country_name": "대만",
+      "news_count": 60,
+      "pol_score": -12,
+      "keywords": "협력(12)",
+      "prev_score": 0.0,
+      "score_change": -12.0
+    },
+    {
+      "month": "2025-07",
+      "country_code": "TW",
+      "country_name": "대만",
+      "news_count": 36,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": -12.0,
+      "score_change": 12.0
+    },
+    {
+      "month": "2025-08",
+      "country_code": "TW",
+      "country_name": "대만",
+      "news_count": 24,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2025-09",
+      "country_code": "TW",
+      "country_name": "대만",
+      "news_count": 36,
+      "pol_score": -12,
+      "keywords": "협력(12)",
+      "prev_score": 0.0,
+      "score_change": -12.0
+    },
+    {
+      "month": "2025-10",
+      "country_code": "TW",
+      "country_name": "대만",
+      "news_count": 12,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": -12.0,
+      "score_change": 12.0
+    },
+    {
+      "month": "2025-11",
+      "country_code": "TW",
+      "country_name": "대만",
+      "news_count": 36,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2025-12",
+      "country_code": "TW",
+      "country_name": "대만",
+      "news_count": 36,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2026-01",
+      "country_code": "TW",
+      "country_name": "대만",
+      "news_count": 36,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2026-02",
+      "country_code": "TW",
+      "country_name": "대만",
+      "news_count": 36,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2026-03",
+      "country_code": "TW",
+      "country_name": "대만",
+      "news_count": 48,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2026-04",
+      "country_code": "TW",
+      "country_name": "대만",
+      "news_count": 60,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2026-05",
+      "country_code": "TW",
+      "country_name": "대만",
+      "news_count": 36,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2022-01",
+      "country_code": "US",
+      "country_name": "미국",
+      "news_count": 240,
+      "pol_score": 24,
+      "keywords": "분쟁(12)",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2022-02",
+      "country_code": "US",
+      "country_name": "미국",
+      "news_count": 216,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 24.0,
+      "score_change": -24.0
+    },
+    {
+      "month": "2022-03",
+      "country_code": "US",
+      "country_name": "미국",
+      "news_count": 336,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2022-04",
+      "country_code": "US",
+      "country_name": "미국",
+      "news_count": 228,
+      "pol_score": 12,
+      "keywords": "규제(12)",
+      "prev_score": 0.0,
+      "score_change": 12.0
+    },
+    {
+      "month": "2022-05",
+      "country_code": "US",
+      "country_name": "미국",
+      "news_count": 300,
+      "pol_score": 24,
+      "keywords": "규제(12), 우려(12)",
+      "prev_score": 12.0,
+      "score_change": 12.0
+    },
+    {
+      "month": "2022-06",
+      "country_code": "US",
+      "country_name": "미국",
+      "news_count": 348,
+      "pol_score": 12,
+      "keywords": "우려(12)",
+      "prev_score": 24.0,
+      "score_change": -12.0
+    },
+    {
+      "month": "2022-07",
+      "country_code": "US",
+      "country_name": "미국",
+      "news_count": 408,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 12.0,
+      "score_change": -12.0
+    },
+    {
+      "month": "2022-08",
+      "country_code": "US",
+      "country_name": "미국",
+      "news_count": 300,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2022-09",
+      "country_code": "US",
+      "country_name": "미국",
+      "news_count": 372,
+      "pol_score": 12,
+      "keywords": "규제(12)",
+      "prev_score": 0.0,
+      "score_change": 12.0
+    },
+    {
+      "month": "2022-10",
+      "country_code": "US",
+      "country_name": "미국",
+      "news_count": 396,
+      "pol_score": -12,
+      "keywords": "갈등(12), 완화(12), 개선(12)",
+      "prev_score": 12.0,
+      "score_change": -24.0
+    },
+    {
+      "month": "2022-11",
+      "country_code": "US",
+      "country_name": "미국",
+      "news_count": 432,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": -12.0,
+      "score_change": 12.0
+    },
+    {
+      "month": "2022-12",
+      "country_code": "US",
+      "country_name": "미국",
+      "news_count": 432,
+      "pol_score": 12,
+      "keywords": "불확실(12)",
+      "prev_score": 0.0,
+      "score_change": 12.0
+    },
+    {
+      "month": "2023-01",
+      "country_code": "US",
+      "country_name": "미국",
+      "news_count": 204,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 12.0,
+      "score_change": -12.0
+    },
+    {
+      "month": "2023-02",
+      "country_code": "US",
+      "country_name": "미국",
+      "news_count": 312,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2023-03",
+      "country_code": "US",
+      "country_name": "미국",
+      "news_count": 336,
+      "pol_score": 36,
+      "keywords": "분쟁(12), 규제(12)",
+      "prev_score": 0.0,
+      "score_change": 36.0
+    },
+    {
+      "month": "2023-04",
+      "country_code": "US",
+      "country_name": "미국",
+      "news_count": 228,
+      "pol_score": 24,
+      "keywords": "분쟁(12)",
+      "prev_score": 36.0,
+      "score_change": -12.0
+    },
+    {
+      "month": "2023-05",
+      "country_code": "US",
+      "country_name": "미국",
+      "news_count": 324,
+      "pol_score": -12,
+      "keywords": "규제(12), 합의(12)",
+      "prev_score": 24.0,
+      "score_change": -36.0
+    },
+    {
+      "month": "2023-06",
+      "country_code": "US",
+      "country_name": "미국",
+      "news_count": 372,
+      "pol_score": -36,
+      "keywords": "합의(24), 규제(12)",
+      "prev_score": -12.0,
+      "score_change": -24.0
+    },
+    {
+      "month": "2023-07",
+      "country_code": "US",
+      "country_name": "미국",
+      "news_count": 300,
+      "pol_score": -36,
+      "keywords": "규제(12), 협정(12), 타결(12)",
+      "prev_score": -36.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2023-08",
+      "country_code": "US",
+      "country_name": "미국",
+      "news_count": 288,
+      "pol_score": 12,
+      "keywords": "규제(12)",
+      "prev_score": -36.0,
+      "score_change": 48.0
+    },
+    {
+      "month": "2023-09",
+      "country_code": "US",
+      "country_name": "미국",
+      "news_count": 396,
+      "pol_score": -36,
+      "keywords": "협력(12), 협정(12)",
+      "prev_score": 12.0,
+      "score_change": -48.0
+    },
+    {
+      "month": "2023-10",
+      "country_code": "US",
+      "country_name": "미국",
+      "news_count": 492,
+      "pol_score": 12,
+      "keywords": "협력(24), 관세(12), 규제(12)",
+      "prev_score": -36.0,
+      "score_change": 48.0
+    },
+    {
+      "month": "2023-11",
+      "country_code": "US",
+      "country_name": "미국",
+      "news_count": 396,
+      "pol_score": 24,
+      "keywords": "수출통제(12), 규제(12), 우려(12)",
+      "prev_score": 12.0,
+      "score_change": 12.0
+    },
+    {
+      "month": "2023-12",
+      "country_code": "US",
+      "country_name": "미국",
+      "news_count": 384,
+      "pol_score": 36,
+      "keywords": "분쟁(12), 규제(12)",
+      "prev_score": 24.0,
+      "score_change": 12.0
+    },
+    {
+      "month": "2024-01",
+      "country_code": "US",
+      "country_name": "미국",
+      "news_count": 320,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 36.0,
+      "score_change": -36.0
+    },
+    {
+      "month": "2024-02",
+      "country_code": "US",
+      "country_name": "미국",
+      "news_count": 320,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2024-03",
+      "country_code": "US",
+      "country_name": "미국",
+      "news_count": 520,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2024-04",
+      "country_code": "US",
+      "country_name": "미국",
+      "news_count": 520,
+      "pol_score": 60,
+      "keywords": "제재(20), 규제(20), 협력(20)",
+      "prev_score": 0.0,
+      "score_change": 60.0
+    },
+    {
+      "month": "2024-05",
+      "country_code": "US",
+      "country_name": "미국",
+      "news_count": 460,
+      "pol_score": 40,
+      "keywords": "관세(20)",
+      "prev_score": 60.0,
+      "score_change": -20.0
+    },
+    {
+      "month": "2024-06",
+      "country_code": "US",
+      "country_name": "미국",
+      "news_count": 480,
+      "pol_score": 20,
+      "keywords": "규제(20)",
+      "prev_score": 40.0,
+      "score_change": -20.0
+    },
+    {
+      "month": "2024-07",
+      "country_code": "US",
+      "country_name": "미국",
+      "news_count": 460,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 20.0,
+      "score_change": -20.0
+    },
+    {
+      "month": "2024-08",
+      "country_code": "US",
+      "country_name": "미국",
+      "news_count": 520,
+      "pol_score": -60,
+      "keywords": "완화(40), 규제(20)",
+      "prev_score": 0.0,
+      "score_change": -60.0
+    },
+    {
+      "month": "2024-09",
+      "country_code": "US",
+      "country_name": "미국",
+      "news_count": 580,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": -60.0,
+      "score_change": 60.0
+    },
+    {
+      "month": "2024-10",
+      "country_code": "US",
+      "country_name": "미국",
+      "news_count": 460,
+      "pol_score": 60,
+      "keywords": "제재(20)",
+      "prev_score": 0.0,
+      "score_change": 60.0
+    },
+    {
+      "month": "2024-11",
+      "country_code": "US",
+      "country_name": "미국",
+      "news_count": 580,
+      "pol_score": 20,
+      "keywords": "제한(20)",
+      "prev_score": 60.0,
+      "score_change": -40.0
+    },
+    {
+      "month": "2024-12",
+      "country_code": "US",
+      "country_name": "미국",
+      "news_count": 480,
+      "pol_score": 60,
+      "keywords": "관세(40), 개선(20)",
+      "prev_score": 20.0,
+      "score_change": 40.0
+    },
+    {
+      "month": "2025-01",
+      "country_code": "US",
+      "country_name": "미국",
+      "news_count": 96,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 60.0,
+      "score_change": -60.0
+    },
+    {
+      "month": "2025-02",
+      "country_code": "US",
+      "country_name": "미국",
+      "news_count": 300,
+      "pol_score": 84,
+      "keywords": "규제(36), 관세(24)",
+      "prev_score": 0.0,
+      "score_change": 84.0
+    },
+    {
+      "month": "2025-03",
+      "country_code": "US",
+      "country_name": "미국",
+      "news_count": 396,
+      "pol_score": 60,
+      "keywords": "관세(12), 규제(12), 불확실(12)",
+      "prev_score": 84.0,
+      "score_change": -24.0
+    },
+    {
+      "month": "2025-04",
+      "country_code": "US",
+      "country_name": "미국",
+      "news_count": 336,
+      "pol_score": 60,
+      "keywords": "관세(36), 개선(12)",
+      "prev_score": 60.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2025-05",
+      "country_code": "US",
+      "country_name": "미국",
+      "news_count": 276,
+      "pol_score": 96,
+      "keywords": "관세(48)",
+      "prev_score": 60.0,
+      "score_change": 36.0
+    },
+    {
+      "month": "2025-06",
+      "country_code": "US",
+      "country_name": "미국",
+      "news_count": 228,
+      "pol_score": 24,
+      "keywords": "관세(24), 완화(12)",
+      "prev_score": 96.0,
+      "score_change": -72.0
+    },
+    {
+      "month": "2025-07",
+      "country_code": "US",
+      "country_name": "미국",
+      "news_count": 360,
+      "pol_score": 48,
+      "keywords": "관세(24)",
+      "prev_score": 24.0,
+      "score_change": 24.0
+    },
+    {
+      "month": "2025-08",
+      "country_code": "US",
+      "country_name": "미국",
+      "news_count": 168,
+      "pol_score": 24,
+      "keywords": "관세(12)",
+      "prev_score": 48.0,
+      "score_change": -24.0
+    },
+    {
+      "month": "2025-09",
+      "country_code": "US",
+      "country_name": "미국",
+      "news_count": 360,
+      "pol_score": 132,
+      "keywords": "관세(60), 규제(12)",
+      "prev_score": 24.0,
+      "score_change": 108.0
+    },
+    {
+      "month": "2025-10",
+      "country_code": "US",
+      "country_name": "미국",
+      "news_count": 324,
+      "pol_score": 36,
+      "keywords": "관세(24), 규제(12), 완화(12)",
+      "prev_score": 132.0,
+      "score_change": -96.0
+    },
+    {
+      "month": "2025-11",
+      "country_code": "US",
+      "country_name": "미국",
+      "news_count": 420,
+      "pol_score": 24,
+      "keywords": "관세(12), 규제(12), 협력(12)",
+      "prev_score": 36.0,
+      "score_change": -12.0
+    },
+    {
+      "month": "2025-12",
+      "country_code": "US",
+      "country_name": "미국",
+      "news_count": 252,
+      "pol_score": 24,
+      "keywords": "규제(24)",
+      "prev_score": 24.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2026-01",
+      "country_code": "US",
+      "country_name": "미국",
+      "news_count": 132,
+      "pol_score": 60,
+      "keywords": "관세(24), 규제(12)",
+      "prev_score": 24.0,
+      "score_change": 36.0
+    },
+    {
+      "month": "2026-02",
+      "country_code": "US",
+      "country_name": "미국",
+      "news_count": 192,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 60.0,
+      "score_change": -60.0
+    },
+    {
+      "month": "2026-03",
+      "country_code": "US",
+      "country_name": "미국",
+      "news_count": 252,
+      "pol_score": 60,
+      "keywords": "수출통제(12), 관세(12)",
+      "prev_score": 0.0,
+      "score_change": 60.0
+    },
+    {
+      "month": "2026-04",
+      "country_code": "US",
+      "country_name": "미국",
+      "news_count": 420,
+      "pol_score": 48,
+      "keywords": "규제(24), 관세(12)",
+      "prev_score": 60.0,
+      "score_change": -12.0
+    },
+    {
+      "month": "2026-05",
+      "country_code": "US",
+      "country_name": "미국",
+      "news_count": 348,
+      "pol_score": 24,
+      "keywords": "관세(12), 규제(12), 개선(12)",
+      "prev_score": 48.0,
+      "score_change": -24.0
+    },
+    {
+      "month": "2026-06",
+      "country_code": "US",
+      "country_name": "미국",
+      "news_count": 239,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 24.0,
+      "score_change": -24.0
+    },
+    {
+      "month": "2022-01",
+      "country_code": "VN",
+      "country_name": "베트남",
+      "news_count": 84,
+      "pol_score": 12,
+      "keywords": "규제(12)",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2022-02",
+      "country_code": "VN",
+      "country_name": "베트남",
+      "news_count": 132,
+      "pol_score": -36,
+      "keywords": "협력(12), 협정(12)",
+      "prev_score": 12.0,
+      "score_change": -48.0
+    },
+    {
+      "month": "2022-03",
+      "country_code": "VN",
+      "country_name": "베트남",
+      "news_count": 132,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": -36.0,
+      "score_change": 36.0
+    },
+    {
+      "month": "2022-04",
+      "country_code": "VN",
+      "country_name": "베트남",
+      "news_count": 144,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2022-05",
+      "country_code": "VN",
+      "country_name": "베트남",
+      "news_count": 120,
+      "pol_score": -12,
+      "keywords": "협력(12)",
+      "prev_score": 0.0,
+      "score_change": -12.0
+    },
+    {
+      "month": "2022-06",
+      "country_code": "VN",
+      "country_name": "베트남",
+      "news_count": 156,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": -12.0,
+      "score_change": 12.0
+    },
+    {
+      "month": "2022-07",
+      "country_code": "VN",
+      "country_name": "베트남",
+      "news_count": 156,
+      "pol_score": -24,
+      "keywords": "협정(12)",
+      "prev_score": 0.0,
+      "score_change": -24.0
+    },
+    {
+      "month": "2022-08",
+      "country_code": "VN",
+      "country_name": "베트남",
+      "news_count": 108,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": -24.0,
+      "score_change": 24.0
+    },
+    {
+      "month": "2022-09",
+      "country_code": "VN",
+      "country_name": "베트남",
+      "news_count": 168,
+      "pol_score": 48,
+      "keywords": "규제(24), 관세(12)",
+      "prev_score": 0.0,
+      "score_change": 48.0
+    },
+    {
+      "month": "2022-10",
+      "country_code": "VN",
+      "country_name": "베트남",
+      "news_count": 144,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 48.0,
+      "score_change": -48.0
+    },
+    {
+      "month": "2022-11",
+      "country_code": "VN",
+      "country_name": "베트남",
+      "news_count": 108,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2022-12",
+      "country_code": "VN",
+      "country_name": "베트남",
+      "news_count": 120,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2023-01",
+      "country_code": "VN",
+      "country_name": "베트남",
+      "news_count": 36,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2023-02",
+      "country_code": "VN",
+      "country_name": "베트남",
+      "news_count": 24,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2023-03",
+      "country_code": "VN",
+      "country_name": "베트남",
+      "news_count": 60,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2023-04",
+      "country_code": "VN",
+      "country_name": "베트남",
+      "news_count": 168,
+      "pol_score": 24,
+      "keywords": "긴장(12)",
+      "prev_score": 0.0,
+      "score_change": 24.0
+    },
+    {
+      "month": "2023-05",
+      "country_code": "VN",
+      "country_name": "베트남",
+      "news_count": 120,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 24.0,
+      "score_change": -24.0
+    },
+    {
+      "month": "2023-06",
+      "country_code": "VN",
+      "country_name": "베트남",
+      "news_count": 264,
+      "pol_score": 12,
+      "keywords": "규제(12)",
+      "prev_score": 0.0,
+      "score_change": 12.0
+    },
+    {
+      "month": "2023-07",
+      "country_code": "VN",
+      "country_name": "베트남",
+      "news_count": 192,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 12.0,
+      "score_change": -12.0
+    },
+    {
+      "month": "2023-08",
+      "country_code": "VN",
+      "country_name": "베트남",
+      "news_count": 108,
+      "pol_score": -24,
+      "keywords": "완화(12)",
+      "prev_score": 0.0,
+      "score_change": -24.0
+    },
+    {
+      "month": "2023-09",
+      "country_code": "VN",
+      "country_name": "베트남",
+      "news_count": 60,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": -24.0,
+      "score_change": 24.0
+    },
+    {
+      "month": "2023-10",
+      "country_code": "VN",
+      "country_name": "베트남",
+      "news_count": 264,
+      "pol_score": 0,
+      "keywords": "규제(12), 개선(12)",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2023-11",
+      "country_code": "VN",
+      "country_name": "베트남",
+      "news_count": 96,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2023-12",
+      "country_code": "VN",
+      "country_name": "베트남",
+      "news_count": 216,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2024-01",
+      "country_code": "VN",
+      "country_name": "베트남",
+      "news_count": 140,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2024-02",
+      "country_code": "VN",
+      "country_name": "베트남",
+      "news_count": 40,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2024-03",
+      "country_code": "VN",
+      "country_name": "베트남",
+      "news_count": 200,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2024-04",
+      "country_code": "VN",
+      "country_name": "베트남",
+      "news_count": 220,
+      "pol_score": -20,
+      "keywords": "협력(20)",
+      "prev_score": 0.0,
+      "score_change": -20.0
+    },
+    {
+      "month": "2024-05",
+      "country_code": "VN",
+      "country_name": "베트남",
+      "news_count": 180,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": -20.0,
+      "score_change": 20.0
+    },
+    {
+      "month": "2024-06",
+      "country_code": "VN",
+      "country_name": "베트남",
+      "news_count": 200,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2024-07",
+      "country_code": "VN",
+      "country_name": "베트남",
+      "news_count": 220,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2024-08",
+      "country_code": "VN",
+      "country_name": "베트남",
+      "news_count": 220,
+      "pol_score": -40,
+      "keywords": "협력(40)",
+      "prev_score": 0.0,
+      "score_change": -40.0
+    },
+    {
+      "month": "2024-09",
+      "country_code": "VN",
+      "country_name": "베트남",
+      "news_count": 180,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": -40.0,
+      "score_change": 40.0
+    },
+    {
+      "month": "2024-10",
+      "country_code": "VN",
+      "country_name": "베트남",
+      "news_count": 180,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2024-11",
+      "country_code": "VN",
+      "country_name": "베트남",
+      "news_count": 280,
+      "pol_score": 0,
+      "keywords": "규제(20), 협력(20)",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2024-12",
+      "country_code": "VN",
+      "country_name": "베트남",
+      "news_count": 220,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2025-01",
+      "country_code": "VN",
+      "country_name": "베트남",
+      "news_count": 48,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2025-02",
+      "country_code": "VN",
+      "country_name": "베트남",
+      "news_count": 156,
+      "pol_score": 24,
+      "keywords": "관세(12)",
+      "prev_score": 0.0,
+      "score_change": 24.0
+    },
+    {
+      "month": "2025-03",
+      "country_code": "VN",
+      "country_name": "베트남",
+      "news_count": 180,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 24.0,
+      "score_change": -24.0
+    },
+    {
+      "month": "2025-04",
+      "country_code": "VN",
+      "country_name": "베트남",
+      "news_count": 132,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2025-05",
+      "country_code": "VN",
+      "country_name": "베트남",
+      "news_count": 132,
+      "pol_score": 24,
+      "keywords": "관세(12)",
+      "prev_score": 0.0,
+      "score_change": 24.0
+    },
+    {
+      "month": "2025-06",
+      "country_code": "VN",
+      "country_name": "베트남",
+      "news_count": 144,
+      "pol_score": 84,
+      "keywords": "관세(48), 협력(12)",
+      "prev_score": 24.0,
+      "score_change": 60.0
+    },
+    {
+      "month": "2025-07",
+      "country_code": "VN",
+      "country_name": "베트남",
+      "news_count": 192,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 84.0,
+      "score_change": -84.0
+    },
+    {
+      "month": "2025-08",
+      "country_code": "VN",
+      "country_name": "베트남",
+      "news_count": 144,
+      "pol_score": 24,
+      "keywords": "관세(12)",
+      "prev_score": 0.0,
+      "score_change": 24.0
+    },
+    {
+      "month": "2025-09",
+      "country_code": "VN",
+      "country_name": "베트남",
+      "news_count": 120,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 24.0,
+      "score_change": -24.0
+    },
+    {
+      "month": "2025-10",
+      "country_code": "VN",
+      "country_name": "베트남",
+      "news_count": 108,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2025-11",
+      "country_code": "VN",
+      "country_name": "베트남",
+      "news_count": 144,
+      "pol_score": 12,
+      "keywords": "규제(12)",
+      "prev_score": 0.0,
+      "score_change": 12.0
+    },
+    {
+      "month": "2025-12",
+      "country_code": "VN",
+      "country_name": "베트남",
+      "news_count": 84,
+      "pol_score": 12,
+      "keywords": "수출통제(12), 협정(12)",
+      "prev_score": 12.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2026-01",
+      "country_code": "VN",
+      "country_name": "베트남",
+      "news_count": 24,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 12.0,
+      "score_change": -12.0
+    },
+    {
+      "month": "2026-02",
+      "country_code": "VN",
+      "country_name": "베트남",
+      "news_count": 24,
+      "pol_score": 12,
+      "keywords": "규제(12)",
+      "prev_score": 0.0,
+      "score_change": 12.0
+    },
+    {
+      "month": "2026-03",
+      "country_code": "VN",
+      "country_name": "베트남",
+      "news_count": 96,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 12.0,
+      "score_change": -12.0
+    },
+    {
+      "month": "2026-04",
+      "country_code": "VN",
+      "country_name": "베트남",
+      "news_count": 132,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": 0.0,
+      "score_change": 0.0
+    },
+    {
+      "month": "2026-05",
+      "country_code": "VN",
+      "country_name": "베트남",
+      "news_count": 168,
+      "pol_score": -12,
+      "keywords": "협력(12)",
+      "prev_score": 0.0,
+      "score_change": -12.0
+    },
+    {
+      "month": "2026-06",
+      "country_code": "VN",
+      "country_name": "베트남",
+      "news_count": 160,
+      "pol_score": 0,
+      "keywords": "",
+      "prev_score": -12.0,
+      "score_change": 12.0
+    }
+  ]
+}
