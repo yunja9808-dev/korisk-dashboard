@@ -179,7 +179,7 @@
 
     <div class="section-title" style="margin-top:24px">
       🏭 산업별 차등 리스크 매트릭스
-      <span style="font-size:11px;font-weight:400;margin-left:8px;color:var(--text3)">정책형·수요형·원가형·사이클형 구조 반영</span>
+      <span style="font-size:11px;font-weight:400;margin-left:8px;color:var(--text3)">정책형·수요형·원가형·사이클형 구조 반영 (산업카드 위험점수와는 별도 모델)</span>
     </div>
     <div id="industryMatrixPanel" style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:24px">
       <div class="panel" style="padding:0"><canvas id="industryRadarChart" style="max-height:280px"></canvas></div>
@@ -534,13 +534,15 @@ function renderIndustryMatrix(matrix) {
   if (!detail) return;
   const structureIcon = {'정책형':'⚡','수요형':'📈','원가형':'💰','사이클형':'🔄'};
   const gradeColor = {'🟢 안정':'var(--green)','🟡 주의':'#f59e0b','🔴 위험':'var(--red)'};
-  detail.innerHTML = Object.entries(scores).sort((a,b)=>b[1].total-a[1].total).map(([ind,d]) => {
+  const sortedEntries = Object.entries(scores).sort((a,b)=>b[1].total-a[1].total);
+  detail.innerHTML = sortedEntries.map(([ind,d], idx) => {
     const icon = structureIcon[d.structure]||'●', color = gradeColor[d.grade]||'var(--text)', bar = Math.min(d.total,100);
+    const rank = idx+1;
     return `
       <div style="padding:12px;border-bottom:1px solid var(--border)">
         <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
           <span style="font-weight:600;font-size:14px">${icon} ${ind}</span>
-          <span style="font-size:12px;color:${color};font-weight:600">${d.total.toFixed(1)}점</span>
+          <span style="font-size:12px;color:${color};font-weight:600">매트릭스 ${rank}위</span>
         </div>
         <div style="font-size:11px;color:var(--text3);margin-bottom:6px">${d.structure} | 뉴스:${d.news} ECOS:${d.ecos||'N/A'} 정치:${d.political}</div>
         <div style="height:4px;background:var(--bg3);border-radius:2px">
@@ -727,7 +729,7 @@ function renderIndustryFlow(flowData) {
         <div style="font-size:10px;color:var(--text3);font-weight:600;margin-bottom:6px">리스크 전달 경로</div>
         <div style="display:flex;flex-direction:column;gap:3px;margin-bottom:14px">${flowHtml}</div>
         ${countriesHtml?`<div style="margin-bottom:12px">
-          <div style="font-size:10px;color:var(--text3);font-weight:600;margin-bottom:6px">관련국 통상·외교 리스크</div>
+          <div style="font-size:10px;color:var(--text3);font-weight:600;margin-bottom:6px">관련국 최근 통상 동향 <span style="font-weight:400">(국가 전체 위험도와는 별도 지표)</span></div>
           ${countriesHtml}
         </div>`:''}
         ${indHtml?`<div style="padding-top:8px;border-top:1px solid var(--border)">
