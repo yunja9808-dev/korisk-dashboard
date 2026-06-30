@@ -897,7 +897,7 @@
       ],
       "current_stage": {
         "grade": "🔴",
-        "stage": "미국 통상리스크 모니터링",
+        "stage": "미국발 관세리스크 모니터링",
         "detail": "미국 정치리스크 51점 🔴 위험"
       },
       "countries": [
@@ -951,7 +951,7 @@
       ],
       "current_stage": {
         "grade": "🟡",
-        "stage": "미국 통상리스크 모니터링",
+        "stage": "미국발 관세리스크 모니터링",
         "detail": "미국 정치리스크 51점 🔴 위험"
       },
       "countries": [
@@ -1007,7 +1007,7 @@
     "total_news": 4964,
     "classified_rate": 100.0,
     "countries": 96,
-    "updated": "2026-06-30 21:50",
+    "updated": "2026-06-30 23:25",
     "data_period": "2022.01 ~ 2026.06"
   }
 }
