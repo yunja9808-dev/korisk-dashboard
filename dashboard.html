@@ -154,8 +154,9 @@
 
     <div class="section-title" style="margin-top:24px">AI 실시간 대응전략 추천 <span style="font-size:10px;color:var(--text3);font-weight:400;letter-spacing:0;text-transform:none">(Claude AI 기반)</span></div>
     <div class="panel" style="margin-bottom:24px">
+      <!-- 산업 선택 + 분석 버튼 -->
       <div style="display:flex;align-items:center;gap:16px;margin-bottom:16px;flex-wrap:wrap">
-        <select id="aiIndustrySelect" style="background:var(--bg3);border:1px solid var(--border);color:var(--text);padding:8px 16px;border-radius:8px;font-family:'Noto Sans KR',sans-serif;font-size:13px;cursor:pointer">
+        <select id="aiIndustrySelect" onchange="resetChat()" style="background:var(--bg3);border:1px solid var(--border);color:var(--text);padding:8px 16px;border-radius:8px;font-family:'Noto Sans KR',sans-serif;font-size:13px;cursor:pointer">
           <option value="배터리">🔋 배터리</option>
           <option value="철강">🏗️ 철강</option>
           <option value="자동차">🚗 자동차</option>
@@ -164,7 +165,23 @@
         <button onclick="getAIRecommendation()" style="background:linear-gradient(135deg,var(--accent),var(--accent2));border:none;color:#fff;padding:8px 24px;border-radius:8px;font-family:'Noto Sans KR',sans-serif;font-size:13px;font-weight:700;cursor:pointer">✨ AI 추천 받기</button>
         <span id="aiLoadingBadge" style="display:none;font-size:12px;color:var(--accent)">⏳ Claude AI 분석 중...</span>
       </div>
-      <div id="aiResult" style="min-height:80px;background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:16px;font-size:13px;line-height:1.8;color:var(--text2);white-space:pre-wrap">산업을 선택하고 'AI 추천 받기'를 클릭하면 Claude AI가 현재 리스크 상황을 분석하여 맞춤형 대응전략을 제안합니다.</div>
+
+      <!-- 채팅 영역 -->
+      <div id="chatMessages" style="min-height:120px;max-height:520px;overflow-y:auto;background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:16px;margin-bottom:12px;display:flex;flex-direction:column;gap:12px">
+        <div style="color:var(--text3);font-size:13px;text-align:center;padding:20px 0">
+          산업을 선택하고 'AI 추천 받기'를 클릭하면<br>Claude AI가 현재 리스크 상황을 분석하여 맞춤형 대응전략을 제안합니다.
+        </div>
+      </div>
+
+      <!-- 후속 질문 입력창 (AI 추천 받은 후에만 활성화) -->
+      <div id="chatInputArea" style="display:none;gap:8px;align-items:center">
+        <input id="chatInput" type="text"
+          placeholder="궁금한 점을 질문해보세요. 예) 공급선 다변화를 구체적으로 어떻게 해야 하나요?"
+          style="flex:1;background:var(--bg3);border:1px solid var(--border);color:var(--text);padding:10px 14px;border-radius:8px;font-family:'Noto Sans KR',sans-serif;font-size:13px;outline:none"
+          onkeydown="if(event.key==='Enter')sendChat()"
+        />
+        <button onclick="sendChat()" style="background:linear-gradient(135deg,var(--accent),var(--accent2));border:none;color:#fff;padding:10px 20px;border-radius:8px;font-family:'Noto Sans KR',sans-serif;font-size:13px;font-weight:700;cursor:pointer;white-space:nowrap">전송</button>
+      </div>
     </div>
 
     <div class="section-title" style="margin-top:24px">대응전략 추천</div>
@@ -740,89 +757,357 @@ function renderIndustryFlow(flowData) {
   }).join('');
 }
 
-function buildDiagnosis(industry, scoreData, flowData) {
+// ── Claude API 프롬프트 빌더 ──
+function buildPrompt(industry, scoreData, flowData, supportPrograms) {
+  const d = (flowData && flowData[industry]) || {};
+  const stage = d.current_stage || {};
+  const countries = (d.countries || []).filter(c => c.score > 0).sort((a,b)=>b.score-a.score);
+  const indicators = d.indicators || {};
+  const gradeWord = scoreData.score >= 60 ? '위험' : scoreData.score >= 35 ? '주의' : '안정';
+
+  // 핵심 지표 문자열
+  const indStr = Object.entries(indicators).map(([k,v]) => {
+    const sk = k.replace('수입물가_','').replace('배터리_','').replace('철강_','');
+    return `${sk}: ${v}`;
+  }).join(', ');
+
+  // 관련국 문자열
+  const countryStr = countries.map(c =>
+    `${c.name}(${c.channel} ${c.score}점, 전월比 ${c.change>0?'+':''}${c.change})`
+  ).join(', ') || '없음';
+
+  // 지원사업 목록
+  const spList = supportPrograms && supportPrograms.matched
+    ? supportPrograms.matched.map(p => `- ${p.name} (${p.agency}): ${p.description}`).join('\n')
+    : '없음';
+
+  return `당신은 한국 수출 중소·중견기업을 위한 국제정세 리스크 전문 애널리스트입니다.
+아래 실시간 데이터를 분석하여 구체적인 진단과 대응전략을 제시하세요.
+
+[현재 리스크 데이터]
+산업: ${industry} (${d.type||''})
+종합 리스크 지수: ${scoreData.score}점 (${gradeWord}, 위험기준 60점)
+주요 리스크 유형: ${scoreData.top_risk}
+관련 국제정세 건수: ${scoreData.news_count}건
+현재 단계: ${stage.stage||'정상'}
+핵심 지표: ${indStr}
+관련국 통상 동향: ${countryStr}
+리스크 전달 구조: ${(d.flow||[]).join(' → ')}
+
+[활용 가능한 정부 지원사업]
+${spList}
+
+[답변 형식 - 반드시 아래 구조를 따르세요]
+
+[현재 상황 진단]
+(2~3문장: 핵심 지표 수치를 직접 인용하며 지금 왜 위험한지 설명. 기준값 대비 비교 포함)
+
+━━━ 즉시 대응 전략 ━━━
+① (전략 + 왜 이 전략인지 이유 한 줄)
+② (전략 + 이유)
+③ (전략 + 이유)
+
+━━━ 모니터링 포인트 ━━━
+· (구체적 임계값 기준으로 "~이 되면 ~해야 한다" 형태로 2개)
+
+━━━ 관련 지원사업 ━━━
+(위 지원사업 중 지금 상황에 가장 적합한 1~2개와 활용 이유)
+
+답변은 한국어로, 전문적이지만 중소기업 실무자가 이해할 수 있게 작성하세요.`;
+}
+
+// ── 고품질 폴백 답변 빌더 (API 없을 때) ──
+function buildFallbackAnswer(industry, scoreData, flowData) {
   const d = (flowData && flowData[industry]) || {};
   const stage = d.current_stage || {};
   const countries = (d.countries || []).filter(c => c.score > 0).sort((a,b)=>b.score-a.score);
   const indicators = d.indicators || {};
   const indEntries = Object.entries(indicators);
-
   const topCountry = countries[0];
   const gradeWord = scoreData.score >= 60 ? '위험' : scoreData.score >= 35 ? '주의' : '안정';
+  const baseline = 60;
+  const gap = (scoreData.score - baseline).toFixed(1);
 
-  let sentence = `${industry} 산업 리스크 ${scoreData.score}점(${gradeWord})`;
+  // 핵심 지표 문자열
+  const indStr = indEntries.map(([k,v]) => {
+    const sk = k.replace('수입물가_','').replace('배터리_','').replace('철강_','');
+    return `${sk}(${v})`;
+  }).join(' · ');
 
+  // 국가 발 리스크 설명
+  let countryDesc = '';
   if (topCountry) {
-    const arrowWord = topCountry.change > 10 ? '급등' : topCountry.change > 0 ? '상승' : '하락';
-    sentence += ` — ${topCountry.name} ${topCountry.channel} 통상리스크(${topCountry.score}점, 전월比 ${topCountry.change>0?'+':''}${topCountry.change} ${arrowWord})가`;
+    const arrowWord = topCountry.change > 10 ? '급등' : topCountry.change > 0 ? '상승' : '완화';
+    countryDesc = `${topCountry.name} ${topCountry.channel} 통상리스크가 전월 대비 ${topCountry.change>0?'+':''}${topCountry.change}점 ${arrowWord}하면서`;
   } else {
-    sentence += ` — 국제정세 변화가`;
+    countryDesc = `국제정세 변화가`;
   }
 
-  if (indEntries.length > 0) {
-    const indParts = indEntries.map(([k,v]) => {
-      const shortK = k.replace('수입물가_','').replace('배터리_','').replace('철강_','');
-      return `${shortK} ${v}`;
-    }).join(', ');
-    sentence += ` 원자재가(${indParts})를 거쳐`;
+  // 현재 단계 설명
+  const stageDesc = stage.stage && stage.stage !== '정상'
+    ? `그 영향이 이미 실물 데이터에 나타나고 있습니다. 현재 ${stage.stage} 상태입니다.`
+    : `산업 전반에 영향을 주고 있습니다.`;
+
+  // 전략 사전
+  const STRATEGIES = {
+    "관세리스크":{
+      "반도체":["미국 CHIPS Act 보조금 활용 현지 생산 확대","대중국 수출규제 우회 경로 사전 차단 및 컴플라이언스 강화","EU·일본 등 우방국 중심 수출 포트폴리오 재편"],
+      "배터리":["IRA 세액공제 요건 충족을 위한 북미 생산 확대","유럽 배터리 규정(EU Battery Regulation) 선제 대응","제3국 우회 수출 리스크 관리"],
+      "자동차":["미국 25% 관세 대응 현지 생산 비중 확대","USMCA 원산지 규정 활용 — 부품 조달 구조 개편으로 관세 면제 가능","전기차 전환 가속화로 IRA 보조금 수혜 극대화"],
+      "철강":["미국 232조 관세 면제 협상 및 쿼터 활용","CBAM 대응 탄소 저감 투자","고부가 특수강 중심 제품 전환"]
+    },
+    "원자재리스크":{
+      "반도체":["희토류 대체 소재 R&D 투자","일본·대만 소재 의존도 감소를 위한 국산화","핵심 소재 6개월 이상 비축"],
+      "배터리":["리튬·코발트·니켈 주요 광산 지분 투자","호주·칠레·아르헨티나 공급망 구축","LFP 배터리 전환으로 코발트·니켈 의존도 축소"],
+      "자동차":["희토류 프리 모터 기술 개발","알루미늄·고강도강 경량 소재 조달 안정화","전기차 배터리 소재 자체 조달 능력 확보"],
+      "철강":["철광석 장기계약 비중 확대","수소환원제철 기술 개발","전기로 전환 가속화"]
+    },
+    "수출규제리스크":{
+      "반도체":["미국 EAR 준수 체계 내재화","중국향 첨단 반도체 대안 시장 발굴","동맹국 중심 공급망 재편 참여"],
+      "배터리":["UFLPA 대응 공급망 투명성 확보","배터리 여권(Battery Passport) 선제 준비","ESG 공급망 실사 체계 구축"],
+      "자동차":["이전가격 세무 리스크 관리 강화","현지 인증·규제 사전 대응 체계 구축","자율주행·소프트웨어 수출통제 리스크 점검"],
+      "철강":["반덤핑·상계관세 조사 대응 법무 역량 강화","CBAM 탄소 배출 측정·보고 시스템 구축","세이프가드 발동 선제 모니터링"]
+    },
+    "공급망리스크":{
+      "반도체":["포토레지스트·불화수소 국산화 가속","파운드리 다변화로 생산 리스크 분산","반도체 장비 국산화율 제고"],
+      "배터리":["양극재·음극재 소재 내재화 투자","폐배터리 재활용 핵심광물 순환 체계 구축","복수 소재 공급사 확보"],
+      "자동차":["반도체 등 핵심 부품 장기 공급 계약 체결","Tier 1·2 협력사 재무건전성 모니터링","모듈화 설계로 부품 대체 유연성 확보"],
+      "철강":["철광석 수입국 다변화","전기로 비중 확대","철스크랩 국내 조달 비중 제고"]
+    },
+    "지정학리스크":{
+      "반도체":["미중 기술 패권 대응 이중 공급망 구축","대만 리스크 대비 생산 거점 다변화","Chip4 동맹 참여 강화"],
+      "배터리":["중국산 소재 의존도 단계적 축소","우크라이나 사태 관련 원자재 대안 확보","자원 보유국 정치 불안 대비 복수 공급선 유지"],
+      "자동차":["러시아·중동 시장 대안 수출 시장 발굴","지정학 갈등 지역 생산 거점 리스크 평가","분쟁 관련 물류 경로 대안 확보"],
+      "철강":["우크라이나 전쟁 관련 원료 조달 대안 확보","중동 물류 리스크 대비 우회 경로 확보","지정학 불안 국가 수출 채권 보험 가입"]
+    }
+  };
+
+  const STRATEGY_REASON = {
+    "관세리스크":["관세 부담을 내재화하는 가장 확실한 방법입니다.","2차 제재 리스크를 사전에 차단합니다.","미중 갈등의 중립지대를 확보하는 전략입니다."],
+    "원자재리스크":["가격 변동성을 직접 헤지할 수 있습니다.","공급 지역 다변화로 단일 의존 리스크를 줄입니다.","원가 구조를 근본적으로 개선하는 방법입니다."],
+    "수출규제리스크":["규제 위반 시 수출금지 처분을 예방합니다.","대체 시장을 선제적으로 확보합니다.","규제 리스크와 기업 이미지를 동시에 관리합니다."],
+    "공급망리스크":["공급망 내재화로 외부 충격을 흡수합니다.","공급망 내 약한 고리를 조기에 파악합니다.","특정 부품 공급 차질 시 신속하게 대응할 수 있습니다."],
+    "지정학리스크":["양쪽 진영 모두에 대응 가능한 구조를 만듭니다.","유사시 대체 거점을 미리 확보합니다.","공급망 안정화와 기술 협력을 동시에 확보합니다."]
+  };
+
+  const SUPPORT_PROGRAMS = {
+    "관세리스크": "FTA 활용 지원 (산업부·KOTRA · ftahub.go.kr)\n   → FTA 원산지 증명으로 관세 절감 즉시 가능, 지금 바로 신청해보세요.\n무역보험 단기수출보험 (무역보험공사 · ksure.or.kr)\n   → 관세 부과에 따른 수출 피해를 보전합니다.",
+    "원자재리스크": "수출바우처 사업 (KOTRA · exportvoucher.com)\n   → 원자재 대체 공급처 발굴 컨설팅 비용을 지원합니다. 공급망 다변화를 추진 중이라면 지금 바로 신청해보세요.\n해외투자보험 (무역보험공사 · ksure.or.kr)\n   → 광산·생산기지 투자 시 손실을 보전합니다. 광산 지분 투자를 검토 중이라면 이 보험을 먼저 확인해두세요.",
+    "수출규제리스크": "FTA 활용 지원 (산업부·KOTRA)\n   → 규제 우회 수출경로 컨설팅을 받을 수 있습니다.\n수출바우처 사업 (KOTRA)\n   → 대체 시장 발굴 및 인증 취득 비용을 지원합니다.",
+    "공급망리스크": "해외시장 다변화 지원 (KOTRA · kotra.or.kr)\n   → 신규 공급처 발굴 및 시장 다변화를 지원합니다.\n수출바우처 사업 (KOTRA)\n   → 공급망 재편 컨설팅 비용을 지원합니다.",
+    "지정학리스크": "해외투자보험 (무역보험공사 · ksure.or.kr)\n   → 지정학 불안 지역 해외투자 손실을 보전합니다.\n무역보험 단기수출보험\n   → 분쟁 지역 수출 대금 미회수 리스크를 헤지합니다."
+  };
+
+  const topRisk = scoreData.top_risk;
+  const specific = (STRATEGIES[topRisk]?.[industry] || STRATEGIES["관세리스크"][industry] || []);
+  const reasons  = (STRATEGY_REASON[topRisk] || STRATEGY_REASON["관세리스크"]);
+  const supportInfo = SUPPORT_PROGRAMS[topRisk] || SUPPORT_PROGRAMS["관세리스크"];
+
+  // 모니터링 포인트
+  const monitorLines = [];
+  indEntries.forEach(([k,v]) => {
+    const sk = k.replace('수입물가_','').replace('배터리_','').replace('철강_','');
+    const val = parseFloat(v);
+    const threshold = (val * 1.1).toFixed(1);
+    const pct = 10;
+    monitorLines.push(`${sk} ${threshold} 돌파 시\n   → 공급망 긴급 점검 타이밍입니다. 현재(${v})에서 ${pct}% 더 오르면 도달합니다.`);
+  });
+  if (monitorLines.length === 0) {
+    monitorLines.push(`${scoreData.top_risk} 지속 상승 시\n   → 대응 전략을 즉시 실행해야 합니다.`);
+    monitorLines.push(`리스크 지수 80점 초과 시\n   → 긴급 대응 체계를 가동하세요.`);
   }
 
-  if (stage.stage && stage.stage !== '정상') {
-    sentence += ` ${stage.stage}으로 이어지고 있습니다.`;
-  } else {
-    sentence += ` 산업 전반에 영향을 주고 있습니다.`;
+  return `${industry} 산업 현황을 분석했습니다.
+
+리스크 지수 ${scoreData.score}점 — 위험 기준선(${baseline}점)을 ${gap}점 초과한 ${gradeWord} 상태입니다.
+
+지금 가장 주목해야 할 신호는 ${scoreData.top_risk}입니다.
+${countryDesc} 핵심 지표(${indStr})에 이미 반영되고 있습니다.
+${stageDesc}
+
+${scoreData.score >= 80
+  ? '과거 패턴상 이 수준의 리스크는 빠르게 수출 실적에 영향을 줬습니다. 지금이 선제적으로 움직여야 할 타이밍입니다.'
+  : scoreData.score >= 60
+  ? '과거 패턴을 보면 이 수준에서 2~3개월 후 수출 변화로 이어진 경우가 많았습니다. 지금이 선제 대응 타이밍입니다.'
+  : '아직 위험 기준선 아래지만, 추이를 면밀히 주시해야 합니다.'}
+
+
+▶ 지금 바로 취할 수 있는 행동
+
+① ${specific[0]||'수출국 다변화를 검토하세요'}
+   ${reasons[0]||''}
+
+② ${specific[1]||'무역보험을 활용하세요'}
+   ${reasons[1]||''}
+
+③ ${specific[2]||'공급망 모니터링 체계를 강화하세요'}
+   ${reasons[2]||''}
+
+
+⚠️ 이 수치를 계속 주시하세요
+
+${monitorLines.slice(0,2).join('\n\n')}
+
+
+🔗 지금 활용 가능한 지원사업
+
+${supportInfo}`;
+}
+
+function buildDiagnosis(industry, scoreData, flowData) {
+  return buildFallbackAnswer(industry, scoreData, flowData);
+}
+
+
+// ── 채팅 상태 ──
+let chatHistory = [];
+let currentIndustry = null;
+let currentScoreData = null;
+let currentFlowData = null;
+
+function resetChat() {
+  chatHistory = [];
+  const msgs = document.getElementById('chatMessages');
+  if (msgs) msgs.innerHTML = `<div style="color:var(--text3);font-size:13px;text-align:center;padding:20px 0">
+    산업을 선택하고 'AI 추천 받기'를 클릭하면<br>Claude AI가 현재 리스크 상황을 분석하여 맞춤형 대응전략을 제안합니다.
+  </div>`;
+  const inputArea = document.getElementById('chatInputArea');
+  if (inputArea) inputArea.style.display = 'none';
+}
+
+function addChatMessage(role, text, typing=false) {
+  const msgs = document.getElementById('chatMessages');
+  if (!msgs) return;
+  // 첫 메시지면 안내 텍스트 제거
+  const placeholder = msgs.querySelector('div[style*="text-align:center"]');
+  if (placeholder) placeholder.remove();
+
+  const isAI = role === 'ai';
+  const bubble = document.createElement('div');
+  bubble.style.cssText = `display:flex;flex-direction:column;gap:4px;align-items:${isAI?'flex-start':'flex-end'}`;
+  bubble.innerHTML = `
+    <div style="font-size:10px;color:var(--text3);${isAI?'':'text-align:right'}">${isAI?'⚡ KoRisk AI':''}</div>
+    <div id="bubble-${Date.now()}" style="max-width:90%;padding:12px 16px;border-radius:${isAI?'4px 12px 12px 12px':'12px 4px 12px 12px'};background:${isAI?'var(--bg2)':'linear-gradient(135deg,var(--accent),var(--accent2))'};color:${isAI?'var(--text)':'#fff'};font-size:13px;line-height:1.8;white-space:pre-wrap;border:${isAI?'1px solid var(--border)':'none'}">${typing?'':escapeHtml(text)}</div>`;
+  msgs.appendChild(bubble);
+  msgs.scrollTop = msgs.scrollHeight;
+
+  if (typing) {
+    const bubbleEl = bubble.querySelector('[id^="bubble-"]');
+    let i = 0;
+    const interval = setInterval(() => {
+      if (i < text.length) { bubbleEl.textContent += text[i++]; msgs.scrollTop = msgs.scrollHeight; }
+      else clearInterval(interval);
+    }, 10);
   }
+  return bubble;
+}
 
-  const newsLine = `최근 ${scoreData.news_count}건의 국제정세 데이터에서 ${scoreData.top_risk}가 가장 두드러지며, `
-    + (scoreData.score >= 80 ? '즉각적인 대응 조치가 필요한 위험 수준입니다.'
-      : scoreData.score >= 60 ? '단기 내 대응이 필요한 위험 수준입니다.'
-      : scoreData.score >= 35 ? '지속적인 모니터링이 필요한 주의 수준입니다.'
-      : '안정적인 수준이나 추이를 계속 지켜볼 필요가 있습니다.');
+function escapeHtml(text) {
+  return text.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
 
-  return sentence + '\n' + newsLine;
+function addLoadingBubble() {
+  const msgs = document.getElementById('chatMessages');
+  if (!msgs) return null;
+  const bubble = document.createElement('div');
+  bubble.id = 'loadingBubble';
+  bubble.style.cssText = 'display:flex;flex-direction:column;gap:4px;align-items:flex-start';
+  bubble.innerHTML = `
+    <div style="font-size:10px;color:var(--text3)">⚡ KoRisk AI</div>
+    <div style="padding:12px 16px;border-radius:4px 12px 12px 12px;background:var(--bg2);border:1px solid var(--border);color:var(--text3);font-size:13px">
+      <span style="animation:pulse 1.5s infinite">분석 중...</span>
+    </div>`;
+  msgs.appendChild(bubble);
+  msgs.scrollTop = msgs.scrollHeight;
+  return bubble;
 }
 
 function getAIRecommendation() {
   const industry  = document.getElementById('aiIndustrySelect').value;
-  const resultEl  = document.getElementById('aiResult');
   const loadingEl = document.getElementById('aiLoadingBadge');
   const scoreData = window._dashboardData?.scores?.[industry];
   const flowData  = window._dashboardData?.industry_flow;
-  if (!scoreData) { resultEl.textContent = '데이터를 먼저 로드해주세요.'; return; }
-  const STRATEGIES = {
-    "관세리스크":{"반도체":["미국 CHIPS Act 보조금 활용 현지 생산 확대","대중국 수출규제 우회 경로 사전 차단 및 컴플라이언스 강화","EU·일본 등 우방국 중심 수출 포트폴리오 재편"],"배터리":["IRA 세액공제 요건 충족을 위한 북미 생산 확대","유럽 배터리 규정(EU Battery Regulation) 선제 대응","관세 우회 목적 제3국 우회 수출 리스크 관리"],"자동차":["미국 25% 자동차 관세 대응 현지 생산 비중 확대","멕시코·캐나다 USMCA 원산지 규정 활용","전기차 전환 가속화로 IRA 보조금 수혜 극대화"],"철강":["미국 232조 관세 면제 협상 및 쿼터 활용","CBAM(탄소국경조정제도) 대응 탄소 저감 투자","고부가 특수강 중심으로 제품 포트폴리오 전환"]},
-    "원자재리스크":{"반도체":["희토류 대체 소재 R&D 투자 확대","일본·대만 소재 의존도 감소를 위한 국산화","핵심 소재 비축량 6개월 이상 유지"],"배터리":["리튬·코발트·니켈 주요 광산 지분 투자","호주·칠레·아르헨티나 리튬 삼각지대 공급망 구축","LFP(리튬인산철) 배터리 전환으로 코발트 의존도 축소"],"자동차":["희토류 프리 모터 기술 개발로 의존도 감소","알루미늄·고강도강 등 경량 소재 조달 안정화","전기차 배터리 소재 자체 조달 능력 확보"],"철강":["철광석 장기계약 비중 확대 (스팟 구매 축소)","수소환원제철 기술 개발로 원료탄 의존도 감소","전기로 전환 가속화로 철광석 투입 감소"]},
-    "수출규제리스크":{"반도체":["미국 EAR(수출관리규정) 준수 체계 내재화","중국향 첨단 반도체 수출 대안 시장 발굴","동맹국 중심 반도체 공급망 재편 참여"],"배터리":["강제노동 방지법(UFLPA) 대응 공급망 투명성 확보","배터리 여권(Battery Passport) 도입 선제 준비","ESG 기준 공급망 실사 체계 구축"],"자동차":["이전가격 세무 리스크 관리 강화","현지 인증·규제 사전 대응 체계 구축","자율주행·소프트웨어 수출통제 리스크 점검"],"철강":["반덤핑·상계관세 조사 대응 법무 역량 강화","CBAM 탄소 배출량 측정·보고 시스템 구축","세이프가드 발동 선제 모니터링 체계 운영"]},
-    "공급망리스크":{"반도체":["첨단 소재 국산화 가속 (포토레지스트·불화수소)","TSMC·삼성 등 파운드리 다변화로 생산 리스크 분산","반도체 장비 국산화율 제고"],"배터리":["배터리 소재 내재화 투자 (양극재·음극재)","폐배터리 재활용을 통한 핵심광물 순환 체계 구축","복수 소재 공급사 확보로 단일 의존 탈피"],"자동차":["반도체 등 핵심 부품 장기 공급 계약 체결","Tier 1·2 협력사 재무건전성 모니터링 강화","모듈화 설계로 부품 대체 유연성 확보"],"철강":["철광석 수입국 다변화 (호주·브라질 외 대안 확보)","전기로 비중 확대로 철광석 의존도 감소","철스크랩 국내 조달 비중 제고"]},
-    "지정학리스크":{"반도체":["미중 기술 패권 경쟁 대응 이중 공급망 구축","대만 리스크 대비 생산 거점 다변화","Chip4 동맹 참여 강화로 공급망 안정화"],"배터리":["중국산 배터리 소재 의존도 단계적 축소","우크라이나 사태 관련 원자재 수급 대안 확보","자원 보유국 정치 불안 대비 복수 공급선 유지"],"자동차":["러시아·중동 시장 대안 수출 시장 발굴","지정학 갈등 지역 생산 거점 리스크 평가","전쟁·분쟁 관련 물류 경로 대안 확보"],"철강":["우크라이나 전쟁 관련 원료 조달 대안 확보","중동 지역 물류 리스크 대비 우회 경로 확보","지정학 불안 국가 수출 채권 보험 가입"]},
-  };
-  const COMMON = ["FTA 활용 수출국 다변화로 리스크 부담 최소화","무역보험공사 수출보험 활용으로 리스크 헤지","공급망 실시간 모니터링 시스템 구축"];
-  const topRisk   = scoreData.top_risk;
-  const specific  = (STRATEGIES[topRisk]?.[industry] || STRATEGIES["관세리스크"][industry] || []);
-  const diagnosis = buildDiagnosis(industry, scoreData, flowData);
-  const text = `[현재 상황 진단]
-${diagnosis}
+  const supportPrograms = window._supportData || null;
+  if (!scoreData) return;
 
-━━━ 기업 대응전략 ━━━
-① ${specific[0]||COMMON[0]}
-② ${specific[1]||COMMON[1]}
-③ ${specific[2]||COMMON[2]}
+  currentIndustry = industry;
+  currentScoreData = scoreData;
+  currentFlowData = flowData;
+  chatHistory = [];
+  resetChat();
 
-━━━ 공통 대응 방향 ━━━
-· ${COMMON[0]}
-· ${COMMON[1]}
-· ${COMMON[2]}`;
   loadingEl.style.display = 'inline';
-  resultEl.textContent = '';
-  resultEl.style.color = 'var(--text)';
-  setTimeout(() => {
+  const loadingBubble = addLoadingBubble();
+  const prompt = buildPrompt(industry, scoreData, flowData, supportPrograms);
+
+  fetch('/api/claude', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({ messages: [{ role: 'user', content: prompt }] })
+  })
+  .then(r => { if (!r.ok) throw new Error('no server'); return r.json(); })
+  .then(data => {
     loadingEl.style.display = 'none';
-    let i = 0;
-    const typing = setInterval(() => {
-      if (i < text.length) { resultEl.textContent += text[i++]; } else { clearInterval(typing); }
-    }, 12);
-  }, 800);
+    if (loadingBubble) loadingBubble.remove();
+    const text = data.content?.[0]?.text || buildFallbackAnswer(industry, scoreData, flowData);
+    chatHistory.push({ role: 'user', content: prompt });
+    chatHistory.push({ role: 'assistant', content: text });
+    addChatMessage('ai', text, true);
+    document.getElementById('chatInputArea').style.display = 'flex';
+  })
+  .catch(() => {
+    loadingEl.style.display = 'none';
+    if (loadingBubble) loadingBubble.remove();
+    const text = buildFallbackAnswer(industry, scoreData, flowData);
+    chatHistory.push({ role: 'user', content: prompt });
+    chatHistory.push({ role: 'assistant', content: text });
+    addChatMessage('ai', text, true);
+    document.getElementById('chatInputArea').style.display = 'flex';
+  });
 }
+
+function sendChat() {
+  const input = document.getElementById('chatInput');
+  const question = input.value.trim();
+  if (!question) return;
+  input.value = '';
+
+  // 사용자 말풍선
+  addChatMessage('user', question);
+  chatHistory.push({ role: 'user', content: question });
+
+  const loadingBubble = addLoadingBubble();
+
+  // 컨텍스트 포함 메시지 구성
+  const contextMsg = `[현재 분석 중인 산업: ${currentIndustry}, 리스크 지수: ${currentScoreData?.score}점, 주요 리스크: ${currentScoreData?.top_risk}]
+위 KoRisk 리스크 분석 결과를 바탕으로 사용자 질문에 답변해주세요. 한국어로, 중소·중견 수출기업 실무자 눈높이에 맞게, 간결하고 구체적으로 답변하세요.
+
+사용자 질문: ${question}`;
+
+  const messages = [
+    ...chatHistory.slice(0, -1), // 마지막 user 메시지 제외 (아래서 contextMsg로 대체)
+    { role: 'user', content: contextMsg }
+  ];
+
+  fetch('/api/claude', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({ messages })
+  })
+  .then(r => { if (!r.ok) throw new Error('no server'); return r.json(); })
+  .then(data => {
+    if (loadingBubble) loadingBubble.remove();
+    const answer = data.content?.[0]?.text || '죄송합니다, 잠시 후 다시 질문해주세요.';
+    chatHistory.push({ role: 'assistant', content: answer });
+    addChatMessage('ai', answer, true);
+  })
+  .catch(() => {
+    if (loadingBubble) loadingBubble.remove();
+    const fallback = `현재 AI 서버에 연결할 수 없습니다.\n로컬 시연 환경에서는 python dashboard/api_server.py 실행 후 이용해주세요.`;
+    addChatMessage('ai', fallback);
+  });
+}
+
 
 function renderPredictions(predictions, scores) {
   if (!predictions) return;
@@ -952,7 +1237,10 @@ fetch('dashboard_data.json')
       renderEarlyWarning(ew);
       renderAlert(data.scores, data.stats, ew);
     }).catch(()=>{});
-    fetch('support_programs.json').then(r=>r.json()).then(renderSupportPrograms).catch(()=>{});
+    fetch('support_programs.json').then(r=>r.json()).then(sp => {
+      window._supportData = sp;
+      renderSupportPrograms(sp);
+    }).catch(()=>{});
     fetch('industry_risk_matrix.json').then(r=>r.json()).then(renderIndustryMatrix).catch(()=>{});
     try { renderIndustryFlow(data.industry_flow); } catch(e) { console.error('flow error:', e); }
     fetch('political_risk.json').then(r=>r.json()).then(renderCountryRisk).catch(()=>{});
