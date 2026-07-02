@@ -248,6 +248,22 @@
     </div>
     <div class="panel" style="margin-bottom:24px"><canvas id="capacityChart" style="max-height:200px"></canvas></div>
 
+    <!-- 지역 산업 영향 모니터링 -->
+    <div class="section-title" style="margin-top:24px">
+      🗺️ 지역 산업 영향 모니터링
+      <span style="font-size:10px;color:var(--text3);font-weight:400;letter-spacing:0;text-transform:none">관세청 시도별 수출 데이터 × KoRisk 리스크 지수 연관성 분석 (66개월 실측)</span>
+    </div>
+    <div class="panel" style="margin-bottom:24px">
+      <div style="font-size:12px;color:var(--text2);margin-bottom:16px;padding:10px 14px;background:rgba(99,102,241,0.08);border-radius:8px;border-left:3px solid var(--accent)">
+        📌 2022~2026년 미중 무역전쟁 기간, <strong>관세리스크</strong>는 4개 산업 모두의 공통 선행지표로 작용했습니다.
+        KoRisk가 관세리스크를 감지하면, 실제 지역 클러스터 수출에 <strong>선행하여</strong> 변화가 나타납니다.
+      </div>
+      <div id="regionAnalysisPanel" style="display:grid;grid-template-columns:1fr 1fr;gap:12px"></div>
+      <div style="font-size:10px;color:var(--text3);margin-top:12px;text-align:right">
+        ※ 상관관계 분석 기반 (인과관계 아님) · 관세청 시도별 품목별 수출입실적 공공데이터 활용
+      </div>
+    </div>
+
     <div class="section-title" style="margin-top:24px">
       🔄 리스크 전이 분석
     </div>
@@ -804,6 +820,49 @@ function renderCapacityChart(dashData) {
     },
     options:{responsive:true,maintainAspectRatio:false,scales:{x:{ticks:{color:'var(--text3)',font:{size:10}},grid:{color:'rgba(255,255,255,0.05)'}},y:{ticks:{color:'var(--text3)',font:{size:10}},grid:{color:'rgba(255,255,255,0.05)'},min:50,max:110}},plugins:{legend:{labels:{color:'var(--text2)',font:{size:11}}}}}
   });
+}
+
+function renderRegionAnalysis(data) {
+  const panel = document.getElementById('regionAnalysisPanel');
+  if (!panel || !data) return;
+
+  const INDUSTRY_ICON = {'배터리':'💰','철강':'🔄','자동차':'📈','반도체':'⚡'};
+  const INDUSTRY_COLOR = {'배터리':'var(--red)','철강':'var(--red)','자동차':'var(--red)','반도체':'#f59e0b'};
+
+  panel.innerHTML = Object.entries(data).map(([industry, d]) => {
+    const icon = INDUSTRY_ICON[industry] || '●';
+    const color = INDUSTRY_COLOR[industry] || 'var(--accent)';
+    const barPct = Math.min(d.r_pct, 100);
+    const lagText = d.lag === 0 ? '즉각 반응' : `${d.lag}개월 후 반응`;
+
+    return `
+      <div style="padding:14px;background:var(--bg3);border-radius:10px;border:1px solid var(--border)">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
+          <span style="font-weight:700;font-size:13px">${icon} ${industry}</span>
+          <span style="font-size:11px;color:var(--text3);background:var(--bg2);padding:2px 8px;border-radius:4px">${lagText}</span>
+        </div>
+        <div style="font-size:11px;color:var(--accent);margin-bottom:8px;font-weight:600">
+          📍 ${d.cluster}
+        </div>
+        <div style="font-size:12px;color:var(--text2);margin-bottom:10px;line-height:1.6">
+          ${d.description}
+        </div>
+        <div style="display:flex;align-items:center;gap:8px">
+          <div style="flex:1;height:5px;background:var(--bg2);border-radius:3px;overflow:hidden">
+            <div style="height:5px;width:0%;background:${color};border-radius:3px;transition:width 1s ease"
+                 data-width="${barPct}"></div>
+          </div>
+          <span style="font-size:12px;font-weight:700;color:${color};white-space:nowrap">연관성 ${d.r_pct}%</span>
+        </div>
+      </div>`;
+  }).join('');
+
+  // 막대 애니메이션
+  setTimeout(() => {
+    panel.querySelectorAll('[data-width]').forEach(el => {
+      el.style.width = el.getAttribute('data-width') + '%';
+    });
+  }, 300);
 }
 
 function renderSpillover(sp) {
@@ -1496,6 +1555,10 @@ fetch('dashboard_data.json')
     renderStrategies(data.strategies);
     renderPredictions(data.predictions, data.scores);
     window._dashboardData = data;
+    // 지역 산업 영향 모니터링
+    if (data.region_analysis && Object.keys(data.region_analysis).length > 0) {
+      renderRegionAnalysis(data.region_analysis);
+    }
     fetch('early_warning.json').then(r=>r.json()).then(ew => {
       window._ewData = ew;
       renderEarlyWarning(ew);
