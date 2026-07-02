@@ -488,7 +488,7 @@
       "risk": "원자재리스크"
     },
     {
-      "title": "앞으로의 5년, 한-일 휴머노이드 공급망 구축의 골든타임",
+      "title": "향후 5년, 한-일 휴머노이드 공급망 구축의 골든타임",
       "date": "2026-06-29",
       "country": "일본",
       "risk": "공급망리스크"
@@ -794,10 +794,10 @@
           "name": "인도네시아",
           "role": "니켈 공급",
           "channel": "원자재",
-          "score": 14.0,
-          "change": 14.0,
+          "score": 15.0,
+          "change": 15.0,
           "grade": "🟢",
-          "keywords": "제한(14)"
+          "keywords": "제한(15)"
         },
         {
           "code": "CL",
@@ -848,10 +848,10 @@
           "name": "호주",
           "role": "철광석 공급",
           "channel": "원자재",
-          "score": 28.0,
-          "change": 84.0,
+          "score": 30.0,
+          "change": 90.0,
           "grade": "🟢",
-          "keywords": "분쟁(14)"
+          "keywords": "분쟁(15)"
         },
         {
           "code": "BR",
@@ -912,10 +912,10 @@
           "name": "미국",
           "role": "최대 수출시장",
           "channel": "관세",
-          "score": 28.0,
-          "change": -28.0,
+          "score": 30.0,
+          "change": -30.0,
           "grade": "🟢",
-          "keywords": "관세(14), 규제(14), 개선(14)"
+          "keywords": "관세(15), 규제(15), 개선(15)"
         },
         {
           "code": "MX",
@@ -923,7 +923,7 @@
           "role": "USMCA 생산기지",
           "channel": "공급망",
           "score": 0.0,
-          "change": -14.0,
+          "change": -15.0,
           "grade": "🟢",
           "keywords": ""
         },
@@ -932,10 +932,10 @@
           "name": "독일",
           "role": "EU 경쟁국",
           "channel": "수출규제",
-          "score": 14.0,
-          "change": 14.0,
+          "score": 15.0,
+          "change": 15.0,
           "grade": "🟢",
-          "keywords": "규제(14), 제한(14), 협력(14)"
+          "keywords": "규제(15), 제한(15), 협력(15)"
         }
       ],
       "indicators": {
@@ -966,20 +966,20 @@
           "name": "미국",
           "role": "규제 주체",
           "channel": "수출규제",
-          "score": 28.0,
-          "change": -28.0,
+          "score": 30.0,
+          "change": -30.0,
           "grade": "🟢",
-          "keywords": "관세(14), 규제(14), 개선(14)"
+          "keywords": "관세(15), 규제(15), 개선(15)"
         },
         {
           "code": "NL",
           "name": "네덜란드",
           "role": "ASML 장비",
           "channel": "공급망",
-          "score": 14.0,
-          "change": 14.0,
+          "score": 15.0,
+          "change": 15.0,
           "grade": "🟢",
-          "keywords": "규제(14)"
+          "keywords": "규제(15)"
         },
         {
           "code": "CN",
@@ -1013,7 +1013,7 @@
     "total_news": 4966,
     "classified_rate": 100.0,
     "countries": 96,
-    "updated": "2026-07-01 18:49",
+    "updated": "2026-07-02 16:37",
     "data_period": "2022.01 ~ 2026.06"
   }
 }
