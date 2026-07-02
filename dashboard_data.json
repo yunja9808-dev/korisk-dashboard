@@ -1013,7 +1013,37 @@
     "total_news": 4966,
     "classified_rate": 100.0,
     "countries": 96,
-    "updated": "2026-07-02 21:01",
+    "updated": "2026-07-03 03:15",
     "data_period": "2022.01 ~ 2026.06"
+  },
+  "region_analysis": {
+    "배터리": {
+      "cluster": "충북 오창·충남 천안",
+      "r_pct": 55.7,
+      "lag": 12,
+      "risk_col": "관세리스크",
+      "description": "관세리스크 감지 → 12개월 후 배터리 가동률 하락"
+    },
+    "철강": {
+      "cluster": "경북 포항·전남 광양",
+      "r_pct": 65.3,
+      "lag": 6,
+      "risk_col": "관세리스크",
+      "description": "관세리스크 감지 → 6개월 후 경북 수출 감소"
+    },
+    "자동차": {
+      "cluster": "울산·경기 평택",
+      "r_pct": 78.4,
+      "lag": 6,
+      "risk_col": "관세리스크",
+      "description": "관세리스크 감지 → 6개월 내 선수출 급증 후 감소"
+    },
+    "반도체": {
+      "cluster": "경기 용인·평택·충남 천안",
+      "r_pct": 48.5,
+      "lag": 3,
+      "risk_col": "관세리스크",
+      "description": "관세리스크 감지 → 3개월 후 충남 수출 감소"
+    }
   }
 }
