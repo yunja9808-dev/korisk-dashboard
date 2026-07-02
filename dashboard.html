@@ -195,8 +195,8 @@
     <!-- ════════ 3막: 무엇을 근거로 하는가 ════════ -->
 
     <div class="section-title" style="margin-top:24px">
-      🏭 산업별 차등 리스크 매트릭스
-      <span style="font-size:11px;font-weight:400;margin-left:8px;color:var(--text3)">정책형·수요형·원가형·사이클형 구조 반영 (산업카드 위험점수와는 별도 모델)</span>
+      🏭 산업별 리스크 민감도 분석
+      <span style="font-size:11px;font-weight:400;margin-left:8px;color:var(--text3)">정책형·수요형·원가형·사이클형 구조 반영 (막대는 4개 산업 간 상대적 민감도 비교)</span>
     </div>
     <div id="industryMatrixPanel" style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:24px">
       <div class="panel" style="padding:0"><canvas id="industryRadarChart" style="max-height:280px"></canvas></div>
@@ -455,11 +455,20 @@ function cleanMsg(msg) {
     ['브라질 연방 공화국', '브라질'],
     ['호주(Commonw', '호주'],
     ['네덜란드(The K', '네덜란드'],
+    ['일본(Japan)', '일본'],
+    ['Japan', '일본'],
     ['PPI_열연강판', '철강 생산자물가'],
     ['PPI_니켈', '니켈 생산자물가'],
     ['국제구리가격', '국제 구리 가격'],
     ['국제유가_Dubai', '두바이 유가'],
     ['미국산업생산', '미국 산업생산지수'],
+    ['환율_원달러', '원/달러 환율'],
+    ['수입물가_니켈괴', '니켈 수입물가'],
+    ['수입물가_흑연', '흑연 수입물가'],
+    ['수입물가_철광석', '철광석 수입물가'],
+    ['수입물가_유연탄', '유연탄 수입물가'],
+    ['배터리_가동률', '배터리 가동률'],
+    ['철강_생산능력', '철강 생산능력'],
     ['철강 철강', '철강'],
     ['배터리 배터리', '배터리'],
   ];
@@ -530,19 +539,147 @@ function renderSupportPrograms(sp) {
     panel.innerHTML = '<div style="color:var(--text3);font-size:13px">매칭된 지원사업 없음</div>';
     return;
   }
-  const urgencyIcon = {'즉시':'🔴','단기':'🟡','중기':'🔵'};
-  panel.innerHTML = sp.matched.map(p => `
-    <div style="padding:10px 0;border-bottom:1px solid var(--border)">
-      <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px">
-        <span>${urgencyIcon[p.urgency]||'📋'}</span>
-        <span style="font-size:13px;font-weight:600;color:var(--text)">${p.name}</span>
-        <span style="font-size:11px;padding:2px 8px;border-radius:4px;background:var(--bg3);color:var(--text3)">${p.urgency}</span>
+
+  // B: 현재 리스크 상황 기반 맥락 문구
+  const RISK_CONTEXT = {
+    '수출바우처 사업': {
+      '관세리스크': '현재 관세 리스크가 높습니다. 수출 시장 다변화와 해외 마케팅 비용을 지원받아 관세 부담을 분산하세요.',
+      '원자재리스크': '원자재 공급 리스크가 높습니다. 대체 공급처 발굴 컨설팅 비용을 바우처로 지원받으세요.',
+      '수출규제리스크': '수출규제 리스크가 높습니다. 대체 시장 발굴과 인증 취득 비용을 지원받으세요.',
+      '공급망리스크': '공급망 리스크가 높습니다. 공급망 재편 컨설팅 비용을 바우처로 지원받으세요.',
+      '지정학리스크': '지정학 리스크가 높습니다. 신시장 진출 컨설팅 비용을 지원받아 수출 다변화를 추진하세요.',
+    },
+    '무역보험 (단기수출보험)': {
+      '관세리스크': '관세 부과로 인한 수출 손실이 발생할 수 있습니다. 지금 바로 수출보험으로 헤지하세요.',
+      '원자재리스크': '원가 상승으로 수출 채산성이 악화될 수 있습니다. 수출보험으로 손실을 선제 헤지하세요.',
+      '수출규제리스크': '수출 제한으로 인한 대금 미회수 리스크가 있습니다. 수출보험으로 즉시 보전하세요.',
+      '공급망리스크': '공급 차질로 인한 납기 지연 리스크가 있습니다. 수출보험으로 손실을 방어하세요.',
+      '지정학리스크': '분쟁 지역 수출 대금 미회수 리스크가 있습니다. 지금 바로 수출보험에 가입하세요.',
+    },
+    'FTA 활용 지원': {
+      '관세리스크': '현재 가장 빠른 관세 절감 방법입니다. FTA 원산지 증명으로 관세를 즉시 줄이세요.',
+      '수출규제리스크': '규제 우회 수출 경로 컨설팅을 받을 수 있습니다. FTA 활용 전략을 지금 수립하세요.',
+      '공급망리스크': '공급망 재편 시 FTA 원산지 기준을 미리 확인하세요.',
+      '지정학리스크': '지정학 리스크 지역 대신 FTA 체결국으로 수출 전환을 검토하세요.',
+      '원자재리스크': 'FTA 활용으로 원자재 수입 관세를 절감해 원가 상승 부담을 줄이세요.',
+    },
+    '해외시장 다변화 지원': {
+      '관세리스크': '미국 관세 의존도를 줄이고 신흥시장으로 다변화할 타이밍입니다.',
+      '지정학리스크': '지정학 불안 지역 의존도를 줄이고 안정적인 수출 시장을 확보하세요.',
+      '수출규제리스크': '규제 리스크가 낮은 신흥시장을 발굴해 수출 포트폴리오를 재편하세요.',
+      '원자재리스크': '원자재 조달 국가를 다변화할 컨설팅을 지원받으세요.',
+      '공급망리스크': '공급망 재편에 맞춰 신규 판로 개척 지원을 받으세요.',
+    },
+    '해외투자 보험': {
+      '원자재리스크': '공급망 다변화를 위한 해외 광산·생산기지 투자 시 손실을 보전합니다.',
+      '지정학리스크': '지정학 불안 지역 해외투자 손실을 보전합니다. 투자 전 반드시 가입하세요.',
+      '공급망리스크': '해외 공급망 구축을 위한 투자 리스크를 보험으로 헤지하세요.',
+      '관세리스크': '현지 생산을 위한 해외 투자 시 손실 보전을 받을 수 있습니다.',
+      '수출규제리스크': '규제 우회를 위한 해외 현지 법인 투자 시 보험으로 보호받으세요.',
+    },
+  };
+
+  // C: 신청 안내 정보
+  const HOW_TO_APPLY = {
+    '수출바우처 사업': {
+      eligibility: '연간 수출액 10만 달러 이상 중소·중견기업',
+      support: '기업당 최대 1억원 (자부담 30~50%)',
+      how: '① exportvoucher.com 접속 → ② 기업 회원가입 → ③ 수요조사 참여 → ④ 선정 후 서비스 이용',
+      period: '연 2회 공고 (상반기/하반기)',
+    },
+    '무역보험 (단기수출보험)': {
+      eligibility: '수출 실적 보유 국내 기업 (규모 무관)',
+      support: '수출대금의 최대 95% 보상',
+      how: '① ksure.or.kr 접속 → ② 온라인 청약 → ③ 보험료 납부 → ④ 수출 후 미회수 시 보상 청구',
+      period: '상시 신청 가능',
+    },
+    'FTA 활용 지원': {
+      eligibility: 'FTA 체결국 수출 중소·중견기업',
+      support: '원산지 증명, 관세 절감 컨설팅 무료 지원',
+      how: '① ftahub.go.kr 접속 → ② 상담 신청 → ③ FTA 전문위원 매칭 → ④ 컨설팅 진행',
+      period: '상시 신청 가능',
+    },
+    '해외시장 다변화 지원': {
+      eligibility: '해외 신시장 진출을 희망하는 중소·중견기업',
+      support: '시장조사, 바이어 발굴, 전시회 참가 지원',
+      how: '① kotra.or.kr 접속 → ② 지원사업 검색 → ③ 온라인 신청 → ④ 심사 후 지원',
+      period: '사업별 공고 일정 상이',
+    },
+    '해외투자 보험': {
+      eligibility: '해외 직접투자를 진행 중이거나 예정인 국내 기업',
+      support: '투자 원금의 최대 90% 보상 (수용·전쟁·송금 불능 리스크)',
+      how: '① ksure.or.kr 접속 → ② 해외투자보험 신청 → ③ 심사 → ④ 보험 체결',
+      period: '투자 실행 전 사전 가입 필수',
+    },
+  };
+
+  // 현재 최고 리스크 유형 파악
+  const topRisk = window._dashboardData
+    ? Object.values(window._dashboardData.scores || {})
+        .sort((a,b)=>b.score-a.score)[0]?.top_risk || '관세리스크'
+    : '관세리스크';
+
+  panel.innerHTML = sp.matched.map(p => {
+    const urgencyIcon = {'즉시':'🔴','단기':'🟡','중기':'🔵'};
+    const urgencyColor = {'즉시':'var(--red)','단기':'#f59e0b','중기':'var(--blue)'};
+    const context = RISK_CONTEXT[p.name]?.[topRisk] || RISK_CONTEXT[p.name]?.['관세리스크'] || '';
+    const howTo = HOW_TO_APPLY[p.name];
+    const modalId = `modal-${p.id}`;
+
+    return `
+    <div style="padding:14px 0;border-bottom:1px solid var(--border)">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px">
+        <span style="font-size:16px">${urgencyIcon[p.urgency]||'📋'}</span>
+        <span style="font-size:13px;font-weight:700;color:var(--text)">${p.name}</span>
+        <span style="font-size:10px;padding:2px 8px;border-radius:4px;background:var(--bg3);color:${urgencyColor[p.urgency]||'var(--text3)'};font-weight:600">${p.urgency}</span>
       </div>
-      <div style="font-size:12px;color:var(--text3);margin-left:24px">${p.agency}</div>
-      <div style="font-size:12px;color:var(--text2);margin-left:24px;margin-top:2px">${p.description}</div>
-      ${p.url ? '<a href="'+p.url+'" target="_blank" style="font-size:11px;color:var(--accent);margin-left:24px;margin-top:4px;display:inline-block">🔗 바로가기</a>' : ''}
-    </div>`).join('');
+      <div style="font-size:11px;color:var(--text3);margin-left:24px;margin-bottom:4px">${p.agency}</div>
+      <div style="font-size:12px;color:var(--text2);margin-left:24px;margin-bottom:6px">${p.description}</div>
+      ${context ? `<div style="font-size:12px;color:var(--accent);margin-left:24px;margin-bottom:8px;padding:6px 10px;background:rgba(99,102,241,0.08);border-radius:6px;border-left:2px solid var(--accent)">💡 ${context}</div>` : ''}
+      <div style="display:flex;gap:8px;margin-left:24px;flex-wrap:wrap">
+        ${p.url ? `<a href="${p.url}" target="_blank" style="font-size:11px;color:var(--accent);padding:4px 10px;border:1px solid var(--accent);border-radius:6px;text-decoration:none">🔗 사이트 바로가기</a>` : ''}
+        ${howTo ? `<button onclick="showModal('${modalId}')" style="font-size:11px;color:var(--text2);padding:4px 10px;border:1px solid var(--border);border-radius:6px;background:var(--bg3);cursor:pointer;font-family:'Noto Sans KR',sans-serif">📋 신청 방법 보기</button>` : ''}
+      </div>
+    </div>
+
+    ${howTo ? `
+    <div id="${modalId}" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.7);z-index:1000;align-items:center;justify-content:center">
+      <div style="background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:28px;max-width:480px;width:90%;position:relative">
+        <button onclick="closeModal('${modalId}')" style="position:absolute;top:12px;right:16px;background:none;border:none;color:var(--text3);font-size:20px;cursor:pointer">×</button>
+        <div style="font-size:16px;font-weight:700;margin-bottom:16px">${p.name}</div>
+        <div style="display:flex;flex-direction:column;gap:12px">
+          <div>
+            <div style="font-size:11px;color:var(--text3);font-weight:600;margin-bottom:4px">✅ 신청 자격</div>
+            <div style="font-size:13px;color:var(--text2)">${howTo.eligibility}</div>
+          </div>
+          <div>
+            <div style="font-size:11px;color:var(--text3);font-weight:600;margin-bottom:4px">💰 지원 내용</div>
+            <div style="font-size:13px;color:var(--text2)">${howTo.support}</div>
+          </div>
+          <div>
+            <div style="font-size:11px;color:var(--text3);font-weight:600;margin-bottom:4px">📝 신청 방법</div>
+            <div style="font-size:13px;color:var(--text2);line-height:1.8">${howTo.how}</div>
+          </div>
+          <div>
+            <div style="font-size:11px;color:var(--text3);font-weight:600;margin-bottom:4px">📅 신청 기간</div>
+            <div style="font-size:13px;color:var(--text2)">${howTo.period}</div>
+          </div>
+        </div>
+        ${p.url ? `<a href="${p.url}" target="_blank" style="display:block;text-align:center;margin-top:16px;padding:10px;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;border-radius:8px;font-size:13px;font-weight:700;text-decoration:none">🔗 신청 사이트 바로가기</a>` : ''}
+      </div>
+    </div>` : ''}`;
+  }).join('');
 }
+
+function showModal(id) {
+  const el = document.getElementById(id);
+  if (el) el.style.display = 'flex';
+}
+function closeModal(id) {
+  const el = document.getElementById(id);
+  if (el) el.style.display = 'none';
+}
+
 
 function renderIndustryMatrix(matrix) {
   if (!matrix) return;
@@ -551,22 +688,44 @@ function renderIndustryMatrix(matrix) {
   if (!detail) return;
   const structureIcon = {'정책형':'⚡','수요형':'📈','원가형':'💰','사이클형':'🔄'};
   const gradeColor = {'🟢 안정':'var(--green)','🟡 주의':'#f59e0b','🔴 위험':'var(--red)'};
+
+  const DESC = {
+    '자동차': '관세·경기 변화에 즉각 반응',
+    '배터리': '원자재 가격이 수익성을 직접 결정',
+    '철강':   '원자재 사이클이 생산을 지배',
+    '반도체': '규제 발표가 공급망을 직접 타격',
+  };
+
   const sortedEntries = Object.entries(scores).sort((a,b)=>b[1].total-a[1].total);
+  const maxTotal = Math.max(...sortedEntries.map(([,d])=>d.total), 1);
+
   detail.innerHTML = sortedEntries.map(([ind,d], idx) => {
-    const icon = structureIcon[d.structure]||'●', color = gradeColor[d.grade]||'var(--text)', bar = Math.min(d.total,100);
+    const icon = structureIcon[d.structure]||'●';
+    const color = gradeColor[d.grade]||'var(--text)';
     const rank = idx+1;
+    const barPct = Math.round((d.total / maxTotal) * 100);
+    const desc = DESC[ind] || '';
+
     return `
-      <div style="padding:12px;border-bottom:1px solid var(--border)">
-        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
-          <span style="font-weight:600;font-size:14px">${icon} ${ind}</span>
-          <span style="font-size:12px;color:${color};font-weight:600">매트릭스 ${rank}위</span>
+      <div style="padding:14px 12px;border-bottom:1px solid var(--border)">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px">
+          <span style="font-weight:700;font-size:14px">${icon} ${ind}</span>
+          <span style="font-size:12px;color:${color};font-weight:700">민감도 ${rank}위</span>
         </div>
-        <div style="font-size:11px;color:var(--text3);margin-bottom:6px">${d.structure} | 뉴스:${d.news} ECOS:${d.ecos||'N/A'} 정치:${d.political}</div>
-        <div style="height:4px;background:var(--bg3);border-radius:2px">
-          <div style="height:4px;width:${bar}%;background:${color};border-radius:2px;transition:width 0.5s"></div>
+        <div style="font-size:11px;color:var(--text3);margin-bottom:8px">${d.structure} — ${desc}</div>
+        <div style="height:5px;background:var(--bg3);border-radius:3px;overflow:hidden">
+          <div style="height:5px;width:0%;background:${color};border-radius:3px;transition:width 1s ease" 
+               data-width="${barPct}"></div>
         </div>
       </div>`;
   }).join('');
+
+  // 애니메이션
+  setTimeout(() => {
+    detail.querySelectorAll('[data-width]').forEach(el => {
+      el.style.width = el.getAttribute('data-width') + '%';
+    });
+  }, 300);
   const ctx = document.getElementById('industryRadarChart');
   if (!ctx||!window.Chart) return;
   const labels = ['관세','수출규제','원자재','공급망','지정학'];
@@ -655,12 +814,18 @@ function renderSpillover(sp) {
   const total = sp.total_spillover||0;
   const color = total>=30?'var(--red)':total>=15?'#f59e0b':'var(--green)';
   const riskShortMap = {'관세리스크':'관세','원자재리스크':'원자재','공급망리스크':'공급망','지정학리스크':'지정학','수출규제리스크':'수출규제'};
+  const levelDesc = total>=30
+    ? '한 산업의 리스크가 다른 산업으로 빠르게 전파되는 고연결 상태입니다.'
+    : total>=15
+    ? '리스크 전이가 일부 발생하는 중간 연결 상태입니다.'
+    : '리스크 전이가 낮은 안정적인 상태입니다.';
   panel.innerHTML = `
-    <div style="display:flex;align-items:center;gap:24px;margin-bottom:16px">
+    <div style="display:flex;align-items:center;gap:24px;margin-bottom:12px">
       <div>
         <div style="font-size:11px;color:var(--text3)">총 리스크 전이 지수</div>
         <div style="font-size:28px;font-weight:700;color:${color}">${total.toFixed(1)}%</div>
-        <div style="font-size:11px;color:${color}">${total>=30?'🔴 고연결':'🟡 중간'}</div>
+        <div style="font-size:11px;color:${color};margin-top:2px">${total>=30?'🔴 고연결':total>=15?'🟡 중간':'🟢 안정'}</div>
+        <div style="font-size:10px;color:var(--text3);margin-top:4px">기준: 30% 초과 시 고연결</div>
       </div>
       <div style="flex:1;display:grid;grid-template-columns:repeat(5,1fr);gap:8px">
         ${net.map(n=>{
@@ -675,6 +840,7 @@ function renderSpillover(sp) {
         }).join('')}
       </div>
     </div>
+    <div style="font-size:12px;color:var(--text2);margin-bottom:8px">${levelDesc}</div>
     <div style="font-size:12px;color:var(--text3)">
       원자재 → 공급망 35.4% | 원자재 → 지정학 34.1% | 관세 → 수출규제 25.1%
     </div>`;
@@ -725,7 +891,14 @@ function renderIndustryFlow(flowData) {
 
     const indHtml = Object.entries(d.indicators||{}).map(([k,v]) => {
       const shortK = k.replace('수입물가_','').replace('배터리_','').replace('철강_','');
-      return `<span>${shortK} <strong>${v}</strong></span>`;
+      const UNITS = {
+        '가동률': '%', '생산능력': 'pt', '환율_원달러': '원',
+        '미국산업생산': 'pt', '미국정책금리': '%', '실리콘웨이퍼': 'pt',
+        '웨이퍼가공장비': 'pt', '니켈괴': 'pt', '흑연': 'pt',
+        '철광석': 'pt', '유연탄': 'pt',
+      };
+      const unit = UNITS[shortK] || '';
+      return `<span>${shortK} <strong>${v}${unit}</strong></span>`;
     }).join(' · ');
 
     return `
@@ -828,20 +1001,22 @@ function buildFallbackAnswer(industry, scoreData, flowData) {
   const baseline = 60;
   const gap = (scoreData.score - baseline).toFixed(1);
 
-  // 핵심 지표 문자열
+  // 핵심 지표 문자열 (3번: 자연어 변환)
+  const IND_NAME_MAP_STR = {
+    '환율_원달러': '원/달러 환율', '미국산업생산': '미국 산업생산지수',
+    '미국정책금리': '미국 정책금리', '니켈괴': '니켈', '흑연': '흑연',
+    '철광석': '철광석', '유연탄': '유연탄', '가동률': '배터리 가동률',
+    '생산능력': '철강 생산능력', '실리콘웨이퍼': '실리콘웨이퍼',
+    '웨이퍼가공장비': '웨이퍼가공장비',
+  };
   const indStr = indEntries.map(([k,v]) => {
-    const sk = k.replace('수입물가_','').replace('배터리_','').replace('철강_','');
-    return `${sk}(${v})`;
+    const raw = k.replace('수입물가_','').replace('배터리_','').replace('철강_','');
+    const name = IND_NAME_MAP_STR[raw] || raw;
+    return `${name}(${v})`;
   }).join(' · ');
 
-  // 국가 발 리스크 설명
-  let countryDesc = '';
-  if (topCountry) {
-    const arrowWord = topCountry.change > 10 ? '급등' : topCountry.change > 0 ? '상승' : '완화';
-    countryDesc = `${topCountry.name} ${topCountry.channel} 통상리스크가 전월 대비 ${topCountry.change>0?'+':''}${topCountry.change}점 ${arrowWord}하면서`;
-  } else {
-    countryDesc = `국제정세 변화가`;
-  }
+  // 국가 발 리스크 설명 (초기값, 아래 새 로직에서 덮어씌워짐)
+  let countryDesc = topCountry ? '' : '국제정세 변화가';
 
   // 현재 단계 설명
   const stageDesc = stage.stage && stage.stage !== '정상'
@@ -882,35 +1057,124 @@ function buildFallbackAnswer(industry, scoreData, flowData) {
     }
   };
 
+  // 지표명 자연어 변환 맵 (3번)
+  const INDICATOR_NAME_MAP = {
+    '환율_원달러': '원/달러 환율',
+    '미국산업생산': '미국 산업생산지수',
+    '미국정책금리': '미국 정책금리',
+    '니켈괴': '니켈 수입물가',
+    '흑연': '흑연 수입물가',
+    '철광석': '철광석 수입물가',
+    '유연탄': '유연탄 수입물가',
+    '가동률': '배터리 가동률',
+    '생산능력': '철강 생산능력',
+    '실리콘웨이퍼': '실리콘웨이퍼 수입물가',
+    '웨이퍼가공장비': '웨이퍼가공장비 수입물가',
+  };
+
+  // 지표별 모니터링 방향 (4번: 상승이 나쁜지 좋은지)
+  const INDICATOR_DIRECTION = {
+    '환율_원달러': { bad: 'up', action: '수출 채산성 악화 → 환헤지 및 선물환 계약 즉시 검토' },
+    '미국산업생산': { bad: 'down', action: '미국 수요 위축 → 수출 물량 조정 검토' },
+    '미국정책금리': { bad: 'up', action: '달러 강세·소비 위축 → 미국향 수출 전략 점검' },
+    '니켈괴': { bad: 'up', action: '배터리 원가 상승 → 공급망 긴급 점검 및 대체 소재 검토' },
+    '흑연': { bad: 'up', action: '배터리 원가 상승 → 중국 의존도 점검 및 대체 공급선 확보' },
+    '철광석': { bad: 'up', action: '철강 원가 상승 → 장기계약 비중 확대 검토' },
+    '유연탄': { bad: 'up', action: '철강 생산원가 상승 → 에너지 대체 공급선 확보' },
+    '가동률': { bad: 'down', action: '생산 위축 심화 → 수출 감소 본격 대응 시작' },
+    '생산능력': { bad: 'down', action: '생산 기반 약화 → 설비 투자 및 구조 조정 검토' },
+    '실리콘웨이퍼': { bad: 'up', action: '반도체 소재 원가 상승 → 국산화 가속 및 비축량 확대' },
+    '웨이퍼가공장비': { bad: 'up', action: '장비 수입 비용 증가 → 수급 리스크 점검' },
+  };
+
+  // 2번: 방향에 따른 자연스러운 표현
+  const countryArrow = topCountry ? topCountry.change : 0;
+  let arrowWord;
+  if (countryArrow > 10) arrowWord = '급등';
+  else if (countryArrow > 0) arrowWord = '상승';
+  else if (countryArrow < -10) arrowWord = '급감';
+  else if (countryArrow < 0) arrowWord = '하락';
+  else arrowWord = '보합';
+
+  // 상승/하락에 따른 설명 다르게
+  const changeContext = countryArrow > 0
+    ? `전월 대비 +${countryArrow}점 상승하면서 리스크가 높아지고 있습니다.`
+    : countryArrow < 0
+    ? `전월 대비 ${countryArrow}점 하락했지만 여전히 높은 리스크 수준을 유지하고 있습니다.`
+    : `전월 수준을 유지하고 있습니다.`;
+
+  // 국가 설명 재구성
+  if (topCountry) {
+    countryDesc = `${topCountry.name} ${topCountry.channel} 통상리스크(${topCountry.score}점)가 ${changeContext}`;
+  }
+
+  // 6번: STRATEGY_REASON을 산업+리스크 조합으로 분리
   const STRATEGY_REASON = {
-    "관세리스크":["관세 부담을 내재화하는 가장 확실한 방법입니다.","2차 제재 리스크를 사전에 차단합니다.","미중 갈등의 중립지대를 확보하는 전략입니다."],
-    "원자재리스크":["가격 변동성을 직접 헤지할 수 있습니다.","공급 지역 다변화로 단일 의존 리스크를 줄입니다.","원가 구조를 근본적으로 개선하는 방법입니다."],
-    "수출규제리스크":["규제 위반 시 수출금지 처분을 예방합니다.","대체 시장을 선제적으로 확보합니다.","규제 리스크와 기업 이미지를 동시에 관리합니다."],
-    "공급망리스크":["공급망 내재화로 외부 충격을 흡수합니다.","공급망 내 약한 고리를 조기에 파악합니다.","특정 부품 공급 차질 시 신속하게 대응할 수 있습니다."],
-    "지정학리스크":["양쪽 진영 모두에 대응 가능한 구조를 만듭니다.","유사시 대체 거점을 미리 확보합니다.","공급망 안정화와 기술 협력을 동시에 확보합니다."]
+    "관세리스크": {
+      "반도체": ["관세 부담을 현지 생산으로 내재화하는 가장 확실한 방법입니다.", "컴플라이언스 강화로 2차 제재·수출금지 리스크를 차단합니다.", "미중 갈등의 중립지대를 확보해 수출 안정성을 높입니다."],
+      "배터리": ["관세 회피와 IRA 보조금 수혜를 동시에 확보할 수 있습니다.", "2027년 EU 배터리 규정 의무화 전 선제 대응이 필요합니다.", "제3국 우회는 추가 제재 위험이 있어 사전 리스크 관리가 필요합니다."],
+      "자동차": ["현지 생산으로 25% 관세 부담을 직접 회피할 수 있습니다.", "USMCA 원산지 규정 충족 시 관세 면제가 가능합니다.", "전기차 전환으로 IRA 보조금을 받아 관세 부담을 상쇄할 수 있습니다."],
+      "철강": ["232조 관세 면제 신청으로 즉각적인 부담 완화가 가능합니다.", "CBAM 선제 대응으로 유럽 수출 경쟁력을 지킬 수 있습니다.", "고부가 특수강은 관세 영향이 상대적으로 낮아 포트폴리오 전환이 유리합니다."],
+    },
+    "원자재리스크": {
+      "반도체": ["중국 의존 희토류 리스크를 중장기적으로 탈피할 수 있습니다.", "일본 수출규제 재발에 대비한 소재 국산화가 시급합니다.", "6개월 비축으로 단기 공급 차질을 완충할 수 있습니다."],
+      "배터리": ["광산 지분 투자로 가격 변동성을 직접 헤지할 수 있습니다.", "인도네시아 단일 의존에서 벗어나 공급 안정성을 높입니다.", "LFP 전환으로 니켈·코발트 의존도를 구조적으로 줄일 수 있습니다."],
+      "자동차": ["희토류 없는 모터 기술로 중국 리스크를 원천 차단합니다.", "경량 소재 조달 다변화로 원가 상승 압력을 분산합니다.", "배터리 소재 내재화로 공급망 리스크를 줄일 수 있습니다."],
+      "철강": ["장기계약으로 스팟 가격 급등 리스크를 헤지합니다.", "수소환원제철로 원료탄 의존도를 중장기적으로 낮출 수 있습니다.", "전기로 전환으로 철광석 투입 자체를 줄이는 구조로 전환합니다."],
+    },
+    "수출규제리스크": {
+      "반도체": ["EAR 위반 시 수출금지 처분을 받을 수 있어 내재화가 필수입니다.", "중국 이외 인도·동남아 등 신흥 수요처를 선제 발굴합니다.", "Chip4 동맹 참여로 안정적인 공급망과 수요를 동시에 확보합니다."],
+      "배터리": ["UFLPA 위반 시 미국 세관 통과가 불가능해 즉시 대응이 필요합니다.", "EU 2027년 배터리 여권 의무화에 앞서 준비해두는 것이 유리합니다.", "ESG 실사는 규제 리스크와 기업 신뢰도를 동시에 관리합니다."],
+      "자동차": ["이전가격 이슈는 미국 세무조사의 주요 대상입니다.", "통관 지연은 생산 차질로 이어지므로 사전 인증이 필수입니다.", "자율주행 소프트웨어는 새로운 수출통제 대상이 될 수 있습니다."],
+      "철강": ["반덤핑 조사는 장기화되면 큰 비용이 발생하므로 사전 대응이 중요합니다.", "CBAM 미준비 시 유럽 수출 자체가 불가능해집니다.", "쿼터 소진 전 선제 모니터링으로 수출 기회를 지킵니다."],
+    },
+    "공급망리스크": {
+      "반도체": ["일본 수출규제 재발에 대비해 국산화가 시급합니다.", "TSMC 단일 의존은 지정학 리스크 발생 시 생산 전면 차질로 이어집니다.", "ASML 의존도를 점진적으로 낮춰 장비 리스크를 줄입니다."],
+      "배터리": ["소재 내재화로 원가 경쟁력과 공급 안정성을 동시에 확보합니다.", "폐배터리 재활용으로 수입 원자재 의존도를 중장기적으로 줄입니다.", "단일 공급사 의존은 협상력 저하와 공급 차질 위험을 높입니다."],
+      "자동차": ["장기 공급계약으로 반도체 부족 사태 재발에 대비합니다.", "협력사 재무 악화는 공급망 붕괴의 전형적인 선행 신호입니다.", "모듈화 설계로 특정 부품 차질 시 신속하게 대응할 수 있습니다."],
+      "철강": ["호주·브라질 외 캐나다·인도로 조달처를 다변화합니다.", "전기로 전환으로 철광석 의존도를 구조적으로 줄입니다.", "국내 철스크랩 활용으로 수입 가격 변동성을 흡수합니다."],
+    },
+    "지정학리스크": {
+      "반도체": ["미중 양쪽에 대응 가능한 이중 공급망 구조가 필수입니다.", "대만 유사시 대체 파운드리가 없으면 생산이 전면 중단됩니다.", "Chip4 참여로 동맹국 중심의 안정적 공급망을 확보합니다."],
+      "배터리": ["미국·EU 규제 강화에 앞서 중국 소재 의존도를 단계적으로 줄입니다.", "러시아산 니켈 의존은 지정학 리스크로 공급 차질이 반복되고 있습니다.", "단일국 의존은 정치 불안 발생 시 공급이 즉각 차단될 수 있습니다."],
+      "자동차": ["지정학 불안 지역 수출 비중을 줄이고 안전한 시장으로 이동합니다.", "갈등 지역 생산기지는 분쟁 시 자산 손실 위험이 있습니다.", "수에즈·말라카 우회 경로를 미리 확보해 물류 차질에 대비합니다."],
+      "철강": ["러시아 유연탄 대체 공급선 확보가 시급합니다.", "수에즈 봉쇄 시나리오에 대비한 우회 경로를 준비합니다.", "분쟁 지역 수출 시 대금 미회수 리스크를 보험으로 헤지합니다."],
+    },
   };
 
   const SUPPORT_PROGRAMS = {
     "관세리스크": "FTA 활용 지원 (산업부·KOTRA · ftahub.go.kr)\n   → FTA 원산지 증명으로 관세 절감 즉시 가능, 지금 바로 신청해보세요.\n무역보험 단기수출보험 (무역보험공사 · ksure.or.kr)\n   → 관세 부과에 따른 수출 피해를 보전합니다.",
-    "원자재리스크": "수출바우처 사업 (KOTRA · exportvoucher.com)\n   → 원자재 대체 공급처 발굴 컨설팅 비용을 지원합니다. 공급망 다변화를 추진 중이라면 지금 바로 신청해보세요.\n해외투자보험 (무역보험공사 · ksure.or.kr)\n   → 광산·생산기지 투자 시 손실을 보전합니다. 광산 지분 투자를 검토 중이라면 이 보험을 먼저 확인해두세요.",
+    "원자재리스크": "수출바우처 사업 (KOTRA · exportvoucher.com)\n   → 원자재 대체 공급처 발굴 컨설팅 비용을 지원합니다. 공급망 다변화를 추진 중이라면 지금 바로 신청해보세요.\n해외투자보험 (무역보험공사 · ksure.or.kr)\n   → 광산·생산기지 투자 시 손실을 보전합니다.",
     "수출규제리스크": "FTA 활용 지원 (산업부·KOTRA)\n   → 규제 우회 수출경로 컨설팅을 받을 수 있습니다.\n수출바우처 사업 (KOTRA)\n   → 대체 시장 발굴 및 인증 취득 비용을 지원합니다.",
     "공급망리스크": "해외시장 다변화 지원 (KOTRA · kotra.or.kr)\n   → 신규 공급처 발굴 및 시장 다변화를 지원합니다.\n수출바우처 사업 (KOTRA)\n   → 공급망 재편 컨설팅 비용을 지원합니다.",
-    "지정학리스크": "해외투자보험 (무역보험공사 · ksure.or.kr)\n   → 지정학 불안 지역 해외투자 손실을 보전합니다.\n무역보험 단기수출보험\n   → 분쟁 지역 수출 대금 미회수 리스크를 헤지합니다."
+    "지정학리스크": "해외투자보험 (무역보험공사 · ksure.or.kr)\n   → 지정학 불안 지역 해외투자 손실을 보전합니다.\n무역보험 단기수출보험\n   → 분쟁 지역 수출 대금 미회수 리스크를 헤지합니다.",
   };
 
   const topRisk = scoreData.top_risk;
   const specific = (STRATEGIES[topRisk]?.[industry] || STRATEGIES["관세리스크"][industry] || []);
-  const reasons  = (STRATEGY_REASON[topRisk] || STRATEGY_REASON["관세리스크"]);
+  const reasons = (STRATEGY_REASON[topRisk]?.[industry] || STRATEGY_REASON["관세리스크"]?.["자동차"] || ["","",""]);
   const supportInfo = SUPPORT_PROGRAMS[topRisk] || SUPPORT_PROGRAMS["관세리스크"];
 
-  // 모니터링 포인트
+  // 4번: 모니터링 포인트 - 상승/하락 방향 고려
   const monitorLines = [];
   indEntries.forEach(([k,v]) => {
-    const sk = k.replace('수입물가_','').replace('배터리_','').replace('철강_','');
+    const rawKey = k.replace('수입물가_','').replace('배터리_','').replace('철강_','');
+    const displayName = INDICATOR_NAME_MAP[rawKey] || INDICATOR_NAME_MAP[k] || rawKey;
     const val = parseFloat(v);
-    const threshold = (val * 1.1).toFixed(1);
-    const pct = 10;
-    monitorLines.push(`${sk} ${threshold} 돌파 시\n   → 공급망 긴급 점검 타이밍입니다. 현재(${v})에서 ${pct}% 더 오르면 도달합니다.`);
+    const dirInfo = INDICATOR_DIRECTION[rawKey] || INDICATOR_DIRECTION[k];
+
+    if (dirInfo) {
+      if (dirInfo.bad === 'up') {
+        const threshold = (val * 1.1).toFixed(1);
+        monitorLines.push(`${displayName} ${threshold} 돌파 시\n   → ${dirInfo.action} (현재 ${v}, 10% 상승 시 도달)`);
+      } else {
+        const threshold = (val * 0.9).toFixed(1);
+        monitorLines.push(`${displayName} ${threshold} 하회 시\n   → ${dirInfo.action} (현재 ${v}, 10% 하락 시 도달)`);
+      }
+    } else {
+      const threshold = (val * 1.1).toFixed(1);
+      monitorLines.push(`${displayName} ${threshold} 초과 시\n   → 리스크 상황 점검 및 대응 전략 실행`);
+    }
   });
   if (monitorLines.length === 0) {
     monitorLines.push(`${scoreData.top_risk} 지속 상승 시\n   → 대응 전략을 즉시 실행해야 합니다.`);
