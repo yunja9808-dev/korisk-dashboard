@@ -1,8 +1,8 @@
 {
-  "timestamp": "2026-06-29 13:06",
-  "month": "2026-06",
+  "timestamp": "2026-07-02 14:17",
+  "month": "2026-07",
   "overall": "🔴 위험",
-  "alert_count": 11,
+  "alert_count": 12,
   "alerts": [
     {
       "type": "PPI선행지표",
@@ -12,6 +12,9 @@
       "value": 158.07,
       "grade": "🔴 위험",
       "pct_change": 0.0,
+      "baseline": 131.12,
+      "vs_baseline_pct": 20.6,
+      "threshold": 142.12,
       "message": "[철강] 열연강판 158.1 (▼0.0%) 🔴 위험",
       "meaning": "철강 생산원가 상승",
       "action": "철강 생산원가 상승 → 선제 대응 필요"
@@ -23,6 +26,9 @@
       "value": 102.28,
       "grade": "🟡 주의",
       "pct_change": -2.9,
+      "baseline": 80.36,
+      "vs_baseline_pct": 27.3,
+      "threshold": 94.26,
       "message": "국제유가_Dubai 🟡 주의: 102.3 (▼2.9%)",
       "meaning": "에너지비용 상승 → 생산원가 압박",
       "action": "철강·배터리 에너지비용 상승 → 생산원가 압박"
@@ -34,6 +40,9 @@
       "value": 4578.46,
       "grade": "🔴 위험",
       "pct_change": -3.0,
+      "baseline": 2466.99,
+      "vs_baseline_pct": 85.6,
+      "threshold": 3399.78,
       "message": "국제구리가격 🔴 위험: 4578.5 (▼3.0%)",
       "meaning": "양극재 원가 상승 → 배터리 원자재리스크",
       "action": "배터리 양극재 원가 상승 → 배터리 원자재리스크"
@@ -45,6 +54,9 @@
       "value": 101.7,
       "grade": "🟡 주의",
       "pct_change": 0.2,
+      "baseline": 99.62,
+      "vs_baseline_pct": 2.1,
+      "threshold": 100.68,
       "message": "미국산업생산 🟡 주의: 101.7 (▲0.2%)",
       "meaning": "미국 수요 변화 → 수출 선행",
       "action": "반도체·자동차 미국 수요 변화 → 수출 선행"
@@ -96,6 +108,14 @@
       "grade": "🟡 주의",
       "message": "호주 정치리스크 34점 🟡 주의",
       "action": "호주 관련 수출입 리스크 모니터링 강화"
+    },
+    {
+      "type": "정치리스크",
+      "indicator": "JP 정치리스크",
+      "value": 33.0,
+      "grade": "🟡 주의",
+      "message": "일본(Japan) 정치리스크 33점 🟡 주의",
+      "action": "일본(Japan) 관련 수출입 리스크 모니터링 강화"
     },
     {
       "type": "정치리스크",

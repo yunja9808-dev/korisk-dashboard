@@ -1,27 +1,27 @@
 {
-  "timestamp": "2026-06-29 13:05",
-  "current_cli": 31.4,
+  "timestamp": "2026-07-02 14:16",
+  "current_cli": 47.2,
   "cli_grade": "🟢 안정",
-  "cli_change": 1.2,
+  "cli_change": 15.7,
   "industry_cli": {
     "반도체": {
-      "current": 46.7,
-      "change": 46.7,
-      "grade": "🟢 안정"
+      "current": 76.5,
+      "change": 30.2,
+      "grade": "🔴 고위험"
     },
     "배터리": {
-      "current": 50.7,
-      "change": -5.1,
-      "grade": "🟡 주의"
-    },
-    "자동차": {
-      "current": 41.9,
-      "change": 14.7,
+      "current": 46.4,
+      "change": -1.0,
       "grade": "🟢 안정"
     },
+    "자동차": {
+      "current": 64.2,
+      "change": 22.4,
+      "grade": "🟡 주의"
+    },
     "철강": {
-      "current": 49.7,
-      "change": -19.6,
+      "current": 46.2,
+      "change": -3.6,
       "grade": "🟢 안정"
     }
   },

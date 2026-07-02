@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-29 13:05",
+  "timestamp": "2026-07-02 14:15",
   "countries": [
     {
       "country_code": "US",
@@ -38,6 +38,12 @@
       "keywords_found": "전쟁(3), 분쟁(2), 핵(40), 미사일(6), 관세(1)"
     },
     {
+      "country_code": "JP",
+      "country_name": "일본(Japan)",
+      "political_risk": 33,
+      "keywords_found": "전쟁(1), 분쟁(1), 제재(1), 수출규제(2), 무기(1)"
+    },
+    {
       "country_code": "BR",
       "country_name": "브라질 연방 공화국(The Feder",
       "political_risk": 33,
@@ -54,12 +60,6 @@
       "country_name": "대만",
       "political_risk": 23,
       "keywords_found": "분쟁(4), 단교(4), 핵(1), 갈등(1), 우려(1)"
-    },
-    {
-      "country_code": "JP",
-      "country_name": "일본(Japan)",
-      "political_risk": 18,
-      "keywords_found": "전쟁(1), 분쟁(1), 제재(1), 수출규제(1), 무기(1)"
     },
     {
       "country_code": "VN",
@@ -82,7 +82,7 @@
   ],
   "industry_risk": {
     "반도체": {
-      "avg_score": 30.0,
+      "avg_score": 33.0,
       "countries": [
         {
           "country": "미국",
@@ -103,7 +103,7 @@
         },
         {
           "country": "일본",
-          "score": 18.0,
+          "score": 33.0,
           "risks": [
             "공급망리스크",
             "수출규제리스크"
@@ -127,7 +127,7 @@
       ]
     },
     "배터리": {
-      "avg_score": 25.6,
+      "avg_score": 27.2,
       "countries": [
         {
           "country": "미국",
@@ -148,7 +148,7 @@
         },
         {
           "country": "일본",
-          "score": 18.0,
+          "score": 33.0,
           "risks": [
             "공급망리스크",
             "수출규제리스크"
