@@ -1,39 +1,39 @@
 {
-  "timestamp": "2026-07-02 16:37",
+  "timestamp": "2026-07-03 20:31",
   "current_risks": {
-    "관세리스크": 2.0,
-    "원자재리스크": 0.0,
+    "관세리스크": 3.0,
+    "원자재리스크": 1.0,
     "공급망리스크": 0.0,
-    "지정학리스크": 0.0,
+    "지정학리스크": 1.0,
     "수출규제리스크": 0.0
   },
   "industry_scores": {
     "반도체": {
       "total": 24.8,
-      "news": 0.1,
+      "news": 0.5,
       "ecos": 49.3,
-      "political": 25.1,
+      "political": 24.6,
       "structure": "정책형"
     },
     "자동차": {
-      "total": 31.1,
-      "news": 0.9,
+      "total": 31.4,
+      "news": 1.6,
       "ecos": 64.0,
-      "political": 26.1,
+      "political": 25.7,
       "structure": "수요형"
     },
     "배터리": {
-      "total": 25.8,
-      "news": 0.2,
+      "total": 25.9,
+      "news": 0.8,
       "ecos": 51.9,
-      "political": 24.8,
+      "political": 24.3,
       "structure": "원가형"
     },
     "철강": {
-      "total": 25.6,
-      "news": 0.6,
+      "total": 25.8,
+      "news": 1.4,
       "ecos": 50.8,
-      "political": 25.2,
+      "political": 24.8,
       "structure": "사이클형"
     }
   },

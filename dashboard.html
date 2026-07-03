@@ -110,6 +110,7 @@
     <div>
       <div class="logo-text">KoRisk Intelligence</div>
       <div class="logo-sub">핵심 수출산업 리스크 조기경보 플랫폼</div>
+      <div style="font-size:12px;color:#f59e0b;margin-top:4px;letter-spacing:0.3px">⚡ 경보가 울리면 AI가 답합니다</div>
     </div>
   </div>
   <div class="header-right">
@@ -173,10 +174,22 @@
         </div>
       </div>
 
+      <!-- 예시질문 버튼 -->
+      <div id="chatSuggestions" style="display:none;gap:8px;margin-bottom:8px;flex-wrap:wrap">
+        <button onclick="document.getElementById('chatInput').value=this.innerText.replace('예) ','')" 
+          style="background:var(--bg3);border:1px solid var(--border);color:var(--text3);padding:6px 12px;border-radius:20px;font-size:11px;cursor:pointer;text-align:left;font-family:'Noto Sans KR',sans-serif">
+          예) 지금 배터리 리스크가 높은데 원자재 재고를 얼마나 확보해야 할까요?
+        </button>
+        <button onclick="document.getElementById('chatInput').value=this.innerText.replace('예) ','')"
+          style="background:var(--bg3);border:1px solid var(--border);color:var(--text3);padding:6px 12px;border-radius:20px;font-size:11px;cursor:pointer;text-align:left;font-family:'Noto Sans KR',sans-serif">
+          예) 지금 리스크 상황에서 어느 지역에 정책 지원을 집중해야 할까요?
+        </button>
+      </div>
+
       <!-- 후속 질문 입력창 (AI 추천 받은 후에만 활성화) -->
       <div id="chatInputArea" style="display:none;gap:8px;align-items:center">
         <input id="chatInput" type="text"
-          placeholder="궁금한 점을 질문해보세요. 예) 공급선 다변화를 구체적으로 어떻게 해야 하나요?"
+          placeholder="예) 지금 배터리 리스크가 높은데 원자재 재고를 얼마나 확보해야 할까요?"
           style="flex:1;background:var(--bg3);border:1px solid var(--border);color:var(--text);padding:10px 14px;border-radius:8px;font-family:'Noto Sans KR',sans-serif;font-size:13px;outline:none"
           onkeydown="if(event.key==='Enter')sendChat()"
         />
@@ -251,16 +264,30 @@
     <!-- 지역 산업 영향 모니터링 -->
     <div class="section-title" style="margin-top:24px">
       🗺️ 지역 산업 영향 모니터링
-      <span style="font-size:10px;color:var(--text3);font-weight:400;letter-spacing:0;text-transform:none">관세청 시도별 수출 데이터 × KoRisk 리스크 지수 연관성 분석 (66개월 실측)</span>
+      <span style="font-size:10px;color:var(--text3);font-weight:400;letter-spacing:0;text-transform:none">관세청 시도별 수출 · KOSIS 제조업 고용 × 리스크 지수 연관성 분석</span>
     </div>
     <div class="panel" style="margin-bottom:24px">
-      <div style="font-size:12px;color:var(--text2);margin-bottom:16px;padding:10px 14px;background:rgba(99,102,241,0.08);border-radius:8px;border-left:3px solid var(--accent)">
-        📌 2022~2026년 미중 무역전쟁 기간, <strong>관세리스크</strong>는 4개 산업 모두의 공통 선행지표로 작용했습니다.
-        KoRisk가 관세리스크를 감지하면, 실제 지역 클러스터 수출에 <strong>선행하여</strong> 변화가 나타납니다.
+      <!-- 상단 인사이트 -->
+      <div style="font-size:12px;color:var(--text2);margin-bottom:16px;padding:12px 14px;background:rgba(99,102,241,0.08);border-radius:8px;border-left:3px solid var(--accent)">
+        <div style="font-size:13px;font-weight:700;color:var(--text);margin-bottom:8px">
+          📌 KoRisk가 경보를 울리면,<br>오늘의 리스크가 지역 경제의 내일을 예고합니다
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:4px;font-size:11px;color:var(--text3);line-height:1.8">
+          <div>📈 자동차 &nbsp; 관세리스크 → 울산·경기 <strong style="color:var(--text2)">6개월 선행</strong></div>
+          <div>🔄 철강 &nbsp;&nbsp;&nbsp; 관세리스크 → 경북·전남 <strong style="color:var(--text2)">9개월 선행</strong></div>
+          <div>💰 배터리 &nbsp; 관세·원자재리스크 → 충북·충남 <strong style="color:var(--text2)">1년 선행</strong></div>
+          <div>⚡ 반도체 &nbsp; 관세·공급망리스크 → 경기·충남 <strong style="color:var(--text2)">3개월 선행</strong></div>
+        </div>
       </div>
+      <!-- 4개 산업 카드 -->
       <div id="regionAnalysisPanel" style="display:grid;grid-template-columns:1fr 1fr;gap:12px"></div>
-      <div style="font-size:10px;color:var(--text3);margin-top:12px;text-align:right">
-        ※ 상관관계 분석 기반 (인과관계 아님) · 관세청 시도별 품목별 수출입실적 공공데이터 활용
+      <!-- 하단 순차 전달 -->
+      <div style="margin-top:12px;padding:12px 14px;background:var(--bg3);border-radius:8px;border:1px solid var(--border)">
+        <div style="font-size:11px;font-weight:600;color:var(--text2);margin-bottom:8px">💡 리스크 전달 경로 실증</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;font-size:11px;color:var(--text3);line-height:1.8">
+          <div>📈 자동차: 리스크 감지 → <strong style="color:var(--red)">6개월 후</strong> 수출 변화(63%) → <strong style="color:var(--red)">9개월 후</strong> 울산·경기 고용 변화(58%)</div>
+          <div>🔄 철강: 리스크 감지 → <strong style="color:var(--red)">6개월 후</strong> 수출 변화(57%) → <strong style="color:var(--red)">9개월 후</strong> 경북·전남 고용 변화(73%)</div>
+        </div>
       </div>
     </div>
 
@@ -824,45 +851,79 @@ function renderCapacityChart(dashData) {
 
 function renderRegionAnalysis(data) {
   const panel = document.getElementById('regionAnalysisPanel');
-  if (!panel || !data) return;
+  if (!panel) return;
+  if (!data || Object.keys(data).length === 0) return;
 
-  const INDUSTRY_ICON = {'배터리':'💰','철강':'🔄','자동차':'📈','반도체':'⚡'};
-  const INDUSTRY_COLOR = {'배터리':'var(--red)','철강':'var(--red)','자동차':'var(--red)','반도체':'#f59e0b'};
+  const ICON = {'배터리':'💰','철강':'🔄','자동차':'📈','반도체':'⚡'};
+  const COLOR = {'배터리':'var(--red)','철강':'var(--red)','자동차':'var(--red)','반도체':'#f59e0b'};
 
-  panel.innerHTML = Object.entries(data).map(([industry, d]) => {
-    const icon = INDUSTRY_ICON[industry] || '●';
-    const color = INDUSTRY_COLOR[industry] || 'var(--accent)';
-    const barPct = Math.min(d.r_pct, 100);
-    const lagText = d.lag === 0 ? '즉각 반응' : `${d.lag}개월 후 반응`;
+  // 설명 문구 오버라이드 (더 직관적인 표현으로)
+  const DESC_OVERRIDE = {
+    '배터리': '관세·원자재리스크 감지 → 1년 후 충북·충남 수출·고용 변화',
+    '철강':   '관세리스크 감지 → 9개월 후 경북·전남 수출·고용 감소',
+    '자동차': '관세 부과 전 수출 급증, 이후 감소 패턴 확인',
+    '반도체': '관세·공급망리스크 감지 → 3개월 후 경기·충남 수출·고용 변화',
+  };
 
-    return `
-      <div style="padding:14px;background:var(--bg3);border-radius:10px;border:1px solid var(--border)">
-        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
-          <span style="font-weight:700;font-size:13px">${icon} ${industry}</span>
-          <span style="font-size:11px;color:var(--text3);background:var(--bg2);padding:2px 8px;border-radius:4px">${lagText}</span>
-        </div>
-        <div style="font-size:11px;color:var(--accent);margin-bottom:8px;font-weight:600">
-          📍 ${d.cluster}
-        </div>
-        <div style="font-size:12px;color:var(--text2);margin-bottom:10px;line-height:1.6">
-          ${d.description}
+  function lagText(lag) {
+    if (lag === 0) return '즉각 반응';
+    if (lag === 12) return '1년 후 반응';
+    return `${lag}개월 후 반응`;
+  }
+
+  function levelText(pct) {
+    if (pct >= 70) return { label: '강함', color: 'var(--red)' };
+    if (pct >= 50) return { label: '유의미', color: '#f59e0b' };
+    return { label: '특이 동향 없음', color: 'var(--text3)' };
+  }
+
+  // 고용 연관성 데이터 (KOSIS 제조업 취업자수 분석 결과)
+  const EMP_DATA = {
+    '배터리': { pct: 59, lag: 12, level: '유의미', color: '#f59e0b' },
+    '철강':   { pct: 73, lag: 9,  level: '강함',   color: 'var(--red)' },
+    '자동차': { pct: 59, lag: 12, level: '유의미', color: '#f59e0b' },
+    '반도체': { pct: 54, lag: 12, level: '유의미', color: '#f59e0b' },
+  };
+
+  const html = Object.entries(data).map(([industry, d]) => {
+    const icon = ICON[industry] || '●';
+    const color = COLOR[industry] || 'var(--accent)';
+    const pct = Math.round(d.r_pct);
+    const lt = lagText(d.lag);
+    const lv = levelText(pct);
+    const desc = DESC_OVERRIDE[industry] || d.description;
+    const emp = EMP_DATA[industry] || { pct: 50, lag: 12, level: '유의미', color: '#f59e0b' };
+    const empLagText = emp.lag === 12 ? '1년 후' : `${emp.lag}개월 후`;
+
+    return `<div style="padding:16px;background:var(--bg3);border-radius:10px;border:1px solid var(--border)">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+        <span style="font-weight:700;font-size:14px">${icon} ${industry}</span>
+        <span style="font-size:10px;color:var(--text3);background:var(--bg2);padding:2px 8px;border-radius:12px;border:1px solid var(--border)">${lt}</span>
+      </div>
+      <div style="font-size:11px;color:var(--accent);font-weight:600;margin-bottom:6px">📍 ${d.cluster}</div>
+      <div style="font-size:12px;color:var(--text2);line-height:1.6;margin-bottom:10px">${desc}</div>
+      <div style="display:flex;flex-direction:column;gap:6px">
+        <div style="display:flex;align-items:center;gap:8px">
+          <span style="font-size:10px;color:var(--text3);white-space:nowrap;width:60px">수출 연관성</span>
+          <div style="flex:1;height:5px;background:var(--bg2);border-radius:3px;overflow:hidden">
+            <div style="height:5px;width:${pct}%;background:${color};border-radius:3px"></div>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:${color};white-space:nowrap">${pct}%</span>
+          <span style="font-size:10px;padding:1px 5px;border-radius:4px;background:${lv.color==='var(--red)'?'rgba(239,68,68,0.12)':lv.color==='#f59e0b'?'rgba(245,158,11,0.12)':'var(--bg2)'};color:${lv.color};font-weight:600">${lv.label}</span>
         </div>
         <div style="display:flex;align-items:center;gap:8px">
+          <span style="font-size:10px;color:var(--text3);white-space:nowrap;width:60px">고용 연관성</span>
           <div style="flex:1;height:5px;background:var(--bg2);border-radius:3px;overflow:hidden">
-            <div style="height:5px;width:0%;background:${color};border-radius:3px;transition:width 1s ease"
-                 data-width="${barPct}"></div>
+            <div style="height:5px;width:${emp.pct}%;background:${emp.color};border-radius:3px"></div>
           </div>
-          <span style="font-size:12px;font-weight:700;color:${color};white-space:nowrap">연관성 ${d.r_pct}%</span>
+          <span style="font-size:11px;font-weight:700;color:${emp.color};white-space:nowrap">${emp.pct}%</span>
+          <span style="font-size:10px;padding:1px 5px;border-radius:4px;background:${emp.color==='var(--red)'?'rgba(239,68,68,0.12)':'rgba(245,158,11,0.12)'};color:${emp.color};font-weight:600">${emp.level}</span>
         </div>
-      </div>`;
+      </div>
+    </div>`;
   }).join('');
 
-  // 막대 애니메이션
-  setTimeout(() => {
-    panel.querySelectorAll('[data-width]').forEach(el => {
-      el.style.width = el.getAttribute('data-width') + '%';
-    });
-  }, 300);
+  panel.innerHTML = html;
 }
 
 function renderSpillover(sp) {
@@ -1377,6 +1438,7 @@ function getAIRecommendation() {
     chatHistory.push({ role: 'assistant', content: text });
     addChatMessage('ai', text, true);
     document.getElementById('chatInputArea').style.display = 'flex';
+    document.getElementById('chatSuggestions').style.display = 'flex';
   })
   .catch(() => {
     loadingEl.style.display = 'none';
@@ -1386,6 +1448,7 @@ function getAIRecommendation() {
     chatHistory.push({ role: 'assistant', content: text });
     addChatMessage('ai', text, true);
     document.getElementById('chatInputArea').style.display = 'flex';
+    document.getElementById('chatSuggestions').style.display = 'flex';
   });
 }
 

@@ -1,8 +1,8 @@
 {
-  "timestamp": "2026-07-02 14:17",
+  "timestamp": "2026-07-03 20:32",
   "month": "2026-07",
   "overall": "🔴 위험",
-  "alert_count": 12,
+  "alert_count": 11,
   "alerts": [
     {
       "type": "PPI선행지표",
@@ -79,27 +79,19 @@
     },
     {
       "type": "정치리스크",
+      "indicator": "ID 정치리스크",
+      "value": 40.0,
+      "grade": "🔴 위험",
+      "message": "인도네시아 정치리스크 40점 🔴 위험",
+      "action": "인도네시아 관련 수출입 리스크 모니터링 강화"
+    },
+    {
+      "type": "정치리스크",
       "indicator": "DE 정치리스크",
       "value": 39.0,
       "grade": "🟡 주의",
       "message": "독일 정치리스크 39점 🟡 주의",
       "action": "독일 관련 수출입 리스크 모니터링 강화"
-    },
-    {
-      "type": "정치리스크",
-      "indicator": "ID 정치리스크",
-      "value": 36.0,
-      "grade": "🟡 주의",
-      "message": "인도네시아 정치리스크 36점 🟡 주의",
-      "action": "인도네시아 관련 수출입 리스크 모니터링 강화"
-    },
-    {
-      "type": "정치리스크",
-      "indicator": "CN 정치리스크",
-      "value": 35.0,
-      "grade": "🟡 주의",
-      "message": "중국 정치리스크 35점 🟡 주의",
-      "action": "중국 관련 수출입 리스크 모니터링 강화"
     },
     {
       "type": "정치리스크",
@@ -111,19 +103,19 @@
     },
     {
       "type": "정치리스크",
-      "indicator": "JP 정치리스크",
-      "value": 33.0,
-      "grade": "🟡 주의",
-      "message": "일본(Japan) 정치리스크 33점 🟡 주의",
-      "action": "일본(Japan) 관련 수출입 리스크 모니터링 강화"
-    },
-    {
-      "type": "정치리스크",
       "indicator": "BR 정치리스크",
       "value": 33.0,
       "grade": "🟡 주의",
       "message": "브라질 정치리스크 33점 🟡 주의",
       "action": "브라질 관련 수출입 리스크 모니터링 강화"
+    },
+    {
+      "type": "정치리스크",
+      "indicator": "JP 정치리스크",
+      "value": 33.0,
+      "grade": "🟡 주의",
+      "message": "일본(Japan) 정치리스크 33점 🟡 주의",
+      "action": "일본(Japan) 관련 수출입 리스크 모니터링 강화"
     }
   ]
 }
