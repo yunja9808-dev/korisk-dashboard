@@ -794,10 +794,10 @@
           "name": "인도네시아",
           "role": "니켈 공급",
           "channel": "원자재",
-          "score": 17.0,
-          "change": 17.0,
+          "score": 18.0,
+          "change": 18.0,
           "grade": "🟢",
-          "keywords": "제한(17)"
+          "keywords": "제한(18)"
         },
         {
           "code": "CL",
@@ -848,10 +848,10 @@
           "name": "호주",
           "role": "철광석 공급",
           "channel": "원자재",
-          "score": 34.0,
-          "change": 102.0,
+          "score": 36.0,
+          "change": 108.0,
           "grade": "🟡",
-          "keywords": "분쟁(17)"
+          "keywords": "분쟁(18)"
         },
         {
           "code": "BR",
@@ -912,10 +912,10 @@
           "name": "미국",
           "role": "최대 수출시장",
           "channel": "관세",
-          "score": 34.0,
-          "change": -34.0,
+          "score": 36.0,
+          "change": -36.0,
           "grade": "🟡",
-          "keywords": "관세(17), 규제(17), 개선(17)"
+          "keywords": "관세(18), 규제(18), 개선(18)"
         },
         {
           "code": "MX",
@@ -923,7 +923,7 @@
           "role": "USMCA 생산기지",
           "channel": "공급망",
           "score": 0.0,
-          "change": -17.0,
+          "change": -18.0,
           "grade": "🟢",
           "keywords": ""
         },
@@ -932,10 +932,10 @@
           "name": "독일",
           "role": "EU 경쟁국",
           "channel": "수출규제",
-          "score": 17.0,
-          "change": 17.0,
+          "score": 18.0,
+          "change": 18.0,
           "grade": "🟢",
-          "keywords": "규제(17), 제한(17), 협력(17)"
+          "keywords": "규제(18), 제한(18), 협력(18)"
         }
       ],
       "indicators": {
@@ -966,20 +966,20 @@
           "name": "미국",
           "role": "규제 주체",
           "channel": "수출규제",
-          "score": 34.0,
-          "change": -34.0,
+          "score": 36.0,
+          "change": -36.0,
           "grade": "🟡",
-          "keywords": "관세(17), 규제(17), 개선(17)"
+          "keywords": "관세(18), 규제(18), 개선(18)"
         },
         {
           "code": "NL",
           "name": "네덜란드",
           "role": "ASML 장비",
           "channel": "공급망",
-          "score": 17.0,
-          "change": 17.0,
+          "score": 18.0,
+          "change": 18.0,
           "grade": "🟢",
-          "keywords": "규제(17)"
+          "keywords": "규제(18)"
         },
         {
           "code": "CN",
@@ -1013,7 +1013,7 @@
     "total_news": 4969,
     "classified_rate": 100.0,
     "countries": 96,
-    "updated": "2026-07-03 20:52",
+    "updated": "2026-07-04 14:33",
     "data_period": "2022.01 ~ 2026.06"
   },
   "region_analysis": {
