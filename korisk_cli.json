@@ -1,17 +1,17 @@
 {
-  "timestamp": "2026-07-04 14:31",
-  "current_cli": 47.2,
+  "timestamp": "2026-07-24 20:42",
+  "current_cli": 19.4,
   "cli_grade": "🟢 안정",
-  "cli_change": 15.7,
+  "cli_change": -13.2,
   "industry_cli": {
     "반도체": {
-      "current": 76.5,
-      "change": 30.2,
+      "current": 76.3,
+      "change": 30.6,
       "grade": "🔴 고위험"
     },
     "배터리": {
-      "current": 46.4,
-      "change": -1.0,
+      "current": 26.0,
+      "change": -22.5,
       "grade": "🟢 안정"
     },
     "자동차": {
@@ -20,9 +20,9 @@
       "grade": "🟡 주의"
     },
     "철강": {
-      "current": 46.2,
-      "change": -3.6,
-      "grade": "🟢 안정"
+      "current": 58.3,
+      "change": -5.4,
+      "grade": "🟡 주의"
     }
   },
   "methodology": "Conference Board CLI / OECD Composite Leading Indicator",

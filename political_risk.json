@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-04 14:31",
+  "timestamp": "2026-07-24 20:42",
   "countries": [
     {
       "country_code": "US",
@@ -8,34 +8,28 @@
       "keywords_found": "전쟁(3), 제재(24), sanction(3), 핵(5), 관세(19)"
     },
     {
+      "country_code": "AU",
+      "country_name": "호주(Commonwealth of A",
+      "political_risk": 46,
+      "keywords_found": "전쟁(4), 분쟁(3), 핵(44), 미사일(6), 희토류(1)"
+    },
+    {
       "country_code": "MX",
       "country_name": "멕시코합중국 (Estados Unid",
-      "political_risk": 43,
-      "keywords_found": "전쟁(2), 분쟁(4), war(1), 핵(2), 테러(1)"
+      "political_risk": 46,
+      "keywords_found": "전쟁(2), 분쟁(8), war(1), 핵(1), 테러(3)"
+    },
+    {
+      "country_code": "DE",
+      "country_name": "독일연방공화국(The Federal ",
+      "political_risk": 41,
+      "keywords_found": "전쟁(1), 분쟁(2), 수출통제(1), 무기(1), 핵(5)"
     },
     {
       "country_code": "ID",
       "country_name": "인도네시아",
       "political_risk": 40,
       "keywords_found": "전쟁(1), 분쟁(9), 핵(6), 관세(2), 무역분쟁(1)"
-    },
-    {
-      "country_code": "DE",
-      "country_name": "독일연방공화국(The Federal ",
-      "political_risk": 39,
-      "keywords_found": "무기(1), 핵(5), 미사일(1), 관세(5), 갈등(2)"
-    },
-    {
-      "country_code": "AU",
-      "country_name": "호주(Commonwealth of A",
-      "political_risk": 34,
-      "keywords_found": "전쟁(3), 분쟁(2), 핵(40), 미사일(6), 관세(1)"
-    },
-    {
-      "country_code": "BR",
-      "country_name": "브라질 연방 공화국(The Feder",
-      "political_risk": 33,
-      "keywords_found": "전쟁(1), 분쟁(5), 핵(1), 관세(2), 위기(1)"
     },
     {
       "country_code": "JP",
@@ -46,26 +40,32 @@
     {
       "country_code": "NL",
       "country_name": "네덜란드(The Kingdom of ",
-      "political_risk": 23,
-      "keywords_found": "분쟁(2), war(1), 제재(2), 수출통제(1), 핵(2)"
+      "political_risk": 30,
+      "keywords_found": "분쟁(2), war(1), 제재(2), 수출통제(1), sanction(1)"
     },
     {
-      "country_code": "TW",
-      "country_name": "대만",
-      "political_risk": 23,
-      "keywords_found": "분쟁(4), 단교(4), 핵(1), 갈등(1), 우려(1)"
+      "country_code": "BR",
+      "country_name": "브라질 연방 공화국(The Feder",
+      "political_risk": 26,
+      "keywords_found": "전쟁(1), 분쟁(7), 핵(1), 관세(2), 불확실(4)"
     },
     {
       "country_code": "CN",
       "country_name": "중화인민공화국(The People&r",
-      "political_risk": 22,
-      "keywords_found": "분쟁(7), 제재(1), 무기(2), 핵(3), 관세(4)"
+      "political_risk": 18,
+      "keywords_found": "전쟁(1), 분쟁(7), 제재(1), 무기(2), 핵(2)"
     },
     {
       "country_code": "VN",
       "country_name": "베트남 사회주의 공화국(Sociali",
       "political_risk": 17,
       "keywords_found": "분쟁(1), 핵(4), 관세(2), 무역분쟁(1), 불확실(3)"
+    },
+    {
+      "country_code": "TW",
+      "country_name": "대만",
+      "political_risk": 13,
+      "keywords_found": "분쟁(4), 단교(4)"
     },
     {
       "country_code": "IN",
@@ -82,7 +82,7 @@
   ],
   "industry_risk": {
     "반도체": {
-      "avg_score": 30.4,
+      "avg_score": 29.0,
       "countries": [
         {
           "country": "미국",
@@ -94,7 +94,7 @@
         },
         {
           "country": "중국",
-          "score": 22.0,
+          "score": 18.0,
           "risks": [
             "수출규제리스크",
             "공급망리스크",
@@ -111,7 +111,7 @@
         },
         {
           "country": "대만",
-          "score": 23.0,
+          "score": 13.0,
           "risks": [
             "수출규제리스크",
             "지정학리스크"
@@ -119,7 +119,7 @@
         },
         {
           "country": "네덜란드",
-          "score": 23.0,
+          "score": 30.0,
           "risks": [
             "수출규제리스크"
           ]
@@ -127,7 +127,7 @@
       ]
     },
     "배터리": {
-      "avg_score": 26.2,
+      "avg_score": 27.1,
       "countries": [
         {
           "country": "미국",
@@ -139,7 +139,7 @@
         },
         {
           "country": "중국",
-          "score": 22.0,
+          "score": 18.0,
           "risks": [
             "수출규제리스크",
             "공급망리스크",
@@ -164,7 +164,7 @@
         },
         {
           "country": "호주",
-          "score": 34.0,
+          "score": 46.0,
           "risks": [
             "원자재리스크"
           ]
@@ -202,7 +202,7 @@
       ]
     },
     "자동차": {
-      "avg_score": 37.5,
+      "avg_score": 38.8,
       "countries": [
         {
           "country": "미국",
@@ -214,7 +214,7 @@
         },
         {
           "country": "독일",
-          "score": 39.0,
+          "score": 41.0,
           "risks": [
             "공급망리스크",
             "관세리스크"
@@ -229,7 +229,7 @@
         },
         {
           "country": "멕시코",
-          "score": 43.0,
+          "score": 46.0,
           "risks": [
             "공급망리스크",
             "관세리스크"
@@ -238,7 +238,7 @@
       ]
     },
     "철강": {
-      "avg_score": 28.8,
+      "avg_score": 29.0,
       "countries": [
         {
           "country": "미국",
@@ -250,7 +250,7 @@
         },
         {
           "country": "중국",
-          "score": 22.0,
+          "score": 18.0,
           "risks": [
             "수출규제리스크",
             "공급망리스크",
@@ -259,14 +259,14 @@
         },
         {
           "country": "호주",
-          "score": 34.0,
+          "score": 46.0,
           "risks": [
             "원자재리스크"
           ]
         },
         {
           "country": "브라질",
-          "score": 33.0,
+          "score": 26.0,
           "risks": [
             "원자재리스크"
           ]
