@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-24 20:43",
+  "timestamp": "2026-07-29 19:32",
   "month": "2026-07",
   "overall": "🔴 위험",
   "alert_count": 10,
@@ -39,11 +39,11 @@
       "industry": "반도체·자동차",
       "value": 101.7,
       "grade": "🟡 주의",
-      "pct_change": 0.2,
-      "baseline": 99.62,
+      "pct_change": 0.1,
+      "baseline": 99.64,
       "vs_baseline_pct": 2.1,
-      "threshold": 100.68,
-      "message": "미국산업생산 🟡 주의: 101.7 (▲0.2%)",
+      "threshold": 100.72,
+      "message": "미국산업생산 🟡 주의: 101.7 (▲0.1%)",
       "meaning": "미국 수요 변화 → 수출 선행",
       "action": "반도체·자동차 미국 수요 변화 → 수출 선행"
     },
@@ -57,19 +57,19 @@
     },
     {
       "type": "정치리스크",
-      "indicator": "AU 정치리스크",
-      "value": 46.0,
-      "grade": "🔴 위험",
-      "message": "호주 정치리스크 46점 🔴 위험",
-      "action": "호주 관련 수출입 리스크 모니터링 강화"
-    },
-    {
-      "type": "정치리스크",
       "indicator": "MX 정치리스크",
       "value": 46.0,
       "grade": "🔴 위험",
       "message": "멕시코 정치리스크 46점 🔴 위험",
       "action": "멕시코 관련 수출입 리스크 모니터링 강화"
+    },
+    {
+      "type": "정치리스크",
+      "indicator": "AU 정치리스크",
+      "value": 46.0,
+      "grade": "🔴 위험",
+      "message": "호주 정치리스크 46점 🔴 위험",
+      "action": "호주 관련 수출입 리스크 모니터링 강화"
     },
     {
       "type": "정치리스크",

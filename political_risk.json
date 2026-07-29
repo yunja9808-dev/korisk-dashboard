@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-24 20:42",
+  "timestamp": "2026-07-29 19:31",
   "countries": [
     {
       "country_code": "US",
@@ -8,16 +8,16 @@
       "keywords_found": "전쟁(3), 제재(24), sanction(3), 핵(5), 관세(19)"
     },
     {
-      "country_code": "AU",
-      "country_name": "호주(Commonwealth of A",
-      "political_risk": 46,
-      "keywords_found": "전쟁(4), 분쟁(3), 핵(44), 미사일(6), 희토류(1)"
-    },
-    {
       "country_code": "MX",
       "country_name": "멕시코합중국 (Estados Unid",
       "political_risk": 46,
       "keywords_found": "전쟁(2), 분쟁(8), war(1), 핵(1), 테러(3)"
+    },
+    {
+      "country_code": "AU",
+      "country_name": "호주(Commonwealth of A",
+      "political_risk": 46,
+      "keywords_found": "전쟁(4), 분쟁(3), 핵(44), 미사일(6), 희토류(1)"
     },
     {
       "country_code": "DE",
@@ -46,8 +46,8 @@
     {
       "country_code": "BR",
       "country_name": "브라질 연방 공화국(The Feder",
-      "political_risk": 26,
-      "keywords_found": "전쟁(1), 분쟁(7), 핵(1), 관세(2), 불확실(4)"
+      "political_risk": 28,
+      "keywords_found": "전쟁(1), 분쟁(7), 핵(2), 관세(2), 불확실(4)"
     },
     {
       "country_code": "CN",
@@ -238,7 +238,7 @@
       ]
     },
     "철강": {
-      "avg_score": 29.0,
+      "avg_score": 29.3,
       "countries": [
         {
           "country": "미국",
@@ -266,7 +266,7 @@
         },
         {
           "country": "브라질",
-          "score": 26.0,
+          "score": 28.0,
           "risks": [
             "원자재리스크"
           ]

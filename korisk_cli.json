@@ -1,12 +1,12 @@
 {
-  "timestamp": "2026-07-24 20:42",
+  "timestamp": "2026-07-29 19:31",
   "current_cli": 19.4,
   "cli_grade": "🟢 안정",
   "cli_change": -13.2,
   "industry_cli": {
     "반도체": {
-      "current": 76.3,
-      "change": 30.6,
+      "current": 73.9,
+      "change": 28.1,
       "grade": "🔴 고위험"
     },
     "배터리": {
@@ -15,8 +15,8 @@
       "grade": "🟢 안정"
     },
     "자동차": {
-      "current": 64.2,
-      "change": 22.4,
+      "current": 62.3,
+      "change": 20.6,
       "grade": "🟡 주의"
     },
     "철강": {
