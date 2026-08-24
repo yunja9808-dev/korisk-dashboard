@@ -1,42 +1,42 @@
 {
-  "timestamp": "2026-07-29 19:32",
+  "timestamp": "2026-08-24 16:19",
   "risk_network": [
     {
       "node": "관세리스크",
       "type": "리스크",
-      "degree": 2.15,
+      "degree": 2.139,
       "betweenness": 0.167,
-      "eigenvector": 0.959,
+      "eigenvector": 0.961,
       "hub": "⭐ 허브"
     },
     {
       "node": "원자재리스크",
       "type": "리스크",
-      "degree": 2.324,
+      "degree": 2.313,
       "betweenness": 0.5,
-      "eigenvector": 0.974,
+      "eigenvector": 0.978,
       "hub": "⭐ 허브"
     },
     {
       "node": "공급망리스크",
       "type": "리스크",
-      "degree": 1.374,
+      "degree": 1.371,
       "betweenness": 0.0,
-      "eigenvector": 0.65,
+      "eigenvector": 0.655,
       "hub": "🔗 연결"
     },
     {
       "node": "지정학리스크",
       "type": "리스크",
-      "degree": 1.795,
+      "degree": 1.761,
       "betweenness": 0.0,
-      "eigenvector": 0.841,
+      "eigenvector": 0.834,
       "hub": "⭐ 허브"
     },
     {
       "node": "수출규제리스크",
       "type": "리스크",
-      "degree": 2.295,
+      "degree": 2.275,
       "betweenness": 0.167,
       "eigenvector": 1.0,
       "hub": "⭐ 허브"

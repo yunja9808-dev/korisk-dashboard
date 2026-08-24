@@ -1,8 +1,8 @@
 {
-  "timestamp": "2026-07-29 19:32",
-  "month": "2026-07",
+  "timestamp": "2026-08-24 16:20",
+  "month": "2026-08",
   "overall": "🔴 위험",
-  "alert_count": 10,
+  "alert_count": 11,
   "alerts": [
     {
       "type": "PPI선행지표",
@@ -11,11 +11,11 @@
       "risk": "원자재리스크",
       "value": 165.09,
       "grade": "🔴 위험",
-      "pct_change": 4.4,
-      "baseline": 131.64,
-      "vs_baseline_pct": 25.4,
-      "threshold": 143.33,
-      "message": "[철강] 열연강판 165.1 (▲4.4%) 🔴 위험",
+      "pct_change": 0.0,
+      "baseline": 132.14,
+      "vs_baseline_pct": 24.9,
+      "threshold": 144.44,
+      "message": "[철강] 열연강판 165.1 (▼0.0%) 🔴 위험",
       "meaning": "철강 생산원가 상승",
       "action": "철강 생산원가 상승 → 선제 대응 필요"
     },
@@ -23,13 +23,13 @@
       "type": "국제원자재",
       "indicator": "국제구리가격",
       "industry": "배터리",
-      "value": 4237.07,
+      "value": 4075.1,
       "grade": "🟡 주의",
-      "pct_change": -7.7,
-      "baseline": 2493.99,
-      "vs_baseline_pct": 69.9,
-      "threshold": 3445.28,
-      "message": "국제구리가격 🟡 주의: 4237.1 (▼7.7%)",
+      "pct_change": -3.8,
+      "baseline": 2517.59,
+      "vs_baseline_pct": 61.9,
+      "threshold": 3481.21,
+      "message": "국제구리가격 🟡 주의: 4075.1 (▼3.8%)",
       "meaning": "양극재 원가 상승 → 배터리 원자재리스크",
       "action": "배터리 양극재 원가 상승 → 배터리 원자재리스크"
     },
@@ -86,6 +86,14 @@
       "grade": "🔴 위험",
       "message": "인도네시아 정치리스크 40점 🔴 위험",
       "action": "인도네시아 관련 수출입 리스크 모니터링 강화"
+    },
+    {
+      "type": "정치리스크",
+      "indicator": "BR 정치리스크",
+      "value": 37.0,
+      "grade": "🟡 주의",
+      "message": "브라질 정치리스크 37점 🟡 주의",
+      "action": "브라질 관련 수출입 리스크 모니터링 강화"
     },
     {
       "type": "정치리스크",

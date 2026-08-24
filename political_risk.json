@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-29 19:31",
+  "timestamp": "2026-08-24 16:18",
   "countries": [
     {
       "country_code": "US",
@@ -32,6 +32,12 @@
       "keywords_found": "전쟁(1), 분쟁(9), 핵(6), 관세(2), 무역분쟁(1)"
     },
     {
+      "country_code": "BR",
+      "country_name": "브라질 연방 공화국(The Feder",
+      "political_risk": 37,
+      "keywords_found": "분쟁(7), 핵(5), 관세(5), 불확실(2)"
+    },
+    {
       "country_code": "JP",
       "country_name": "일본(Japan)",
       "political_risk": 33,
@@ -42,12 +48,6 @@
       "country_name": "네덜란드(The Kingdom of ",
       "political_risk": 30,
       "keywords_found": "분쟁(2), war(1), 제재(2), 수출통제(1), sanction(1)"
-    },
-    {
-      "country_code": "BR",
-      "country_name": "브라질 연방 공화국(The Feder",
-      "political_risk": 28,
-      "keywords_found": "전쟁(1), 분쟁(7), 핵(2), 관세(2), 불확실(4)"
     },
     {
       "country_code": "CN",
@@ -238,7 +238,7 @@
       ]
     },
     "철강": {
-      "avg_score": 29.3,
+      "avg_score": 30.8,
       "countries": [
         {
           "country": "미국",
@@ -266,7 +266,7 @@
         },
         {
           "country": "브라질",
-          "score": 28.0,
+          "score": 37.0,
           "risks": [
             "원자재리스크"
           ]
