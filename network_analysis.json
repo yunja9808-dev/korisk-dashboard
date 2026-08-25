@@ -1,51 +1,51 @@
 {
-  "timestamp": "2026-08-24 16:19",
+  "timestamp": "2026-08-25 15:27",
   "risk_network": [
     {
       "node": "관세리스크",
       "type": "리스크",
-      "degree": 2.139,
+      "degree": 1.362,
       "betweenness": 0.167,
-      "eigenvector": 0.961,
+      "eigenvector": 0.857,
       "hub": "⭐ 허브"
     },
     {
       "node": "원자재리스크",
       "type": "리스크",
-      "degree": 2.313,
+      "degree": 1.739,
       "betweenness": 0.5,
-      "eigenvector": 0.978,
+      "eigenvector": 1.0,
       "hub": "⭐ 허브"
     },
     {
       "node": "공급망리스크",
       "type": "리스크",
-      "degree": 1.371,
+      "degree": 1.052,
       "betweenness": 0.0,
-      "eigenvector": 0.655,
-      "hub": "🔗 연결"
+      "eigenvector": 0.741,
+      "hub": "⭐ 허브"
     },
     {
       "node": "지정학리스크",
       "type": "리스크",
-      "degree": 1.761,
+      "degree": 0.918,
       "betweenness": 0.0,
-      "eigenvector": 0.834,
-      "hub": "⭐ 허브"
+      "eigenvector": 0.622,
+      "hub": "🔗 연결"
     },
     {
       "node": "수출규제리스크",
       "type": "리스크",
-      "degree": 2.275,
+      "degree": 1.519,
       "betweenness": 0.167,
-      "eigenvector": 1.0,
+      "eigenvector": 0.928,
       "hub": "⭐ 허브"
     }
   ],
   "total_nodes": 5,
   "hub_risks": [
-    "수출규제리스크",
-    "원자재리스크"
+    "원자재리스크",
+    "수출규제리스크"
   ],
   "methodology": "Acemoglu et al. (2012), Network Centrality Analysis"
 }

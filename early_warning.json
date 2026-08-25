@@ -1,9 +1,18 @@
 {
-  "timestamp": "2026-08-24 16:20",
+  "timestamp": "2026-08-25 15:28",
   "month": "2026-08",
   "overall": "🔴 위험",
-  "alert_count": 11,
+  "alert_count": 13,
   "alerts": [
+    {
+      "type": "뉴스리스크",
+      "indicator": "수출규제리스크",
+      "value": 25.0,
+      "grade": "🟡 주의",
+      "change": 4.0,
+      "message": "수출규제리스크 25점 🟡 주의",
+      "action": "수출규제리스크 관련 뉴스 집중 모니터링 및 대응전략 검토"
+    },
     {
       "type": "PPI선행지표",
       "indicator": "PPI_열연강판",
@@ -110,6 +119,18 @@
       "grade": "🟡 주의",
       "message": "네덜란드 정치리스크 30점 🟡 주의",
       "action": "네덜란드 관련 수출입 리스크 모니터링 강화"
+    },
+    {
+      "type": "ARIMAX예측",
+      "indicator": "수출규제리스크",
+      "value": 23.5,
+      "grade": "🟡 주의",
+      "upper_1m": 34.2,
+      "lower_1m": 12.8,
+      "pred_3m": 15.7,
+      "change": -1.5,
+      "message": "수출규제리스크 1개월 후 24점 하락 예측 (▼1.5)",
+      "action": "수출규제리스크 하락 예측 → 선제 대응 준비 (3개월 후 16점)"
     }
   ]
 }

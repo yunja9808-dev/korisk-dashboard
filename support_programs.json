@@ -1,15 +1,16 @@
 {
-  "timestamp": "2026-08-24 16:20",
+  "timestamp": "2026-08-25 15:28",
   "overall": "🔴 위험",
   "risk_types": [
+    "AU 정치리스크",
     "US 정치리스크",
     "NL 정치리스크",
-    "BR 정치리스크",
     "ID 정치리스크",
-    "DE 정치리스크",
-    "AU 정치리스크",
+    "MX 정치리스크",
+    "BR 정치리스크",
     "JP 정치리스크",
-    "MX 정치리스크"
+    "수출규제리스크",
+    "DE 정치리스크"
   ],
   "industries": [
     "철강",
@@ -37,6 +38,40 @@
       "urgency": "단기"
     },
     {
+      "id": "SP003",
+      "name": "통상분쟁 대응 지원",
+      "agency": "산업통상자원부·무역안보관리원",
+      "risk_types": [
+        "관세리스크",
+        "수출규제리스크"
+      ],
+      "industries": [
+        "반도체",
+        "자동차",
+        "철강"
+      ],
+      "description": "반덤핑·상계관세 등 통상분쟁 법무 지원 및 WTO 제소 지원",
+      "url": "https://www.motie.go.kr",
+      "urgency": "단기"
+    },
+    {
+      "id": "SP008",
+      "name": "소부장 공급망 안정 협력사업",
+      "agency": "산업통상자원부·KOTRA",
+      "risk_types": [
+        "공급망리스크",
+        "수출규제리스크"
+      ],
+      "industries": [
+        "반도체",
+        "자동차",
+        "배터리"
+      ],
+      "description": "소재·부품·장비 공급망 다변화 및 국산화 R&D 지원",
+      "url": "https://www.kotra.or.kr",
+      "urgency": "중기"
+    },
+    {
       "id": "SP002",
       "name": "무역보험 (단기수출보험)",
       "agency": "한국무역보험공사",
@@ -55,57 +90,19 @@
       "urgency": "즉시"
     },
     {
-      "id": "SP009",
-      "name": "FTA 활용 지원",
-      "agency": "산업통상자원부·KOTRA",
+      "id": "SP004",
+      "name": "전략물자 수출입 허가 지원",
+      "agency": "산업통상자원부·무역안보관리원",
       "risk_types": [
-        "관세리스크",
-        "공급망리스크"
+        "수출규제리스크"
       ],
       "industries": [
-        "자동차",
-        "철강",
         "반도체",
         "배터리"
       ],
-      "description": "FTA 원산지 증명 및 활용 컨설팅, 관세 절감 전략 수립",
-      "url": "https://www.ftahub.go.kr",
+      "description": "전략물자 해당 여부 판정 및 수출허가 신청 지원",
+      "url": "https://www.yestrade.go.kr",
       "urgency": "즉시"
-    },
-    {
-      "id": "SP010",
-      "name": "해외시장 다변화 지원",
-      "agency": "KOTRA",
-      "risk_types": [
-        "지정학리스크",
-        "관세리스크"
-      ],
-      "industries": [
-        "반도체",
-        "자동차",
-        "배터리",
-        "철강"
-      ],
-      "description": "신흥시장 진출 지원 및 수출시장 다변화 컨설팅",
-      "url": "https://www.kotra.or.kr",
-      "urgency": "중기"
-    },
-    {
-      "id": "SP011",
-      "name": "해외투자 보험",
-      "agency": "한국무역보험공사",
-      "risk_types": [
-        "지정학리스크"
-      ],
-      "industries": [
-        "반도체",
-        "자동차",
-        "배터리",
-        "철강"
-      ],
-      "description": "지정학 리스크 지역 해외투자 손실 보전 보험",
-      "url": "https://www.ksure.or.kr",
-      "urgency": "단기"
     }
   ],
   "immediate": [
@@ -128,21 +125,18 @@
       "urgency": "즉시"
     },
     {
-      "id": "SP009",
-      "name": "FTA 활용 지원",
-      "agency": "산업통상자원부·KOTRA",
+      "id": "SP004",
+      "name": "전략물자 수출입 허가 지원",
+      "agency": "산업통상자원부·무역안보관리원",
       "risk_types": [
-        "관세리스크",
-        "공급망리스크"
+        "수출규제리스크"
       ],
       "industries": [
-        "자동차",
-        "철강",
         "반도체",
         "배터리"
       ],
-      "description": "FTA 원산지 증명 및 활용 컨설팅, 관세 절감 전략 수립",
-      "url": "https://www.ftahub.go.kr",
+      "description": "전략물자 해당 여부 판정 및 수출허가 신청 지원",
+      "url": "https://www.yestrade.go.kr",
       "urgency": "즉시"
     }
   ],
@@ -166,39 +160,38 @@
       "urgency": "단기"
     },
     {
-      "id": "SP011",
-      "name": "해외투자 보험",
-      "agency": "한국무역보험공사",
+      "id": "SP003",
+      "name": "통상분쟁 대응 지원",
+      "agency": "산업통상자원부·무역안보관리원",
       "risk_types": [
-        "지정학리스크"
+        "관세리스크",
+        "수출규제리스크"
       ],
       "industries": [
         "반도체",
         "자동차",
-        "배터리",
         "철강"
       ],
-      "description": "지정학 리스크 지역 해외투자 손실 보전 보험",
-      "url": "https://www.ksure.or.kr",
+      "description": "반덤핑·상계관세 등 통상분쟁 법무 지원 및 WTO 제소 지원",
+      "url": "https://www.motie.go.kr",
       "urgency": "단기"
     }
   ],
   "mid_term": [
     {
-      "id": "SP010",
-      "name": "해외시장 다변화 지원",
-      "agency": "KOTRA",
+      "id": "SP008",
+      "name": "소부장 공급망 안정 협력사업",
+      "agency": "산업통상자원부·KOTRA",
       "risk_types": [
-        "지정학리스크",
-        "관세리스크"
+        "공급망리스크",
+        "수출규제리스크"
       ],
       "industries": [
         "반도체",
         "자동차",
-        "배터리",
-        "철강"
+        "배터리"
       ],
-      "description": "신흥시장 진출 지원 및 수출시장 다변화 컨설팅",
+      "description": "소재·부품·장비 공급망 다변화 및 국산화 R&D 지원",
       "url": "https://www.kotra.or.kr",
       "urgency": "중기"
     }
